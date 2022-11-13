@@ -86,7 +86,7 @@ export default function PlayerInfoModal({
             X
           </button>
           <ul className="stats-list">
-            <h1>Stats</h1>
+            <h1 className="stats-label">Stats</h1>
             <li>
               Games: <span>{info.stats[0].splits[0].stat.games}</span>
             </li>
