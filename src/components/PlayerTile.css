@@ -25,12 +25,10 @@ background-color: var(--color-bg);
   letter-spacing: 0.05rem;
   font-size: 1rem;
   transform: scale(1.1, 1.25);
-  /* font-family: "NHL_Edge_Columbus"; */
 }
 
 .player-number {
   margin: 0rem 0rem 0.5rem 0;
-  /* font-family: "NHL_Edge_Columbus"; */
   letter-spacing: 0rem;
   font-size: 3.5rem;
   transform: scale(1.05, 1.3);
