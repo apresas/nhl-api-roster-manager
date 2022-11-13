@@ -43,9 +43,7 @@ export default function PlayerInfoModal({
   const imgs = playerItems.find((item) => item.id === info.id)
   if (imgs == null) return null;
 
-  // const savePercentage = info.stats[0].splits[0].stat.savePercentage
 
-  // const formattedSP = parseFloat(Math.round(savePercentage * 100) / 100).toFixed(2);
 
   function percentFormatter(percent) {
     const formatted = parseFloat(Math.round(percent * 100) / 100).toFixed(2);
@@ -78,7 +76,7 @@ export default function PlayerInfoModal({
               Height: <span>{info.height}</span>
             </li>
             <li>
-              Weight: <span>{info.weight}lbs</span>
+              Weight: <span>{NodeFilter.weight}lbs</span>
             </li>
             <li>
               Shoots: <span>{info.shootsCatches}</span>
@@ -129,9 +127,6 @@ export default function PlayerInfoModal({
             </li>
             <li>
               PK Save %: <span>{percentFormatter(info.stats[0].splits[0].stat.shortHandedSavePercentage)}%</span>
-            </li>
-            <li>
-              Average TOI: <span>{info.stats[0].splits[0].stat.timeOnIcePerGame}</span>
             </li>
           </ul>
         </div>

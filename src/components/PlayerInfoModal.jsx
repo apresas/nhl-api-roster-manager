@@ -21,11 +21,11 @@ export default function PlayerInfoModal({
 
 
 
-  // const [info, setInfo] = useState({});
+  // const [infoP, setInfo] = useState({});
 
   // useEffect(() => {
   //   setInfo(playerInfo[0]);
-  //   console.log(info);
+  //   console.log(infoP);
   // }, [playerInfo, info]);
 
   // Path for Stats
