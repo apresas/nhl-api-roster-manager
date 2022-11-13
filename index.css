@@ -1,0 +1,9 @@
+:root {
+   --color-bg: #0d1b2c;
+   --color-bg-varient: #152a47;
+   --color-primary: #002868;
+   --color-primary-varient: #0038A8;
+   --color-white: #fff;
+   --color-offWhite: #faebd7;
+   --color-light: rgba(255, 255, 255, 0.6);
+}

@@ -6,14 +6,23 @@ export default function PlayerTile({
   position,
   shoots,
   lastName,
+  onClick,
+  passPlayerID, 
+  id
 
 }) {
+const currentPlayerHandler = () => {
+  onClick(id)
+  // passPlayerID(id)
+  // console.info('ID from PlayerTile: ' + id)
+
+}
+
   return (
-    <div className="player-tile">
+    <div className="player-tile" onClick={currentPlayerHandler}>
       <h3 className="player-name">{lastName}</h3>
       <h1 className="player-number">{number}</h1>
       <h4 className="player-position">{position}</h4>
-      <h5 className="player-shoots">{shoots}</h5>
     </div>
   );
 }

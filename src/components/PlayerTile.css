@@ -1,45 +1,56 @@
 .player-tile {
-    display: flex;
-    background-color: #152a47;
-    color: antiquewhite;
-    /* height: 11rem;
+  display: flex;
+  background-color: #152a47;
+  /* color: antiquewhite; */
+  color: var(--color-offWhite);
+  /* height: 11rem;
     width: 11rem; */
-    height: 10rem;
-    width: 10rem;
-    border-radius: 12px;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Apex mk2';
-
+  height: 10rem;
+  width: 10rem;
+  border-radius: 12px;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Apex mk2";
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
 }
 
-
-.player-name{
-    margin: 1.2rem 0 0 0;
-    letter-spacing: -.15rem;
-    font-size: 1rem;
-    font-family: 'NHL_Edge_Columbus';
+.player-name {
+  margin: 1.2rem 0 0 0;
+  letter-spacing: -0.15rem;
+  font-size: 1rem;
+  font-family: "NHL_Edge_Columbus";
 }
 
-.player-number{
-    margin: .85rem .75rem 0.85rem 0;
-    font-family: 'NHL_Edge_Columbus';
-    letter-spacing: -.7rem;
-    font-size: 3.5rem;
+.player-number {
+  margin: 0.85rem 0.75rem 0.85rem 0;
+  font-family: "NHL_Edge_Columbus";
+  letter-spacing: -0.7rem;
+  font-size: 3.5rem;
 }
 
 .player-position {
-    margin: 0;
-    opacity: 0.3;
-    transform: scale(1, 1.25)
+  margin: 0;
+  opacity: 0.3;
+  transform: scale(1, 1.25);
 }
 
 .player-shoots {
-    margin: 0.75rem 0 0 0;
-    opacity: 0;
+  margin: 0.75rem 0 0 0;
+  opacity: 0;
 }
 
 .player-shoots::before {
-    content: 'Shoots: ';
-    opacity: .5;
+  content: "Shoots: ";
+  opacity: 0.5;
+}
+
+.player-list-type-title {
+  margin-top: 3rem;
+}
+
+.player-list-type-title:first-of-type {
+  margin-top: 1.5rem;
 }

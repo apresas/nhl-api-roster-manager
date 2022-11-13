@@ -16,7 +16,16 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.75rem;
+    list-style: none;
 
+}
+
+.defense-list{
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.goalie-list {
+    grid-template-columns: repeat(2, 1fr)
 }
 
 .player-list-header{

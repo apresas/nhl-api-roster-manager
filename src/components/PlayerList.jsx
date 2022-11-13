@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import PlayerTile from "./PlayerTile";
 import "./PlayerList.css";
 import { usePlayers } from "../context/PlayerContext";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+
 
 export default function PlayerList({ playerData }) {
   // console.info([...playerData]);
@@ -17,6 +19,20 @@ export default function PlayerList({ playerData }) {
   };
 
   const [forwardList, setForwardList] = useState([forward]);
+
+  const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
+  const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
+
+  function openPlayerInfoModal(playerID) {
+    setShowPlayerInfoModal(true);
+    setPlayerInfoModalID(playerID);
+  }
+
+  function testClick() {
+    console.log('clicked')
+  }
+
+
   // console.info(forward);
 
   return (
@@ -34,6 +50,7 @@ export default function PlayerList({ playerData }) {
             .filter((player) => player.primaryPosition.type.includes("Forward"))
             .map((fp) => (
               <PlayerTile
+                onClick={testClick}
                 key={fp.id}
                 id={fp.id}
                 fullName={fp.fullName}
@@ -47,21 +64,24 @@ export default function PlayerList({ playerData }) {
             ))}
         </section>
         <h1 className="player-list-type-title">Defense</h1>
-        <section className="player-list">
+        <section className="player-list defense-list">
           {playerData
             .filter((player) => player.primaryPosition.type.includes("Defense"))
             .map((fp) => (
-              <PlayerTile
-                key={fp.id}
-                id={fp.id}
-                fullName={fp.fullName}
-                lastName={fp.lastName}
-                firstName={fp.firstName}
-                number={fp.primaryNumber}
-                position={fp.primaryPosition.abbreviation}
-                shoots={fp.shootsCatches}
-                stats={fp.stats.splits}
-              />
+              <li key={fp.id}>
+                <PlayerTile
+                  onClick={setShowPlayerInfoModal}
+                  key={fp.id}
+                  id={fp.id}
+                  fullName={fp.fullName}
+                  lastName={fp.lastName}
+                  firstName={fp.firstName}
+                  number={fp.primaryNumber}
+                  position={fp.primaryPosition.abbreviation}
+                  shoots={fp.shootsCatches}
+                  stats={fp.stats.splits}
+                />
+              </li>
             ))}
         </section>
         <h1 className="player-list-type-title">Goalies</h1>
@@ -69,20 +89,24 @@ export default function PlayerList({ playerData }) {
           {playerData
             .filter((player) => player.primaryPosition.type.includes("Goalie"))
             .map((fp) => (
-              <PlayerTile
-                key={fp.id}
-                id={fp.id}
-                fullName={fp.fullName}
-                lastName={fp.lastName}
-                firstName={fp.firstName}
-                number={fp.primaryNumber}
-                position={fp.primaryPosition.abbreviation}
-                shoots={fp.shootsCatches}
-                stats={fp.stats.splits}
-              />
+              <li key={fp.id}>
+                <PlayerTile
+                  onClick={setShowPlayerInfoModal}
+                  key={fp.id}
+                  id={fp.id}
+                  fullName={fp.fullName}
+                  lastName={fp.lastName}
+                  firstName={fp.firstName}
+                  number={fp.primaryNumber}
+                  position={fp.primaryPosition.abbreviation}
+                  shoots={fp.shootsCatches}
+                  stats={fp.stats.splits}
+                />
+              </li>
             ))}
         </section>
       </div>
+      
     </>
   );
 }

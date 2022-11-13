@@ -10,26 +10,39 @@ export function usePlayers() {
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
   const [forwards, setForwards] = useLocalStorage("forwards", []);
+  const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage("currentPlayer", []);
 
   function getPlayers(id) {
     return players.filter((p) => p.id === id);
   }
 
-  function addPlayer() {
-    setPlayers((prevPlayers) => {
-      if (prevPlayers.find(players => players.id === id))
-      return prevPlayers;
-      return [...prevPlayers, {id, lastName, number, position}];
-    });
+  function addCurrentPlayer(player) {
+    setCurrentPlayer(player);
+    return [...player]
   }
 
-  function addForward({id, name, number, position}) {
-    setForwards((prevForwards) => {
-      if (prevForwards.find((forwards) => forwards.id === id))
-      return prevForwards;
-      return [...prevForwards, {id, name, number, position}];
-    })
+  // function addPlayer() {
+  //   setPlayers((prevPlayers) => {
+  //     if (prevPlayers.find(players => players.id === id))
+  //     return prevPlayers;
+  //     return [...prevPlayers, {id, lastName, number, position}];
+  //   });
+  // }
+
+  function addPlayers(player) {
+    setPlayers(player);
+    return [...player]
   }
+
+  // function addForward({id, name, number, position}) {
+  //   setForwards((prevForwards) => {
+  //     if (prevForwards.find((forwards) => forwards.id === id))
+  //     return prevForwards;
+  //     return [...prevForwards, {id, name, number, position}];
+  //   })
+  // }
+
+
 
 //   setPlayer((prevPlayers) => {
 //     return prevPlayers.filter((player) => player.id === id);
@@ -40,7 +53,10 @@ export const PlayerProvider = ({ children }) => {
       value={{
         players,
         getPlayers,
-        addForward
+        // addForward,
+        addPlayers,
+        addCurrentPlayer, 
+        localCurrentPlayer, 
       }}
     >
         {children}
