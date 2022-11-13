@@ -1,12 +1,12 @@
-body {
+/* body {
     margin: 0;
     background-color: #0d1b2c;
-}
+} */
 .player-list-container{
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: antiquewhite;
+    color: var(--color-white);
     /* font-family: 'NHL_Edge_Columbus'; */
     font-family: 'Apex MK2';
     letter-spacing: .1rem;
@@ -37,12 +37,13 @@ body {
 
 .player-list-title {
     margin: 3rem 0 0 0;
-    transform: scale(1, 1.25)
+    transform: scale(1, 1.25);
 }
 
 .player-list-year {
     margin: 0.7rem 0 1.75rem 0;
-    transform: scale(1, 1.25)
+    transform: scale(1, 1.25);
+    color: var(--color-capital-silver);
 }
 
 .player-list-container span {

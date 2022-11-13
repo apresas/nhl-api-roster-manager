@@ -128,9 +128,6 @@ export default function PlayerInfoModal({
             <li>
               PK Save %: <span>{percentFormatter(info.stats[0].splits[0].stat.shortHandedSavePercentage)}%</span>
             </li>
-            <li>
-              Average TOI: <span>{info.stats[0].splits[0].stat.timeOnIcePerGame}</span>
-            </li>
           </ul>
         </div>
       </div>
