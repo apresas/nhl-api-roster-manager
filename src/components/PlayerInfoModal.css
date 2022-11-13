@@ -125,7 +125,8 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  background-color: var(--color-bg-varient);
+  /* background-color: var(--color-bg-varient); */
+  background: linear-gradient(0deg, var(--color-bg-varient) 0%, var(--color-primary) 100%);
   line-height: 2.25rem;
   color: var(--color-white);
 }
