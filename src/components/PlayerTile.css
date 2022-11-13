@@ -34,7 +34,7 @@ background-color: var(--color-bg);
   letter-spacing: 0.05rem;
   font-size: 3.5rem;
   transform: scale(1.1, 1.25);
-  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-width: 0.65px;
   -webkit-text-stroke-color: var(--color-red);
 }
 
