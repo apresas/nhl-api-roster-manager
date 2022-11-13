@@ -12,12 +12,15 @@
 }
 
 .player-info-modal {
+  /* width: 60rem;
+  height: 70vh; */
   width: 60rem;
-  height: 70vh;
+  height: 42rem;
   display: grid;
   grid-template-rows: repeat(2, auto) 3, 1fr;
   grid-template-columns: repeat(2, 1fr);
   margin: 3rem 0;
+  border-radius: 12px 12px 12px 12px;
   overflow: hidden;
 }
 
@@ -102,6 +105,7 @@
   transform: scale(1.1, 1.25);
   margin: 0.55rem 0 2.5rem 0;
   -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.25px;
   -webkit-text-stroke-color: var(--color-red);
   /* -webkit-text-stroke-color: lightgray; */
 }
@@ -128,7 +132,7 @@
 
 .stats-list {
   margin-right: 17rem;
-  margin-top: 0rem;
+  margin-top: -0.5rem;
 }
 
 .stats-list li {
@@ -143,11 +147,11 @@
   height: 2.5rem;
   width: 2.5rem;
   border: none;
-  border-radius: 3px;
+  border-radius: 6px;
   font-weight: 500;
   align-items: flex-end;
-  margin-top: 0.7rem;
-  margin-right: 0.7rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
   font-family: "Sono";
   font-size: 1rem;
   cursor: pointer;
