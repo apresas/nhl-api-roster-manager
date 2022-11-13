@@ -9,7 +9,7 @@
   letter-spacing: 0.02rem;
   background-color: rgba(0, 0, 0, 0.4);
   color: var(--color-bg-varient);
-  font-size: 1.1rem;
+  /* font-size: 1.25rem; */
 }
 
 .player-info-modal {
