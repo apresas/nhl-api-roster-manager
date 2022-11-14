@@ -3,7 +3,7 @@ import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
-// import { formatPercent } from "../utils/PercentFormatter";
+import { CgClose } from 'react-icons/cg'
 
 export default function PlayerInfoModal({
   handelClose,
@@ -91,7 +91,7 @@ export default function PlayerInfoModal({
         </div>
         <div className="player-profile-stats">
           <button className="btn-close" onClick={handelClose}>
-            X
+            <CgClose className='btn-icon'/>
           </button>
           <ul className="stats-list">
             <h1 className='stats-label'>Stats</h1>

@@ -3,6 +3,7 @@ import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
+import { CgClose } from 'react-icons/cg'
 
 export default function PlayerInfoModal({
   playerID,
@@ -83,7 +84,7 @@ export default function PlayerInfoModal({
         </div>
         <div className="player-profile-stats">
           <button className="btn-close" onClick={handelClose}>
-            X
+            <CgClose/>
           </button>
           <ul className="stats-list">
             <h1 className="stats-label">Stats</h1>
@@ -109,7 +110,7 @@ export default function PlayerInfoModal({
               PIM: <span>{info.stats[0].splits[0].stat.penaltyMinutes}</span>
             </li>
             <li>
-              plusMinus: <span>{info.stats[0].splits[0].stat.plusMinus}</span>
+              Plus/Minus: <span>{info.stats[0].splits[0].stat.plusMinus}</span>
             </li>
             <li>
               Shots: <span>{info.stats[0].splits[0].stat.shots}</span>
