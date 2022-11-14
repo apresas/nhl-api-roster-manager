@@ -15,6 +15,7 @@ function App() {
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
+  const [defaultPlayer, setDefaultPlayer] = useState(players[0]);
   const [rosterData, setRosterData] = useState([]);
   const [rosterUrl, setRosterUrl] = useState([
     "https://statsapi.web.nhl.com/api/v1/teams/29/roster",
@@ -36,7 +37,7 @@ function App() {
 
       setRosterData((state) => {
         state = [...state, ...result.data.people];
-        // addCurrentPlayer(state)
+        addCurrentPlayer(state)
         return state;
       });
     });
@@ -53,7 +54,13 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
+
   }, [rosterData]);
+
+  // useEffect(() => {
+  //   addCurrentPlayer({defaultPlayer})
+  // }, [players])
+
 
   function nationalityFormatter(nationality) {
     const formatted = nationality.slice(0,2)
