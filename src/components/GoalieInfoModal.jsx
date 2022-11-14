@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
 import { CgClose } from 'react-icons/cg'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,
@@ -36,6 +37,7 @@ export default function PlayerInfoModal({
 
   // const info = playerInfo[0]
 
+  const [natCode, setNatCode] = useState();
 
 
   const info = localCurrentPlayer[0];
@@ -49,6 +51,18 @@ export default function PlayerInfoModal({
     const formatted = parseFloat(Math.round(percent * 100) / 100).toFixed(2);
     return formatted
   }
+
+  // function nationalityFormatter(nationality) {
+  //   const formatted = nationality.slice(0,2)
+  //   // console.log(formatted)
+  //   return formatted
+  // }
+
+  // useEffect(() => {
+  //   const flagCode = nationalityFormatter(info.nationality);
+  //   setNatCode(flagCode);
+  //   console.log('Natcode: ' + natCode)
+  // }, [localCurrentPlayer[0]])
 
   
 
@@ -85,7 +99,7 @@ export default function PlayerInfoModal({
               Age: <span>{info.currentAge}</span>
             </li>
             <li>
-              Nationality: <span>{info.nationality}</span>
+              Nationality: <span>{info.nationality} <span className="fi fi-sw"></span></span>
             </li>
           </ul>
         </div>

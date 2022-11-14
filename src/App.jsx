@@ -14,7 +14,7 @@ function App() {
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
-  const [playerListItems, setPlayerListItems] = useState([]);
+  const [flagCode, setFlagCode] = useState();
   const [rosterData, setRosterData] = useState([]);
   const [rosterUrl, setRosterUrl] = useState([
     "https://statsapi.web.nhl.com/api/v1/teams/29/roster",
@@ -26,9 +26,7 @@ function App() {
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
-  const [currentPlayerID, setCurrentPlayerID] = useState();
-
-  const [currentPlayer, setCurrentPlayer] = useState([]);
+  // const [currentPlayer, setCurrentPlayer] = useState([]);
 
   const getRoster = async (res) => {
     res.map(async (item) => {
@@ -56,6 +54,12 @@ function App() {
     addPlayers(rosterData);
   }, [rosterData]);
 
+  function nationalityFormatter(nationality) {
+    const formatted = nationality.slice(0,2)
+    // console.log(formatted)
+    return formatted
+  }
+
   function openPlayerInfoModal(playerID) {
     setPlayerInfoModalID(playerID);
 
@@ -67,17 +71,24 @@ function App() {
       setShowGoalieInfoModal(true);
     }
 
-    setCurrentPlayer(selectedPlayer);
+
 
     addCurrentPlayer(selectedPlayer);
 
+        // setCurrentPlayer(selectedPlayer);
+
     // setShowPlayerInfoModal(true);
 
-    console.log(...selectedPlayer);
+    // console.log(...selectedPlayer);
+    // // console.log(...currentPlayer);
+    // console.log(...localCurrentPlayer);
+
   }
+
 
   function closePlayerInfoModal() {
     setShowPlayerInfoModal(false);
+    console.log(...localCurrentPlayer)
   }
 
   function closeGoalieInfoModal() {

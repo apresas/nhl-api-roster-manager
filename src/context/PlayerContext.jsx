@@ -31,7 +31,7 @@ export const PlayerProvider = ({ children }) => {
 
   function addPlayers(player) {
     setPlayers(player);
-    return [...player]
+    return [player]
   }
 
   // function addForward({id, name, number, position}) {
