@@ -90,7 +90,7 @@ export default function PlayerInfoModal({
               Height: <span>{info.height}</span>
             </li>
             <li>
-              Weight: <span>{NodeFilter.weight}lbs</span>
+              Weight: <span>{info.weight}lbs</span>
             </li>
             <li>
               Shoots: <span>{info.shootsCatches}</span>

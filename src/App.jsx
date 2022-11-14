@@ -27,6 +27,7 @@ function App() {
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
+
   // const [currentPlayer, setCurrentPlayer] = useState([]);
 
   const getRoster = async (res) => {
@@ -37,7 +38,8 @@ function App() {
 
       setRosterData((state) => {
         state = [...state, ...result.data.people];
-        addCurrentPlayer(state)
+        // addCurrentPlayer(state)
+        // console.log(...state)
         return state;
       });
     });
@@ -58,8 +60,8 @@ function App() {
   }, [rosterData]);
 
   // useEffect(() => {
-  //   addCurrentPlayer({defaultPlayer})
-  // }, [players])
+  //   addCurrentPlayer(rosterData[0])
+  // }, [])
 
 
   function nationalityFormatter(nationality) {

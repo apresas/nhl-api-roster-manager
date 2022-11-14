@@ -10,7 +10,41 @@ export function usePlayers() {
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
   const [forwards, setForwards] = useLocalStorage("forwards", []);
-  const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage("currentPlayer", {});
+  const defaultCurrentPlayer = {
+    id: 0,
+    fullName: "default",
+    primaryNumber: '0',
+    primaryPosition: {
+      name: "default"
+    },
+    height: "default",
+    weight: "default",
+    shootsCatches: 'D',
+    currentAge: "default",
+    nationality: "default",
+    stats: {
+      splits: {
+        stat: {
+          games: 0,
+          goals: 0,
+          assets: 0,
+          points: 0,
+          powerPlayerGoals: 0,
+          powerPlayPoints: 0,
+          penaltyMinutes: 0,
+          plusMinus: 0,
+          shots: 0,
+          hits: 0,
+          faceOffPct: 0,
+          blocked: 0,
+          timeOnIcePerGame: 0,
+        }
+      }
+    },
+
+  }
+
+  const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage("currentPlayer", [{defaultCurrentPlayer}]);
 
   function getPlayers(id) {
     return players.filter((p) => p.id === id);
