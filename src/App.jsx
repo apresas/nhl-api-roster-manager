@@ -36,6 +36,7 @@ function App() {
 
       setRosterData((state) => {
         state = [...state, ...result.data.people];
+        // addCurrentPlayer(state)
         return state;
       });
     });

@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
 import { CgClose } from 'react-icons/cg'
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+// import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,

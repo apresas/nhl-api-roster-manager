@@ -10,7 +10,7 @@ export function usePlayers() {
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
   const [forwards, setForwards] = useLocalStorage("forwards", []);
-  const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage("currentPlayer", []);
+  const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage("currentPlayer", {});
 
   function getPlayers(id) {
     return players.filter((p) => p.id === id);
