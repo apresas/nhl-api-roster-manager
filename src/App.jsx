@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PlayerList from "./components/PlayerList";
 import PlayerInfoModal from "./components/PlayerInfoModal";
 import GoalieInfoModal from "./components/GoalieInfoModal";
 import axios from "axios";
 import PlayerTile from "./components/PlayerTile";
 import { Container, Stack } from "react-bootstrap";
 import { usePlayers } from "./context/PlayerContext";
-
+import CBJLogo from './img/cbj_logo.svg'
 
 function App() {
   const { addCurrentPlayer, localCurrentPlayer, addPlayers, players } =
@@ -15,7 +14,6 @@ function App() {
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
-  const [defaultPlayer, setDefaultPlayer] = useState(players[0]);
   const [rosterData, setRosterData] = useState([]);
   const [rosterUrl, setRosterUrl] = useState([
     "https://statsapi.web.nhl.com/api/v1/teams/29/roster",
@@ -28,8 +26,6 @@ function App() {
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
 
-  // const [currentPlayer, setCurrentPlayer] = useState([]);
-
   const getRoster = async (res) => {
     res.map(async (item) => {
       const newURL = starterURL.concat(item.person.link).concat(statsURL);
@@ -38,8 +34,6 @@ function App() {
 
       setRosterData((state) => {
         state = [...state, ...result.data.people];
-        // addCurrentPlayer(state)
-        // console.log(...state)
         return state;
       });
     });
@@ -56,18 +50,12 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
-
   }, [rosterData]);
-
-  // useEffect(() => {
-  //   addCurrentPlayer(rosterData[0])
-  // }, [])
 
 
   function nationalityFormatter(nationality) {
-    const formatted = nationality.slice(0,2)
-    // console.log(formatted)
-    return formatted
+    const formatted = nationality.slice(0, 2);
+    return formatted;
   }
 
   function openPlayerInfoModal(playerID) {
@@ -81,24 +69,12 @@ function App() {
       setShowGoalieInfoModal(true);
     }
 
-
-
     addCurrentPlayer(selectedPlayer);
-
-        // setCurrentPlayer(selectedPlayer);
-
-    // setShowPlayerInfoModal(true);
-
-    // console.log(...selectedPlayer);
-    // // console.log(...currentPlayer);
-    // console.log(...localCurrentPlayer);
-
   }
-
 
   function closePlayerInfoModal() {
     setShowPlayerInfoModal(false);
-    console.log(...localCurrentPlayer)
+    console.log(...localCurrentPlayer);
   }
 
   function closeGoalieInfoModal() {
@@ -114,6 +90,7 @@ function App() {
             <h2 className="player-list-year">
               2022<span>-</span>2023
             </h2>
+            <img src={CBJLogo} alt='CBJ Logo'></img>
           </header>
           <h1 className="player-list-type-title">Forwards</h1>
           <section className="player-list forward-list">
