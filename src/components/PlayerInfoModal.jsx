@@ -47,7 +47,8 @@ export default function PlayerInfoModal({
   if (imgs == null) return null;
 
   return (
-    <Modal className="player-info-container" show={show} onHide={handelClick}>
+
+    <Modal className="player-info-container" show={show} onHide={handelClose} onClick={() => handelClose(false)}>
       <div className="player-info-modal">
         <div className="player-profile-display">
           <div className="image-container">
