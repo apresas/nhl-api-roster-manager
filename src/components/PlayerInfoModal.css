@@ -70,6 +70,16 @@
   background-color: var(--color-white);
   padding: 2.5rem 0 0 0;
   background-image: url('../img/card_bg_plain_img.png');
+  user-select: none;
+  position: relative;
+}
+
+.player-modal-injury-icon {
+  position: absolute;
+  right: 20px;
+  top: 255px;
+  opacity: 0;
+  color: var(--CBJ-red)
 }
 
 .player-image {

@@ -5,27 +5,33 @@ import axios from "axios";
 import PlayerTile from "./components/PlayerTile";
 import { Container, Stack } from "react-bootstrap";
 import { usePlayers } from "./context/PlayerContext";
-import CBJLogo from './img/cbj_logo.svg'
+import CBJLogo from "./img/cbj_logo.svg";
 
 function App() {
   const { addCurrentPlayer, localCurrentPlayer, addPlayers, players } =
     usePlayers();
+    
+
+  //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
+
+  // ROSTERDATA ROSTERURL USESTATES
   const [rosterData, setRosterData] = useState([]);
   const [rosterUrl, setRosterUrl] = useState([
     "https://statsapi.web.nhl.com/api/v1/teams/29/roster",
   ]);
 
+  // PLAYER URL
   const [playerURL, setPlayerURL] = useState([]);
 
   const starterURL = "https://statsapi.web.nhl.com";
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
-
+  // GET ROSTER
   const getRoster = async (res) => {
     res.map(async (item) => {
       const newURL = starterURL.concat(item.person.link).concat(statsURL);
@@ -39,6 +45,7 @@ function App() {
     });
   };
 
+  // SET PLAYER
   const playerFun = async () => {
     const res = await axios.get(rosterUrl);
     getRoster(res.data.roster);
@@ -52,12 +59,62 @@ function App() {
     addPlayers(rosterData);
   }, [rosterData]);
 
+  // PLAYER RECORD
+  // const [playerRecord, setPlayerRecord] = useState([]);
 
+  // const [recordUrl, setRecordUrl] = useState([
+  //   "/site/api/player/byTeam/29",
+  // ]);
+
+  // const getRecord = async (res) => {
+  //   res.map(async (item) => {
+  //     setPlayerURL(item);
+  //     setPlayerRecord((state) => {
+  //       state = [...state, ...item.data];
+  //       return state;
+  //     });
+  //   });
+  // };
+
+  // const recordFun = async () => {
+  //   const res = await axios.get('/site/api/player/byTeam/29')
+  //   .then(res => res.json());
+  //   getRecord(res.data)
+  //   // fetch('https://records.nhl.com/site/api/player/byTeam/29')
+  //   // .then(record => record.json())
+  // }
+
+  // useEffect(() => {
+  //   recordFun();
+  // }, []);
+  
+  // const [recordUrl, setRecordUrl] = useState([
+  //   "https://records.nhl.com/site/api/player/byTeam/29",
+  // ]);
+
+  // const [isInjured, setIsInjured] = useState([]);
+
+  // const [playerRecord, setPlayerRecord] = useState([]);
+  //  const getPlayerRecord = async (res) => {
+  //   setPlayerRecord(res)
+  // }
+
+  // const recordFun = async () => {
+  //   const res = await axios.get(recordUrl);
+  //   getPlayerRecord(res.data)
+  // }
+
+  // useEffect(() => {
+  //   recordFun();
+  // }, []);
+
+  // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
     const formatted = nationality.slice(0, 2);
     return formatted;
   }
 
+  // MODAL CONTROLS
   function openPlayerInfoModal(playerID) {
     setPlayerInfoModalID(playerID);
 
@@ -90,7 +147,7 @@ function App() {
             <h2 className="player-list-year">
               2022<span>-</span>2023
             </h2>
-            <img src={CBJLogo} alt='CBJ Logo'></img>
+            <img src={CBJLogo} alt="CBJ Logo"></img>
           </header>
           <h1 className="player-list-type-title">Forwards</h1>
           <section className="player-list forward-list">

@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
 import { CgClose } from 'react-icons/cg'
+import { AiFillMedicineBox } from 'react-icons/ai'
 // import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
@@ -48,7 +49,7 @@ export default function PlayerInfoModal({
 
   return (
 
-    <Modal className="player-info-container" show={show} onHide={handelClose} onClick={() => handelClose(false)}>
+    <Modal className="player-info-container" show={show} onHide={handelClose}>
       <div className="player-info-modal">
         <div className="player-profile-display">
           <div className="image-container">
@@ -58,6 +59,7 @@ export default function PlayerInfoModal({
               alt="player image"
             ></img>
           </div>
+          <AiFillMedicineBox className="player-modal-injury-icon" size={'2rem'}/>
           <h1>{info.fullName}</h1>
           <h2>{info.primaryNumber}</h2>
           <span className="divider" />
