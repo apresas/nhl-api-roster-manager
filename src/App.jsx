@@ -152,6 +152,12 @@ function App() {
       setShowGoalieInfoModal(true);
     }
 
+    if(selectedPlayer[0].rosterStatus.includes('I')) {
+      setInjuryStatus('player-modal-injury-icon-active')
+    } else {
+      setInjuryStatus('player-modal-injury-icon')
+    }
+
     addCurrentPlayer(selectedPlayer);
   }
 
@@ -209,7 +215,7 @@ function App() {
           <section className="player-list forward-list">
             {players
               .filter((player) =>
-                player.primaryPosition.type.includes("Forward")
+                player.primaryPosition.type.includes("Forward") && player.rosterStatus.includes("Y")
               )
               .map((forward) => (
                 <PlayerTile
@@ -224,7 +230,6 @@ function App() {
                   shoots={forward.shootsCatches}
                   stats={forward.stats.splits}
                   rosterStatus={forward.rosterStatus}
-                  injury={getInjuryStatus}
                 />
               ))}
           </section>
@@ -232,7 +237,7 @@ function App() {
           <section className="player-list defense-list">
             {players
               .filter((player) =>
-                player.primaryPosition.type.includes("Defense")
+                player.primaryPosition.type.includes("Defense") && player.rosterStatus.includes("Y")
               )
               .map((defense) => (
                 <li key={defense.id}>
@@ -248,7 +253,6 @@ function App() {
                     shoots={defense.shootsCatches}
                     stats={defense.stats.splits}
                     rosterStatus={defense.rosterStatus}
-                    injury={getInjuryStatus}
                   />
                 </li>
               ))}
@@ -257,7 +261,7 @@ function App() {
           <section className="player-list goalie-list">
             {players
               .filter((player) =>
-                player.primaryPosition.type.includes("Goalie")
+                player.primaryPosition.type.includes("Goalie") && player.rosterStatus.includes("Y")
               )
               .map((goalie) => (
                 <li key={goalie.id}>
@@ -273,7 +277,30 @@ function App() {
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
                     rosterStatus={goalie.rosterStatus}
-                    injury={getInjuryStatus}
+                  />
+                </li>
+              ))}
+          </section>
+          <h1 className="player-list-type-title">Injury</h1>
+          <section className="player-list injury-list">
+            {players
+              .filter((player) =>
+                player.rosterStatus.includes("I")
+              )
+              .map((goalie) => (
+                <li key={goalie.id}>
+                  <PlayerTile
+                    onClick={openPlayerInfoModal}
+                    key={goalie.id}
+                    id={goalie.id}
+                    fullName={goalie.fullName}
+                    lastName={goalie.lastName}
+                    firstName={goalie.firstName}
+                    number={goalie.primaryNumber}
+                    position={goalie.primaryPosition.abbreviation}
+                    shoots={goalie.shootsCatches}
+                    stats={goalie.stats.splits}
+                    rosterStatus={goalie.rosterStatus}
                   />
                 </li>
               ))}
@@ -285,12 +312,14 @@ function App() {
         handleClick={() => setShowPlayerInfoModal(false)}
         handelClose={closePlayerInfoModal}
         localCurrentPlayer={localCurrentPlayer}
+        injuryStatus={injuryStatus}
       />
       <GoalieInfoModal
         show={showGoalieInfoModal}
         handleClick={() => setShowPlayerInfoModal(false)}
         handelClose={closeGoalieInfoModal}
         localCurrentPlayer={localCurrentPlayer}
+        injuryStatus={injuryStatus}
       />
     </>
   );

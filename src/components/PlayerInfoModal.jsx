@@ -1,55 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
-import { usePlayers } from '../context/PlayerContext';
-import playerItems from '../data/player.json'
-import { CgClose } from 'react-icons/cg'
-import { AiFillMedicineBox } from 'react-icons/ai'
-import { FaBandAid } from 'react-icons/fa'
+import { usePlayers } from "../context/PlayerContext";
+import playerItems from "../data/player.json";
+import { CgClose } from "react-icons/cg";
+import { AiFillMedicineBox } from "react-icons/ai";
+import { FaBandAid } from "react-icons/fa";
+import { IoBandage } from "react-icons/io5";
 // import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,
   show,
   handelClick,
-  localCurrentPlayer
+  localCurrentPlayer,
+  injuryStatus,
 }) {
-
-  // Set Image URLS
-  // const item = playerItems.find((i) => i.id === playerInfo[0].id);
-  // if (item == null) return null;
-
-  // const [playerFullName, setPlayerFullName] = useState("");
-
-
-
-  // const [infoP, setInfo] = useState({});
-
-  // useEffect(() => {
-  //   setInfo(playerInfo[0]);
-  //   console.log(infoP);
-  // }, [playerInfo, info]);
-
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
 
-  // console.log(info)
-
-  // console.log(playerInfo[0])
-
-  // const info = playerInfo[0]
-
   useEffect(() => {
-    console.log(...localCurrentPlayer)
-  }, [localCurrentPlayer])
+    console.log(...localCurrentPlayer);
+  }, [localCurrentPlayer]);
 
   const info = localCurrentPlayer[0];
 
-  const imgs = playerItems.find((item) => item.id === info.id)
+  const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
 
   return (
-
     <Modal className="player-info-container" show={show} onHide={handelClose}>
       <div className="player-info-modal">
         <div className="player-profile-display">
@@ -60,10 +39,10 @@ export default function PlayerInfoModal({
               alt="player image"
             ></img>
           </div>
-          {/* <AiFillMedicineBox className="player-modal-injury-icon" size={'2rem'}/> */}
-          <FaBandAid className="player-modal-injury-icon" size={'2rem'}/>
-          <FaBandAid className="player-modal-injury-icon2" size={'2rem'}/>
-          <h1>{info.fullName}</h1>
+          <h1>
+            <IoBandage className={`${injuryStatus}`} size={"1.5rem"} />
+            {info.fullName}
+          </h1>
           <h2>{info.primaryNumber}</h2>
           <span className="divider" />
         </div>
@@ -91,7 +70,7 @@ export default function PlayerInfoModal({
         </div>
         <div className="player-profile-stats">
           <button className="btn-close" onClick={handelClose}>
-            <CgClose/>
+            <CgClose />
           </button>
           <ul className="stats-list">
             <h1 className="stats-label">Stats</h1>
@@ -108,10 +87,12 @@ export default function PlayerInfoModal({
               Points: <span>{info.stats[0].splits[0].stat.points}</span>
             </li>
             <li>
-              PP Goals: <span>{info.stats[0].splits[0].stat.powerPlayGoals}</span>
+              PP Goals:{" "}
+              <span>{info.stats[0].splits[0].stat.powerPlayGoals}</span>
             </li>
             <li>
-              PP Points: <span>{info.stats[0].splits[0].stat.powerPlayPoints}</span>
+              PP Points:{" "}
+              <span>{info.stats[0].splits[0].stat.powerPlayPoints}</span>
             </li>
             <li>
               PIM: <span>{info.stats[0].splits[0].stat.penaltyMinutes}</span>
@@ -132,7 +113,8 @@ export default function PlayerInfoModal({
               Blocks Shots: <span>{info.stats[0].splits[0].stat.blocked}</span>
             </li>
             <li>
-              Average TOI: <span>{info.stats[0].splits[0].stat.timeOnIcePerGame}</span>
+              Average TOI:{" "}
+              <span>{info.stats[0].splits[0].stat.timeOnIcePerGame}</span>
             </li>
           </ul>
         </div>

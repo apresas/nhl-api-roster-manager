@@ -1,6 +1,6 @@
 body {
   margin: 0;
-background-color: var(--color-bg);
+  background-color: var(--color-bg);
 }
 
 .player-tile {
@@ -21,8 +21,25 @@ background-color: var(--color-bg);
   position: relative;
 }
 
+.player-tile-injury {
+  display: flex;
+  background-color: var(--CBJ-red);
+  color: var(--color-white);
+  border: 3px solid var(--CBJ-red);
+  height: 10rem;
+  width: 10rem;
+  border-radius: 12px;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Apex mk2";
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+  position: relative;
+}
+
 .player-name {
-  /* margin: 1.5rem 0 0 0; */
   margin: 0;
   position: absolute;
   top: 20px;
@@ -36,15 +53,12 @@ background-color: var(--color-bg);
   position: absolute;
   align-items: center;
   justify-content: center;
-  /* margin: 0rem 0rem 0.5rem 0.2rem; */
   letter-spacing: 0.25rem;
   font-size: 3.5rem;
   transform: scale(1.05, 1.3);
-  text-shadow: 
-  -1.25px -1.25px 0 var(--CBJ-red),
-  -1.5px 1.25px 0 var(--CBJ-red),
-  1.25px -1.25px 0 var(--CBJ-red),
-  1.25px 1.25px 0 var(--CBJ-red);
+  text-shadow: -1.25px -1.25px 0 var(--CBJ-red), -1.5px 1.25px 0 var(--CBJ-red),
+    1.25px -1.25px 0 var(--CBJ-red), 1.25px 1.25px 0 var(--CBJ-red);
+  z-index: 1;
   /* -webkit-text-stroke: 1px var(--color-red); */
   /* -webkit-text-stroke-color: var(--color-red); */
 }
@@ -75,20 +89,16 @@ background-color: var(--color-bg);
   margin-top: 1.5rem;
 }
 
-/* .injury-icon-container {
-  display: flex;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-} */
-
 .injury-icon {
-  display: flex;
   position: absolute;
-  bottom: 12px;
+  opacity: 0;
+}
+
+.injury-icon-active {
+  position: absolute;
+  bottom: 14px;
   right: 12px;
   size: 100px;
-  color: var(--CBJ-red);
-  opacity: 0;
-  /* width: 5rem; */
+  color: var(--color-white);
+  opacity: 0.3;
 }

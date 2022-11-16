@@ -76,18 +76,28 @@
 
 .player-modal-injury-icon {
   position: absolute;
-  right: 20px;
-  top: 255px;
   opacity: 0;
-  transform: rotate(45deg);
-  color: var(--CBJ-blue)
+}
+.player-modal-injury-icon-active {
+  position: absolute;
+  left: -35px;
+  bottom: 2px;
+  opacity: 1;
+  /* transform: rotate(-45deg); */
+  color: var(--CBJ-blue);
+
 }
 
 .player-modal-injury-icon2 {
   position: absolute;
+  opacity: 0;
+
+}
+.player-modal-injury-icon2-active {
+  position: absolute;
   right: 20px;
   top: 255px;
-  opacity: 0;
+  opacity: 1;
   transform: rotate(-45deg);
   color: var(--CBJ-red)
 }
