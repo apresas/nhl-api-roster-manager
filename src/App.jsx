@@ -10,7 +10,6 @@ import CBJLogo from "./img/cbj_logo.svg";
 function App() {
   const { addCurrentPlayer, localCurrentPlayer, addPlayers, players } =
     usePlayers();
-    
 
   //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
@@ -30,6 +29,26 @@ function App() {
   const starterURL = "https://statsapi.web.nhl.com";
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
+
+
+
+  // GET INJURY STATUS
+  const [injuredPlayersList, setInjuredPlayersList] = useState([{}])
+  const [injuryStatus, setInjuryStatus] = useState([])
+  const [injuredPlayerID, setInjuredPlayerID] = useState([])
+  const [isInjured, setIsInjured] = useState(false)
+  // function getInjuryStatus(id, fullName, rosterStatus) {
+    // const playerItem = {
+    //   id,
+    //   fullName,
+    //   rosterStatus
+    // }
+
+  //   }
+  //   rosterData.map(p => playerItem)
+  //   rosterData.filter(fp => fp.rosterStatus === rosterStatus).map(p => setInjuredPlayer(p))
+  //   console.log(injuredPlayer)
+  // }
 
   // GET ROSTER
   const getRoster = async (res) => {
@@ -56,7 +75,14 @@ function App() {
   }, [rosterUrl]);
 
   useEffect(() => {
+    getInjuryStatus();
+
+  }, []);
+
+  useEffect(() => {
     addPlayers(rosterData);
+    // console.log(injuredPlayersList)
+
   }, [rosterData]);
 
   // PLAYER RECORD
@@ -129,13 +155,43 @@ function App() {
     addCurrentPlayer(selectedPlayer);
   }
 
+
+
   function closePlayerInfoModal() {
     setShowPlayerInfoModal(false);
-    console.log(...localCurrentPlayer);
   }
 
   function closeGoalieInfoModal() {
     setShowGoalieInfoModal(false);
+  }
+
+  function getInjuryStatus(id, isInjured ) {
+    const iList = [];
+
+    const injuredPlayer = rosterData.filter(p => p.rosterStatus === 'I').map((p) => iList.push(p));
+
+
+    const rosterID = rosterData.map(p => p.id)
+    console.log(rosterID)
+
+    const injuredID = iList.map((p) => p.id)
+    console.log(injuredID)
+
+    console.log(id)
+
+    // compare(injuredID.id)
+
+    // function compare(id) {
+    //  const playerInjuryStatus = rosterID.filter((r) => r === id).map(p => {
+    //   setIsInjured(true)
+    //   console.log(p)
+    // })
+    //   // console.log(isInjured)
+
+    // }
+
+    return injuredPlayer
+
   }
 
   return (
@@ -167,6 +223,8 @@ function App() {
                   position={forward.primaryPosition.abbreviation}
                   shoots={forward.shootsCatches}
                   stats={forward.stats.splits}
+                  rosterStatus={forward.rosterStatus}
+                  injury={getInjuryStatus}
                 />
               ))}
           </section>
@@ -189,6 +247,8 @@ function App() {
                     position={defense.primaryPosition.abbreviation}
                     shoots={defense.shootsCatches}
                     stats={defense.stats.splits}
+                    rosterStatus={defense.rosterStatus}
+                    injury={getInjuryStatus}
                   />
                 </li>
               ))}
@@ -212,6 +272,8 @@ function App() {
                     position={goalie.primaryPosition.abbreviation}
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
+                    rosterStatus={goalie.rosterStatus}
+                    injury={getInjuryStatus}
                   />
                 </li>
               ))}

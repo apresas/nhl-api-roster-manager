@@ -1,157 +1,172 @@
 [
-    {
-        "id": 8482705,
-        "name": "Cole Sillinger",
-        "imgURL": "../assets/cole_sillinger_img2.png"
-    },
-    {
-        "id": 8474161,
-        "name": "Jakub Voracek",
-        "imgURL": "../assets/jakub_voracek_img2.png"
-    },
-    {
-        "id": 8476374,
-        "name": "Sean Kuraly",
-        "imgURL": "../assets/sean_kuraly_img2.png"
-    },
-    {
-        "id": 8479941,
-        "name": "Justin Danforth",
-        "imgURL": "../assets/justin_danforth_img2.png"
-    },
-    {
-        "id": 8474679,
-        "name": "Gustav Nyquist",
-        "imgURL": "../assets/gustav_nyquist_img2.png"
-    },
-    {
-        "id": 8476346,
-        "name": "Johnny Gaudreau",
-        "imgURL": "../assets/johnny_gaudreau_img2.png"
-    },
-    {
-        "id": 8476432,
-        "name": "Boone Jenner",
-        "imgURL": "../assets/boone_jenner_img2.png"
-    },
-    {
-        "id": 8476867,
-        "name": "Brendan Gaunce",
-        "imgURL": "../assets/brendan_gaunce_img2.png"
-    },
-    {
-        "id": 8478458,
-        "name": "Jack Roslovic",
-        "imgURL": "../assets/jack_roslovic_img2.png"
-    },
-    {
-        "id": 8479339,
-        "name": "Patrik Laine",
-        "imgURL": "../assets/patrik_laine_img2.png"
-    },
-    {
-        "id": 8479671,
-        "name": "Mathieu Olivier",
-        "imgURL": "../assets/mathieu_olivier_img2.png"
-    },
-    {
-        "id": 8480205,
-        "name": "Emil Bemstrom",
-        "imgURL": "../assets/emil_bemstrom_img2.png"
-    },
-    {
-        "id": 8480762,
-        "name": "Eric Robinson",
-        "imgURL": "../assets/eric_robinson_img2.png"
-    },
-    {
-        "id": 8480853,
-        "name": "Liam Foudy",
-        "imgURL": "../assets/liam_foudy_img2.png"
-    },
-    {
-        "id": 8482475,
-        "name": "Yegor Chinakhov",
-        "imgURL": "../assets/yegor_chinakhov_img2.png"
-    },
-    {
-        "id": 8482660,
-        "name": "Kent Johnson",
-        "imgURL": "../assets/kent_johnson_img2.png"
-    },
-    {
-        "id": 8480893,
-        "name": "Kirill Marchenko",
-        "imgURL": "../assets/kirill_marchenko_img2.png"
-    },
-    {
-        "id": 8480871,
-        "name": "Adam Boqvist",
-        "imgURL": "../assets/adam_boqvist_img2.png"
-    },
-    {
-        "id": 8483565,
-        "name": "Nick Blankenburg",
-        "imgURL": "../assets/nick_blankenburg_img2.png"
-    },
-    {
-        "id": 8475790,
-        "name": "Erik Gudbranson",
-        "imgURL": "../assets/erik_gudbranson_img2.png"
-    },
-    {
-        "id": 8478460,
-        "name": "Zach Werenski",
-        "imgURL": "../assets/zach_werenski_img2.png"
-    },
-    {
-        "id": 8478882,
-        "name": "Vladislav Gavrikov",
-        "imgURL": "../assets/vladislav_gavrikov_img2.png"
-    },
-    {
-        "id": 8479369,
-        "name": "Andrew Peeke",
-        "imgURL": "../assets/andrew_peeke_img2.png"
-    },
-    {
-        "id": 8479402,
-        "name": "Jake Bean",
-        "imgURL": "../assets/jake_bean_img2.png"
-    },
-    {
-        "id": 8479945,
-        "name": "Gavin Bayreuther",
-        "imgURL": "../assets/gavin_bayreuther_img2.png"
-    },    
-    {
-        "id": 8483460,
-        "name": "David Jiricek",
-        "imgURL": "../assets/david_jiricek_img2.png"
-    },    
-    {
-        "id": 8483620,
-        "name": "Marcus Bjork",
-        "imgURL": "../assets/marcus_bjork_img.png"
-    }, 
-    {
-        "id": 8481161,
-        "name": "Jake Christiansen",
-        "imgURL": "../assets/jake_christiansen_img2.png"
-    },   
-    {
-        "id": 8476914,
-        "name": "Joonas Korpisalo",
-        "imgURL": "../assets/joonas_korpisalo_img2.png"
-    },    
-    {
-        "id": 8478007,
-        "name": "Elvis Merzlikens",
-        "imgURL": "../assets/elvis_merzlikins_img2.png"
-    },
-    {
-        "id": 8480193,
-        "name": "Daniil Tarasov",
-        "imgURL": "../assets/daniil_tarasov_img2.png"
-    }
+  {
+    "id": 8482705,
+    "name": "Cole Sillinger",
+    "imgURL": "../assets/cole_sillinger_img2.png"
+  },
+  {
+    "id": 8474161,
+    "name": "Jakub Voracek",
+    "imgURL": "../assets/jakub_voracek_img2.png"
+  },
+  {
+    "id": 8476374,
+    "name": "Sean Kuraly",
+    "imgURL": "../assets/sean_kuraly_img2.png"
+  },
+  {
+    "id": 8479941,
+    "name": "Justin Danforth",
+    "imgURL": "../assets/justin_danforth_img2.png"
+  },
+  {
+    "id": 8474679,
+    "name": "Gustav Nyquist",
+    "imgURL": "../assets/gustav_nyquist_img2.png"
+  },
+  {
+    "id": 8476346,
+    "name": "Johnny Gaudreau",
+    "imgURL": "../assets/johnny_gaudreau_img2.png"
+  },
+  {
+    "id": 8476432,
+    "name": "Boone Jenner",
+    "imgURL": "../assets/boone_jenner_img2.png"
+  },
+  {
+    "id": 8476867,
+    "name": "Brendan Gaunce",
+    "imgURL": "../assets/brendan_gaunce_img2.png"
+  },
+  {
+    "id": 8478458,
+    "name": "Jack Roslovic",
+    "imgURL": "../assets/jack_roslovic_img2.png"
+  },
+  {
+    "id": 8479339,
+    "name": "Patrik Laine",
+    "imgURL": "../assets/patrik_laine_img2.png"
+  },
+  {
+    "id": 8479671,
+    "name": "Mathieu Olivier",
+    "imgURL": "../assets/mathieu_olivier_img2.png"
+  },
+  {
+    "id": 8480205,
+    "name": "Emil Bemstrom",
+    "imgURL": "../assets/emil_bemstrom_img2.png"
+  },
+  {
+    "id": 8480762,
+    "name": "Eric Robinson",
+    "imgURL": "../assets/eric_robinson_img2.png"
+  },
+  {
+    "id": 8480853,
+    "name": "Liam Foudy",
+    "imgURL": "../assets/liam_foudy_img2.png"
+  },
+  {
+    "id": 8482475,
+    "name": "Yegor Chinakhov",
+    "imgURL": "../assets/yegor_chinakhov_img2.png"
+  },
+  {
+    "id": 8482660,
+    "name": "Kent Johnson",
+    "imgURL": "../assets/kent_johnson_img2.png"
+  },
+  {
+    "id": 8480893,
+    "name": "Kirill Marchenko",
+    "imgURL": "../assets/kirill_marchenko_img2.png"
+  },
+  {
+    "id": 8480074,
+    "name": "Alexandre Texier",
+    "imgURL": "../assets/alexandre_texier_img2.png"
+  },
+  {
+    "id": 8480292,
+    "name": "Carson Meyer",
+    "imgURL": "../assets/carson_meyer_img2.png"
+  },
+  {
+    "id": 8480441,
+    "name": "Trey Fix-Wolansky",
+    "imgURL": "../assets/trey_fix-wolansky_img2.png"
+  },
+  {
+    "id": 8480871,
+    "name": "Adam Boqvist",
+    "imgURL": "../assets/adam_boqvist_img2.png"
+  },
+  {
+    "id": 8483565,
+    "name": "Nick Blankenburg",
+    "imgURL": "../assets/nick_blankenburg_img2.png"
+  },
+  {
+    "id": 8475790,
+    "name": "Erik Gudbranson",
+    "imgURL": "../assets/erik_gudbranson_img2.png"
+  },
+  {
+    "id": 8478460,
+    "name": "Zach Werenski",
+    "imgURL": "../assets/zach_werenski_img2.png"
+  },
+  {
+    "id": 8478882,
+    "name": "Vladislav Gavrikov",
+    "imgURL": "../assets/vladislav_gavrikov_img2.png"
+  },
+  {
+    "id": 8479369,
+    "name": "Andrew Peeke",
+    "imgURL": "../assets/andrew_peeke_img2.png"
+  },
+  {
+    "id": 8479402,
+    "name": "Jake Bean",
+    "imgURL": "../assets/jake_bean_img2.png"
+  },
+  {
+    "id": 8479945,
+    "name": "Gavin Bayreuther",
+    "imgURL": "../assets/gavin_bayreuther_img2.png"
+  },
+  {
+    "id": 8483460,
+    "name": "David Jiricek",
+    "imgURL": "../assets/david_jiricek_img2.png"
+  },
+  {
+    "id": 8483620,
+    "name": "Marcus Bjork",
+    "imgURL": "../assets/marcus_bjork_img.png"
+  },
+  {
+    "id": 8481161,
+    "name": "Jake Christiansen",
+    "imgURL": "../assets/jake_christiansen_img2.png"
+  },
+  {
+    "id": 8476914,
+    "name": "Joonas Korpisalo",
+    "imgURL": "../assets/joonas_korpisalo_img2.png"
+  },
+  {
+    "id": 8478007,
+    "name": "Elvis Merzlikens",
+    "imgURL": "../assets/elvis_merzlikins_img2.png"
+  },
+  {
+    "id": 8480193,
+    "name": "Daniil Tarasov",
+    "imgURL": "../assets/daniil_tarasov_img2.png"
+  }
 ]
