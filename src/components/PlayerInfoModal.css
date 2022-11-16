@@ -124,12 +124,12 @@
   margin: 0.55rem 0rem 2rem 0;
   z-index: 0;
   position: relative;
-  /* -webkit-text-stroke: 1.25px var(--color-red); */
   text-shadow: 
   -1.25px -1.25px 0 var(--CBJ-red),
   -1.25px 1.25px 0 var(--CBJ-red),
   1.5px -1.25px 0 var(--CBJ-red),
   1.25px 1.25px 0 var(--CBJ-red);
+    /* -webkit-text-stroke: 1.25px var(--color-red); */
 }
 
 
@@ -172,7 +172,7 @@
 }
 
 .stats-label {
-  font-family: "apex mk2";
+  font-family: 'Apex Mk2', sans-serif;
 }
 
 .btn-close {
