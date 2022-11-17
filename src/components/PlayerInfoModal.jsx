@@ -26,8 +26,6 @@ export default function PlayerInfoModal({
 
   const info = localCurrentPlayer[0];
 
-  console.log(flagCode)
-
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
 

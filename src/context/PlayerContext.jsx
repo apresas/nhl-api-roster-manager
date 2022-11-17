@@ -9,7 +9,6 @@ export function usePlayers() {
 
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
-  const [forwards, setForwards] = useLocalStorage("forwards", []);
   const defaultCurrentPlayer = {
     id: 0,
     fullName: "default",
@@ -55,32 +54,10 @@ export const PlayerProvider = ({ children }) => {
     return [...player]
   }
 
-  // function addPlayer() {
-  //   setPlayers((prevPlayers) => {
-  //     if (prevPlayers.find(players => players.id === id))
-  //     return prevPlayers;
-  //     return [...prevPlayers, {id, lastName, number, position}];
-  //   });
-  // }
-
   function addPlayers(player) {
     setPlayers(player);
     return [player]
   }
-
-  // function addForward({id, name, number, position}) {
-  //   setForwards((prevForwards) => {
-  //     if (prevForwards.find((forwards) => forwards.id === id))
-  //     return prevForwards;
-  //     return [...prevForwards, {id, name, number, position}];
-  //   })
-  // }
-
-
-
-//   setPlayer((prevPlayers) => {
-//     return prevPlayers.filter((player) => player.id === id);
-//   });
 
   return (
     <PlayerContext.Provider

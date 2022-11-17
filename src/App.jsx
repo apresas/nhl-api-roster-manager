@@ -30,25 +30,8 @@ function App() {
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
-
-
   // GET INJURY STATUS
-  const [injuredPlayersList, setInjuredPlayersList] = useState([{}])
-  const [injuryStatus, setInjuryStatus] = useState([])
-  const [injuredPlayerID, setInjuredPlayerID] = useState([])
-  const [isInjured, setIsInjured] = useState(false)
-  // function getInjuryStatus(id, fullName, rosterStatus) {
-    // const playerItem = {
-    //   id,
-    //   fullName,
-    //   rosterStatus
-    // }
-
-  //   }
-  //   rosterData.map(p => playerItem)
-  //   rosterData.filter(fp => fp.rosterStatus === rosterStatus).map(p => setInjuredPlayer(p))
-  //   console.log(injuredPlayer)
-  // }
+  const [injuryStatus, setInjuryStatus] = useState([]);
 
   // GET ROSTER
   const getRoster = async (res) => {
@@ -75,64 +58,8 @@ function App() {
   }, [rosterUrl]);
 
   useEffect(() => {
-    getInjuryStatus();
-
-  }, []);
-
-  useEffect(() => {
     addPlayers(rosterData);
-    // console.log(injuredPlayersList)
-
   }, [rosterData]);
-
-  // PLAYER RECORD
-  // const [playerRecord, setPlayerRecord] = useState([]);
-
-  // const [recordUrl, setRecordUrl] = useState([
-  //   "/site/api/player/byTeam/29",
-  // ]);
-
-  // const getRecord = async (res) => {
-  //   res.map(async (item) => {
-  //     setPlayerURL(item);
-  //     setPlayerRecord((state) => {
-  //       state = [...state, ...item.data];
-  //       return state;
-  //     });
-  //   });
-  // };
-
-  // const recordFun = async () => {
-  //   const res = await axios.get('/site/api/player/byTeam/29')
-  //   .then(res => res.json());
-  //   getRecord(res.data)
-  //   // fetch('https://records.nhl.com/site/api/player/byTeam/29')
-  //   // .then(record => record.json())
-  // }
-
-  // useEffect(() => {
-  //   recordFun();
-  // }, []);
-  
-  // const [recordUrl, setRecordUrl] = useState([
-  //   "https://records.nhl.com/site/api/player/byTeam/29",
-  // ]);
-
-  // const [isInjured, setIsInjured] = useState([]);
-
-  // const [playerRecord, setPlayerRecord] = useState([]);
-  //  const getPlayerRecord = async (res) => {
-  //   setPlayerRecord(res)
-  // }
-
-  // const recordFun = async () => {
-  //   const res = await axios.get(recordUrl);
-  //   getPlayerRecord(res.data)
-  // }
-
-  // useEffect(() => {
-  //   recordFun();
-  // }, []);
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
@@ -152,28 +79,25 @@ function App() {
       setShowGoalieInfoModal(true);
     }
 
-    if(selectedPlayer[0].rosterStatus.includes('I')) {
-      setInjuryStatus('player-modal-injury-icon-active')
+    if (selectedPlayer[0].rosterStatus.includes("I")) {
+      setInjuryStatus("player-modal-injury-icon-active");
     } else {
-      setInjuryStatus('player-modal-injury-icon')
+      setInjuryStatus("player-modal-injury-icon");
     }
 
-    const countryCode = selectedPlayer[0].nationality
-    if(countryCode === 'SWE') {
-      setFlagCode('fi fi-se fis')
-    } else{
-      const code = nationalityFormatter(countryCode); 
-      const flagClassStart = "fi fi-"
-      const flagSquare = ' fis'
-      const flagClass = flagClassStart.concat(code).concat(flagSquare)
-      setFlagCode(flagClass)
+    const countryCode = selectedPlayer[0].nationality;
+    if (countryCode === "SWE") {
+      setFlagCode("fi fi-se fis");
+    } else {
+      const code = nationalityFormatter(countryCode);
+      const flagClassStart = "fi fi-";
+      const flagSquare = " fis";
+      const flagClass = flagClassStart.concat(code).concat(flagSquare);
+      setFlagCode(flagClass);
     }
-
 
     addCurrentPlayer(selectedPlayer);
   }
-
-
 
   function closePlayerInfoModal() {
     setShowPlayerInfoModal(false);
@@ -181,35 +105,6 @@ function App() {
 
   function closeGoalieInfoModal() {
     setShowGoalieInfoModal(false);
-  }
-
-  function getInjuryStatus(id, isInjured ) {
-    const iList = [];
-
-    const injuredPlayer = rosterData.filter(p => p.rosterStatus === 'I').map((p) => iList.push(p));
-
-
-    const rosterID = rosterData.map(p => p.id)
-    console.log(rosterID)
-
-    const injuredID = iList.map((p) => p.id)
-    console.log(injuredID)
-
-    console.log(id)
-
-    // compare(injuredID.id)
-
-    // function compare(id) {
-    //  const playerInjuryStatus = rosterID.filter((r) => r === id).map(p => {
-    //   setIsInjured(true)
-    //   console.log(p)
-    // })
-    //   // console.log(isInjured)
-
-    // }
-
-    return injuredPlayer
-
   }
 
   return (
@@ -226,8 +121,10 @@ function App() {
           <h1 className="player-list-type-title">Forwards</h1>
           <section className="player-list forward-list">
             {players
-              .filter((player) =>
-                player.primaryPosition.type.includes("Forward") && player.rosterStatus.includes("Y")
+              .filter(
+                (player) =>
+                  player.primaryPosition.type.includes("Forward") &&
+                  player.rosterStatus.includes("Y")
               )
               .map((forward) => (
                 <PlayerTile
@@ -248,8 +145,10 @@ function App() {
           <h1 className="player-list-type-title">Defense</h1>
           <section className="player-list defense-list">
             {players
-              .filter((player) =>
-                player.primaryPosition.type.includes("Defense") && player.rosterStatus.includes("Y")
+              .filter(
+                (player) =>
+                  player.primaryPosition.type.includes("Defense") &&
+                  player.rosterStatus.includes("Y")
               )
               .map((defense) => (
                 <li key={defense.id}>
@@ -272,8 +171,10 @@ function App() {
           <h1 className="player-list-type-title">Goalies</h1>
           <section className="player-list goalie-list">
             {players
-              .filter((player) =>
-                player.primaryPosition.type.includes("Goalie") && player.rosterStatus.includes("Y")
+              .filter(
+                (player) =>
+                  player.primaryPosition.type.includes("Goalie") &&
+                  player.rosterStatus.includes("Y")
               )
               .map((goalie) => (
                 <li key={goalie.id}>
@@ -296,9 +197,7 @@ function App() {
           <h1 className="player-list-type-title">Injury</h1>
           <section className="player-list injury-list">
             {players
-              .filter((player) =>
-                player.rosterStatus.includes("I")
-              )
+              .filter((player) => player.rosterStatus.includes("I"))
               .map((goalie) => (
                 <li key={goalie.id}>
                   <PlayerTile
