@@ -34,7 +34,7 @@ export default function PlayerTile({
       <h3 className="player-name">{lastName}</h3>
       <h1 className="player-number">{number}</h1>
       <h4 className="player-position">{position}</h4>
-      <GiAmbulance className={`${isInjuredIcon}`} size={"1.7rem"} />
+      <GiAmbulance className={`${isInjuredIcon}`} />
     </div>
   );
 }
