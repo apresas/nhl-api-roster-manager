@@ -136,7 +136,7 @@ function App() {
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
-    const formatted = nationality.slice(0, 2);
+    const formatted = nationality.toLowerCase().slice(0, 2);
     return formatted;
   }
 
@@ -157,6 +157,18 @@ function App() {
     } else {
       setInjuryStatus('player-modal-injury-icon')
     }
+
+    const countryCode = selectedPlayer[0].nationality
+    if(countryCode === 'SWE') {
+      setFlagCode('fi fi-se fis')
+    } else{
+      const code = nationalityFormatter(countryCode); 
+      const flagClassStart = "fi fi-"
+      const flagSquare = ' fis'
+      const flagClass = flagClassStart.concat(code).concat(flagSquare)
+      setFlagCode(flagClass)
+    }
+
 
     addCurrentPlayer(selectedPlayer);
   }
@@ -313,6 +325,7 @@ function App() {
         handelClose={closePlayerInfoModal}
         localCurrentPlayer={localCurrentPlayer}
         injuryStatus={injuryStatus}
+        flagCode={flagCode}
       />
       <GoalieInfoModal
         show={showGoalieInfoModal}
@@ -320,6 +333,7 @@ function App() {
         handelClose={closeGoalieInfoModal}
         localCurrentPlayer={localCurrentPlayer}
         injuryStatus={injuryStatus}
+        flagCode={flagCode}
       />
     </>
   );

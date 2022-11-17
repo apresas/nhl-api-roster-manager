@@ -7,7 +7,7 @@ import { CgClose } from "react-icons/cg";
 import { AiFillMedicineBox } from "react-icons/ai";
 import { FaBandAid } from "react-icons/fa";
 import { IoBandage } from "react-icons/io5";
-// import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,
@@ -15,6 +15,7 @@ export default function PlayerInfoModal({
   handelClick,
   localCurrentPlayer,
   injuryStatus,
+  flagCode
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -24,6 +25,8 @@ export default function PlayerInfoModal({
   }, [localCurrentPlayer]);
 
   const info = localCurrentPlayer[0];
+
+  console.log(flagCode)
 
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
@@ -64,7 +67,7 @@ export default function PlayerInfoModal({
               Age: <span>{info.currentAge}</span>
             </li>
             <li>
-              Nationality: <span>{info.nationality}</span>
+              Nationality: <span className={`${flagCode}`} style={{borderRadius: '50%', border:'1px solid var(--CBJ-silver)'}}></span>
             </li>
           </ul>
         </div>

@@ -4,13 +4,14 @@ import Modal from "react-bootstrap/Modal";
 import { usePlayers } from '../context/PlayerContext';
 import playerItems from '../data/player.json'
 import { CgClose } from 'react-icons/cg'
-// import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,
   show,
   handelClick,
-  localCurrentPlayer
+  localCurrentPlayer,
+  flagCode
 }) {
 
   // Set Image URLS
@@ -99,7 +100,7 @@ export default function PlayerInfoModal({
               Age: <span>{info.currentAge}</span>
             </li>
             <li>
-              Nationality: <span>{info.nationality} <span className="fi fi-sw"></span></span>
+              Nationality: <span className={`${flagCode}`} style={{borderRadius: '50%', border:'1px solid var(--CBJ-silver)'}}></span>
             </li>
           </ul>
         </div>
