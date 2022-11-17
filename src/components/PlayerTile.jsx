@@ -66,7 +66,7 @@ useEffect(() => {
       <h1 className="player-number">{number}</h1>
       <h4 className="player-position">{position}</h4>
       {/* <AiFillMedicineBox className={`${isInjuredIcon}`} size={'1.5rem'}/> */}
-      <GiAmbulance className={`${isInjuredIcon}`} size={'1.5rem'}/>
+      <GiAmbulance className={`${isInjuredIcon}`} size={'1.7rem'}/>
     </div>
   );
 }
