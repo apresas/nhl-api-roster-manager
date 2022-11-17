@@ -15,7 +15,7 @@ export default function PlayerInfoModal({
   handelClick,
   localCurrentPlayer,
   injuryStatus,
-  flagCode
+  flagCode,
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -41,7 +41,7 @@ export default function PlayerInfoModal({
             ></img>
           </div>
           <h1>
-            <IoBandage className={`${injuryStatus}`}  />
+            <IoBandage className={`${injuryStatus}`} />
             {info.fullName}
           </h1>
           <h2>{info.primaryNumber}</h2>
@@ -65,7 +65,14 @@ export default function PlayerInfoModal({
               Age: <span>{info.currentAge}</span>
             </li>
             <li>
-              Nationality: <span className={`${flagCode}`} style={{borderRadius: '50%', border:'1px solid var(--CBJ-silver)'}}></span>
+              Nationality:{" "}
+              <span
+                className={`${flagCode}`}
+                style={{
+                  borderRadius: "50%",
+                  border: "1px solid var(--CBJ-silver)",
+                }}
+              ></span>
             </li>
           </ul>
         </div>
