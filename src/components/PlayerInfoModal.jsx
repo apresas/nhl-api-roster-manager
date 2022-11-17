@@ -41,7 +41,7 @@ export default function PlayerInfoModal({
             ></img>
           </div>
           <h1>
-            <IoBandage className={`${injuryStatus}`} size={"1.5rem"} />
+            <IoBandage className={`${injuryStatus}`}  />
             {info.fullName}
           </h1>
           <h2>{info.primaryNumber}</h2>
