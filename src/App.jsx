@@ -8,8 +8,16 @@ import { usePlayers } from "./context/PlayerContext";
 import CBJLogo from "./img/cbj_logo.svg";
 
 function App() {
-  const { addCurrentPlayer, localCurrentPlayer, addPlayers, players } =
-    usePlayers();
+  const {
+    addCurrentPlayer,
+    localCurrentPlayer,
+    addPlayers,
+    players,
+    getXtraPlayer,
+    xtraPlayers,
+    isSet
+
+  } = usePlayers();
 
   //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
@@ -60,6 +68,11 @@ function App() {
   useEffect(() => {
     addPlayers(rosterData);
   }, [rosterData]);
+
+  // useEffect(() => {
+  //   getXtraPlayer();
+  //   console.log(xtraPlayers)
+  // }, [])
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
