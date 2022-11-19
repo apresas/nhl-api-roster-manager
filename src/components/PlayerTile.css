@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: var(--color-bg2);
+  background-color: var(--color-bg);
 }
 
 .player-tile {
@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Apex Mk2", sans-serif;
+  font-family: "Apex Mk3", sans-serif;
   cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -66,8 +66,8 @@ body {
 .player-name {
   margin: 0;
   position: absolute;
-  top: 42px;
-  letter-spacing: 0.05rem;
+  top: 40px;
+  letter-spacing: 0.1rem;
   font-size: 1rem;
   transform: scale(1.1, 1.25);
 }
