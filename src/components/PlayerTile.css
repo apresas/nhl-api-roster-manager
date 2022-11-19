@@ -66,10 +66,10 @@ body {
 .player-name {
   margin: 0;
   position: absolute;
-  top: 40px;
-  letter-spacing: 0.1rem;
+  top: 42px;
+  letter-spacing: 0.12rem;
   font-size: 1rem;
-  transform: scale(1.1, 1.25);
+  transform: scale(1.1, 1.5);
 }
 
 .player-number {
@@ -81,7 +81,7 @@ body {
   text-shadow: -1.25px -1.25px 0 var(--CBJ-red), -1.5px 1.25px 0 var(--CBJ-red),
     1.25px -1.25px 0 var(--CBJ-red), 1.25px 1.25px 0 var(--CBJ-red);
   z-index: 1;
-  top: 13px;
+  top: 15px;
   margin-left: 2px;
   /* bottom: 1.5px; */
   /* -webkit-text-stroke: 1px var(--color-red); */
