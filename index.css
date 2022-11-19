@@ -8,6 +8,16 @@
   src: url(./public/fonts/Apex\ Mk3-Medium.otf);
 }
 
+@font-face {
+  font-family: 'Apex MK3 light';
+  src: url(./public/fonts/Apex\ Mk3-ExtraLight.otf);
+}
+
+@font-face {
+  font-family: 'Apex MK2 light';
+  src: url(./public/fonts/ApexMk2-LightCondensed.otf);
+}
+
 :root {
   /* --color-bg: #0d1b2c;
    --color-bg-varient: #182941; */
@@ -15,6 +25,7 @@
   --color-bg-varient: #031d3d;
   --color-primary: #002654;
   --color-primary-varient: #023675;
+  --blue-light: #0359c2;
   --color-white: #fff;
   --color-white-varient:rgb(235, 235, 235);
   --color-offWhite: #f8e6cd;
@@ -24,6 +35,7 @@
   --CBJ-red: #c8102e;
   --CBJ-red-varient: #b80f2b;
 }
+
 
 .player-list-container {
   display: flex;
@@ -67,7 +79,8 @@
 
 .player-list-year {
   margin: 0.7rem 0 1.75rem 0;
-  transform: scale(1, 1.25);
+  font-size: 2rem;;
+  font-family: 'Apex MK2 light'
 }
 
 .player-list-container span {

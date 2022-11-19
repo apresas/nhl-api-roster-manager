@@ -130,7 +130,7 @@
 .player-profile-display h1 {
   margin: 1rem 0 0 0;
   font-size: 1.5rem;
-  transform: scale(1, 1.5);
+  transform: scale(1.1, 1.5);
   letter-spacing: 0.1rem;
 }
 .player-profile-display > h2 {
@@ -174,11 +174,12 @@ h1 {
   );
   line-height: 2.25rem;
   color: var(--color-white);
+  font-size: 1.25rem;
 }
 
 .stats-list {
   margin-right: 17rem;
-  margin-top: -1.5rem;
+  margin-top: -1.65rem;
 }
 
 .stats-list li {
@@ -190,7 +191,9 @@ h1 {
 }
 
 .stats-label {
-  font-family: "Apex Mk2", sans-serif;
+  font-family: "Apex MK2 light", sans-serif;
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
 }
 
 .btn-close {
