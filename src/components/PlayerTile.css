@@ -46,9 +46,9 @@ body {
   position: absolute;
   top: 0;
 
-  text-shadow: -1.25px -1.25px 0 var(--CBJ-silver),
-    -1.5px 1.25px 0 var(--CBJ-silver), 1.25px -1.25px 0 var(--CBJ-silver),
-    1.25px 1.25px 0 var(--CBJ-silver);
+  text-shadow: -1.5px -1.5px 0 var(--CBJ-silver),
+    -1.5px 1.5px 0 var(--CBJ-silver), 1.5px -1.5px 0 var(--CBJ-silver),
+    1.5px 1.5px 0 var(--CBJ-silver);
 }
 
 .player-tile-injury > .player-name {

@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Apex MK2';
-  src: url(./public/fonts/ApexMk2-Regular.otf);
+  src: url(/fonts/ApexMk2-Regular.otf);
 }
 
 @font-face {
   font-family: 'Apex MK3';
-  src: url(./public/fonts/Apex\ Mk3-Medium.otf);
+  src: url(/fonts/Apex\ Mk3-Medium.otf);
 }
 
 @font-face {
   font-family: 'Apex MK3 light';
-  src: url(./public/fonts/Apex\ Mk3-ExtraLight.otf);
+  src: url(/fonts/Apex\ Mk3-ExtraLight.otf);
 }
 
 @font-face {
   font-family: 'Apex MK2 light';
-  src: url(./public/fonts/ApexMk2-LightCondensed.otf);
+  src: url(/fonts/ApexMk2-LightCondensed.otf);
 }
 
 :root {

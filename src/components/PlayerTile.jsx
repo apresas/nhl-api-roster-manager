@@ -28,7 +28,7 @@ export default function PlayerTile({
   };
 
   const options = {
-    scale: 1.1,
+    scale: 1.12,
     perspective: 1000,
     speed: 300,
     max: 15,
