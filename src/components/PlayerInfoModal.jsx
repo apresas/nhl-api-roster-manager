@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
-import { usePlayers } from "../context/PlayerContext";
 import playerItems from "../data/player.json";
-import { CgClose } from "react-icons/cg";
-import { AiFillMedicineBox } from "react-icons/ai";
-import { FaBandAid } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { IoBandage } from "react-icons/io5";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
   handelClose,
   show,
-  handelClick,
   localCurrentPlayer,
   injuryStatus,
   flagCode,
@@ -78,7 +74,7 @@ export default function PlayerInfoModal({
         </div>
         <div className="player-profile-stats">
           <button className="btn-close" onClick={handelClose}>
-            <CgClose />
+            <IoClose className='close-icon'/>
           </button>
           <ul className="stats-list">
             <h1 className="stats-label">Stats</h1>

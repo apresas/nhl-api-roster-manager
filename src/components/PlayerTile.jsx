@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./PlayerTile.css";
 import { GiAmbulance } from "react-icons/gi";
 import { GrStar } from "react-icons/gr";
-import { BiPlusMedical } from "react-icons/bi";
 import VanillaTilt from "vanilla-tilt";
 
 function Tilt(props) {
@@ -19,10 +18,8 @@ function Tilt(props) {
 export default function PlayerTile({
   number,
   position,
-  shoots,
   lastName,
   onClick,
-  passPlayerID,
   id,
   rosterStatus,
 }) {
@@ -32,7 +29,8 @@ export default function PlayerTile({
 
   const options = {
     scale: 1.1,
-    speed: 1000,
+    perspective: 1000,
+    speed: 300,
     max: 15,
     reset: true,
     reverse: true,
