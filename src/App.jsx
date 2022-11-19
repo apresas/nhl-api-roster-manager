@@ -129,7 +129,7 @@ function App() {
             <h2 className="player-list-year">
               2022<span>-</span>2023
             </h2>
-            <img src={CBJLogo} alt="CBJ Logo"></img>
+            <img className='cbj-logo' src={CBJLogo} alt="CBJ Logo"></img>
           </header>
           <h1 className="player-list-type-title">Forwards</h1>
           <section className="player-list forward-list">
@@ -207,7 +207,7 @@ function App() {
                 </li>
               ))}
           </section>
-          <h1 className="player-list-type-title">Injury</h1>
+          <h1 className="player-list-type-title">Injuries</h1>
           <section className="player-list injury-list">
             {players
               .filter((player) => player.rosterStatus.includes("I"))

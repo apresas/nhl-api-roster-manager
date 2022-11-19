@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./PlayerTile.css";
 import { GiAmbulance } from "react-icons/gi";
+import { GrStar } from "react-icons/gr";
+import { BiPlusMedical } from "react-icons/bi";
 
 export default function PlayerTile({
   number,
@@ -31,9 +33,24 @@ export default function PlayerTile({
 
   return (
     <div className={`${isInjuredBorder}`} onClick={currentPlayerHandler}>
+      <div className="navy-border"></div>
+      <div className="red-border"></div>
+      <div className="white-border"></div>
       <h3 className="player-name">{lastName}</h3>
       <h1 className="player-number">{number}</h1>
-      <h4 className="player-position">{position}</h4>
+      <div className="position-container">
+        <h4 className="player-position">
+          <div className="left-divider">
+            <GrStar />
+            <GrStar />
+          </div>
+          {position}
+          <div className="right-divider">
+            <GrStar />
+            <GrStar />
+          </div>
+        </h4>
+      </div>
       <GiAmbulance className={`${isInjuredIcon}`} />
     </div>
   );
