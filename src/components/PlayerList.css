@@ -1,0 +1,52 @@
+
+.player-list-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-white);
+    font-family: 'Apex MK2';
+    letter-spacing: .1rem;
+}
+
+.player-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.75rem;
+    list-style: none;
+
+}
+
+.defense-list{
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.goalie-list {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.player-list-header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100;
+}
+
+.player-list-title {
+    margin: 3rem 0 0 0;
+    transform: scale(1, 1.25);
+}
+
+.player-list-year {
+    margin: 0.7rem 0 1.75rem 0;
+    transform: scale(1, 1.25);
+    color: var(--color-capital-silver);
+}
+
+.player-list-container span {
+    margin: 0 .1rem;
+}
+
+.player-list-type-title {
+    transform: scale(1, 1.25)
+
+}

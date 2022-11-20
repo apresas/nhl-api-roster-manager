@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
 import playerItems from "../data/player.json";
@@ -12,15 +12,100 @@ export default function PlayerInfoModal({
   localCurrentPlayer,
   injuryStatus,
   flagCode,
+  defaultStat,
+  hasStats
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
 
+  const [playerStats, setPlayerStats] = useState({
+    games: localCurrentPlayer[0].stats[0].splits[0].stat.games,
+    goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
+    assets: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
+    points: localCurrentPlayer[0].stats[0].splits[0].stat.points,
+    powerPlayerGoals: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
+    powerPlayPoints: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
+    penaltyMinutes: localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
+    plusMinus: localCurrentPlayer[0].stats[0].splits[0].stat.plusMinus,
+    shots: localCurrentPlayer[0].stats[0].splits[0].stat.shots,
+    hits: localCurrentPlayer[0].stats[0].splits[0].stat.hits,
+    faceOffPct: localCurrentPlayer[0].stats[0].splits[0].stat.faceOffPct,
+    blocked: localCurrentPlayer[0].stats[0].splits[0].stat.blocked,
+    timeOnIcePerGame: localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame
+  });
+
+  const [currentStats, setCurrentStats] = useState({});
+
+  useEffect(() => {
+    if(hasStats === true) {
+      console.log("hasStats: " + hasStats)
+      setCurrentStats(() => {localCurrentPlayer[0].stats[0].splits[0].stat})
+      console.log(currentStats)
+  }}, [])
+
+
+  // const [playerStats, setPlayerStats] = useState({
+  //   games: 0,
+  //   goals: 0,
+  //   assets: 0,
+  //   points: 0,
+  //   powerPlayerGoals: 0,
+  //   powerPlayPoints: 0,
+  //   penaltyMinutes: 0,
+  //   plusMinus: 0,
+  //   shots: 0,
+  //   hits: 0,
+  //   faceOffPct: 0,
+  //   blocked: 0,
+  //   timeOnIcePerGame: 0
+  // });
+  
+  // useEffect(() => {
+  //   if(hasStats === false) {
+  //     console.log("hasStats: " + hasStats)
+  //     setPlayerStats(() => {[...defaultStat]})
+  //   } else if (hasStats === true) {
+  //     setPlayerStats(localCurrentPlayer[0].stats[0].splits[0].stat);
+  //   }
+  // }, [])
+
+
+// const CurrentPlayerStats = {
+  // stat: {
+  //   games: localCurrentPlayer[0].stats[0].splits[0].stat.games,
+  //   goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
+  //   assets: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
+  //   points: localCurrentPlayer[0].stats[0].splits[0].stat.points,
+  //   powerPlayerGoals: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
+  //   powerPlayPoints: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
+  //   penaltyMinutes: localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
+  //   plusMinus: localCurrentPlayer[0].stats[0].splits[0].stat.plusMinus,
+  //   shots: localCurrentPlayer[0].stats[0].splits[0].stat.shots,
+  //   hits: localCurrentPlayer[0].stats[0].splits[0].stat.hits,
+  //   faceOffPct: localCurrentPlayer[0].stats[0].splits[0].stat.faceOffPct,
+  //   blocked: localCurrentPlayer[0].stats[0].splits[0].stat.blocked,
+  //   timeOnIcePerGame: localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame
+  // }
+// }
+
+//   console.log(defaultStats.stat.games)
+//   console.log(CurrentPlayerStats)
+
+//   useEffect(() => {
+//     if (localCurrentPlayer[0].stats[0].splits[0] === undefined) {
+//       console.log('no stats')
+//     }
+//   }, [])
+
+
   useEffect(() => {
     console.log(...localCurrentPlayer);
+    // console.log(playerStats.games);
+    // console.log(defaultStat.games)
+
   }, [localCurrentPlayer]);
 
-  const info = localCurrentPlayer[0];
+  const info = localCurrentPlayer[0];  
 
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
@@ -79,46 +164,45 @@ export default function PlayerInfoModal({
           <ul className="stats-list">
             <h1 className="stats-label">Stats</h1>
             <li>
-              Games: <span>{info.stats[0].splits[0].stat.games}</span>
+              Games: <span>{playerStats.games}</span>
             </li>
             <li>
-              Goals: <span>{info.stats[0].splits[0].stat.goals}</span>
+              Goals: <span>{playerStats.goals}</span>
             </li>
             <li>
-              Assists: <span>{info.stats[0].splits[0].stat.assists}</span>
+              Assists: <span>{playerStats.assists}</span>
             </li>
             <li>
-              Points: <span>{info.stats[0].splits[0].stat.points}</span>
+              Points: <span>{playerStats.points}</span>
             </li>
             <li>
               PP Goals:{" "}
-              <span>{info.stats[0].splits[0].stat.powerPlayGoals}</span>
+              <span>{playerStats.powerPlayGoals}</span>
             </li>
             <li>
               PP Points:{" "}
-              <span>{info.stats[0].splits[0].stat.powerPlayPoints}</span>
+              <span>{playerStats.powerPlayPoints}</span>
             </li>
             <li>
-              PIM: <span>{info.stats[0].splits[0].stat.penaltyMinutes}</span>
+              PIM: <span>{playerStats.penaltyMinutes}</span>
             </li>
             <li>
-              Plus/Minus: <span>{info.stats[0].splits[0].stat.plusMinus}</span>
+              Plus/Minus: <span>{playerStats.plusMinus}</span>
             </li>
             <li>
-              Shots: <span>{info.stats[0].splits[0].stat.shots}</span>
+              Shots: <span>{playerStats.shots}</span>
             </li>
             <li>
-              Hits: <span>{info.stats[0].splits[0].stat.hits}</span>
+              Hits: <span>{playerStats.hits}</span>
             </li>
             <li>
-              Faceoffs: <span>{info.stats[0].splits[0].stat.faceOffPct}%</span>
+              Faceoffs: <span>{playerStats.faceOffPct}%</span>
             </li>
             <li>
-              Blocks Shots: <span>{info.stats[0].splits[0].stat.blocked}</span>
+              Blocks Shots: <span>{playerStats.blocked}</span>
             </li>
             <li>
-              Average TOI:{" "}
-              <span>{info.stats[0].splits[0].stat.timeOnIcePerGame}</span>
+              Average TOI: <span>{playerStats.timeOnIcePerGame}</span>
             </li>
           </ul>
         </div>

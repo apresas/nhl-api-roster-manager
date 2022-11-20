@@ -24,6 +24,25 @@ function App() {
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
+  const [hasStats, setHasStats] = useState(true);
+  const [defaultStat, setDefaultStat] = useState({
+    
+        games: 0,
+        goals: 0,
+        assets: 0,
+        points: 0,
+        powerPlayerGoals: 0,
+        powerPlayPoints: 0,
+        penaltyMinutes: 0,
+        plusMinus: 0,
+        shots: 0,
+        hits: 0,
+        faceOffPct: 0,
+        blocked: 0,
+        timeOnIcePerGame: 0,
+      });
+
+  const [noStats, setNoStats] = useState(); 
 
   // ROSTERDATA ROSTERURL USESTATES
   const [rosterData, setRosterData] = useState([]);
@@ -97,6 +116,59 @@ function App() {
     } else {
       setInjuryStatus("player-modal-injury-icon");
     }
+
+    if (selectedPlayer[0].stats[0].splits[0] === undefined) {
+      console.log('no stats avalible')
+      setHasStats(false)
+   }
+    //   console.log(selectedPlayer[0].stats[0].splits)
+
+      
+      // const statArray = selectedPlayer[0].stats[0].splits
+
+      // const statArray = []
+
+      // const defaultStat = 
+      //   {
+      //       games: 0,
+      //       goals: 0,
+      //       assets: 0,
+      //       points: 0,
+      //       powerPlayerGoals: 0,
+      //       powerPlayPoints: 0,
+      //       penaltyMinutes: 0,
+      //       plusMinus: 0,
+      //       shots: 0,
+      //       hits: 0,
+      //       faceOffPct: 0,
+      //       blocked: 0,
+      //       timeOnIcePerGame: 0,
+      //     }
+
+      //     statArray.push(defaultStat);
+      //     console.log(statArray);
+
+//           stat.push(defaultStat)
+      
+
+// console.log(statArray);
+
+        // stat.push(defaultStat);
+
+        // statArray.concat(stat);
+        
+    // ]
+        // setDefaultStat((state) => {
+        //   state = [...state, ...stat]
+        //   return s
+        // });
+        // console.log(defaultStat)
+        // statArray.push(defaultStat);
+        // console.log(selectedPlayer);
+        // console.log(statArray)
+        // statArray.push(defaultStat);
+      // }
+
 
     const countryCode = selectedPlayer[0].nationality;
     if (countryCode === "SWE") {
@@ -203,6 +275,7 @@ function App() {
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
                     rosterStatus={goalie.rosterStatus}
+
                   />
                 </li>
               ))}
@@ -225,6 +298,7 @@ function App() {
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
                     rosterStatus={goalie.rosterStatus}
+
                   />
                 </li>
               ))}
@@ -238,6 +312,8 @@ function App() {
         localCurrentPlayer={localCurrentPlayer}
         injuryStatus={injuryStatus}
         flagCode={flagCode}
+        defaultStat={defaultStat}
+        hasStats={hasStats}
       />
       <GoalieInfoModal
         show={showGoalieInfoModal}
@@ -246,6 +322,8 @@ function App() {
         localCurrentPlayer={localCurrentPlayer}
         injuryStatus={injuryStatus}
         flagCode={flagCode}
+        defaultStat={defaultStat}
+        hasStats={hasStats}
       />
     </>
   );
