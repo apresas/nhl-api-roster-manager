@@ -62,7 +62,7 @@ body {
 
 .player-tile-injury > .player-name {
   position: absolute;
-  top: 1.6rem;
+  top: 1.75rem;
 }
 
 .player-tile-injury > .player-position {
