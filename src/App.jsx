@@ -6,6 +6,7 @@ import PlayerTile from "./components/PlayerTile";
 import { Container, Stack } from "react-bootstrap";
 import { usePlayers } from "./context/PlayerContext";
 import CBJLogo from "./img/cbj_logo.svg";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const {
@@ -309,6 +310,7 @@ function App() {
           </section>
         </Stack>
       </Container>
+      <AnimatePresence>
       {showPlayerInfoModal && <PlayerInfoModal
         show={showPlayerInfoModal}
         handleClick={() => setShowPlayerInfoModal(false)}
@@ -319,6 +321,8 @@ function App() {
         defaultStat={defaultStat}
         hasStats={hasStats}
       />}
+      </AnimatePresence>
+      <AnimatePresence>
       {showGoalieInfoModal && <GoalieInfoModal
         show={showGoalieInfoModal}
         handleClick={() => setShowPlayerInfoModal(false)}
@@ -329,6 +333,7 @@ function App() {
         defaultStat={defaultStat}
         hasStats={hasStats}
       />}
+      </AnimatePresence>
     </>
   );
 }

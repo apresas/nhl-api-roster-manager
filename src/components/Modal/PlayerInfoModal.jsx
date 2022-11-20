@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import ModalBackDrop from "../Backdrop/ModalBackDrop";
 import playerItems from "../../data/player.json";
 import { IoClose } from "react-icons/io5";
@@ -15,7 +15,7 @@ export default function PlayerInfoModal({
   injuryStatus,
   flagCode,
   defaultStat,
-  hasStats
+  hasStats,
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -25,26 +25,32 @@ export default function PlayerInfoModal({
     goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
     assets: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
     points: localCurrentPlayer[0].stats[0].splits[0].stat.points,
-    powerPlayerGoals: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
-    powerPlayPoints: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
-    penaltyMinutes: localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
+    powerPlayerGoals:
+      localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
+    powerPlayPoints:
+      localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
+    penaltyMinutes:
+      localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
     plusMinus: localCurrentPlayer[0].stats[0].splits[0].stat.plusMinus,
     shots: localCurrentPlayer[0].stats[0].splits[0].stat.shots,
     hits: localCurrentPlayer[0].stats[0].splits[0].stat.hits,
     faceOffPct: localCurrentPlayer[0].stats[0].splits[0].stat.faceOffPct,
     blocked: localCurrentPlayer[0].stats[0].splits[0].stat.blocked,
-    timeOnIcePerGame: localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame
+    timeOnIcePerGame:
+      localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame,
   });
 
   const [currentStats, setCurrentStats] = useState({});
 
   useEffect(() => {
-    if(hasStats === true) {
-      console.log("hasStats: " + hasStats)
-      setCurrentStats(() => {localCurrentPlayer[0].stats[0].splits[0].stat})
-      console.log(currentStats)
-  }}, [])
-
+    if (hasStats === true) {
+      console.log("hasStats: " + hasStats);
+      setCurrentStats(() => {
+        localCurrentPlayer[0].stats[0].splits[0].stat;
+      });
+      console.log(currentStats);
+    }
+  }, []);
 
   // const [playerStats, setPlayerStats] = useState({
   //   games: 0,
@@ -61,7 +67,7 @@ export default function PlayerInfoModal({
   //   blocked: 0,
   //   timeOnIcePerGame: 0
   // });
-  
+
   // useEffect(() => {
   //   if(hasStats === false) {
   //     console.log("hasStats: " + hasStats)
@@ -71,8 +77,7 @@ export default function PlayerInfoModal({
   //   }
   // }, [])
 
-
-// const CurrentPlayerStats = {
+  // const CurrentPlayerStats = {
   // stat: {
   //   games: localCurrentPlayer[0].stats[0].splits[0].stat.games,
   //   goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
@@ -88,154 +93,156 @@ export default function PlayerInfoModal({
   //   blocked: localCurrentPlayer[0].stats[0].splits[0].stat.blocked,
   //   timeOnIcePerGame: localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame
   // }
-// }
+  // }
 
-//   console.log(defaultStats.stat.games)
-//   console.log(CurrentPlayerStats)
+  //   console.log(defaultStats.stat.games)
+  //   console.log(CurrentPlayerStats)
 
-//   useEffect(() => {
-//     if (localCurrentPlayer[0].stats[0].splits[0] === undefined) {
-//       console.log('no stats')
-//     }
-//   }, [])
-
+  //   useEffect(() => {
+  //     if (localCurrentPlayer[0].stats[0].splits[0] === undefined) {
+  //       console.log('no stats')
+  //     }
+  //   }, [])
 
   useEffect(() => {
     console.log(...localCurrentPlayer);
     // console.log(playerStats.games);
     // console.log(defaultStat.games)
-
   }, [localCurrentPlayer]);
 
-  const info = localCurrentPlayer[0];  
+  const info = localCurrentPlayer[0];
 
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
 
   const dropIn = {
     hidden: {
-      y: '-100vh',
+      y: "-100vh",
       opacity: 0,
     },
     visible: {
-      y:  '0',
+      y: "0",
       opacity: 1,
       transition: {
         duration: 0.1,
-        type: 'spring',
+        type: "spring",
         damping: 25,
-        stiffness: 500,
-      }
+        stiffness: 450,
+      },
     },
     exit: {
-      y: '100vh',
+      y: "-100vh",
       opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
     },
   };
 
   return (
-      <ModalBackDrop show={show} onHide={handelClose} onClick={handelClose}>
-      <motion.div className="player-info-modal"
-       onClick={(e) => e.stopPropagation()}
-       variants={dropIn}
-       initial="hidden"
-       animate='visible'
-       exit='exit'
-       >
-        <div className="player-profile-display">
-          <div className="image-container">
-            <img
-              className="player-image"
-              src={imgs.imgURL}
-              alt="player image"
-            ></img>
+    <ModalBackDrop show={show} onHide={handelClose} onClick={handelClose}>
+        <motion.div
+          key="player-info-modal"
+          className="player-info-modal"
+          onClick={(e) => e.stopPropagation()}
+          variants={dropIn}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          <div className="player-profile-display">
+            <div className="image-container">
+              <img
+                className="player-image"
+                src={imgs.imgURL}
+                alt="player image"
+              ></img>
+            </div>
+            <h1>
+              <IoBandage className={`${injuryStatus}`} />
+              {info.fullName}
+            </h1>
+            <h2>{info.primaryNumber}</h2>
+            <span className="divider" />
           </div>
-          <h1>
-            <IoBandage className={`${injuryStatus}`} />
-            {info.fullName}
-          </h1>
-          <h2>{info.primaryNumber}</h2>
-          <span className="divider" />
-        </div>
-        <div className="player-profile-info">
-          <ul className="info-list">
-            <li>
-              Position: <span>{info.primaryPosition.name}</span>
-            </li>
-            <li>
-              Height: <span>{info.height}</span>
-            </li>
-            <li>
-              Weight: <span>{info.weight}lbs</span>
-            </li>
-            <li>
-              Shoots: <span>{info.shootsCatches}</span>
-            </li>
-            <li>
-              Age: <span>{info.currentAge}</span>
-            </li>
-            <li>
-              Nationality:{" "}
-              <span
-                className={`${flagCode}`}
-                style={{
-                  borderRadius: "50%",
-                  border: "1px solid var(--CBJ-silver)",
-                }}
-              ></span>
-            </li>
-          </ul>
-        </div>
-        <div className="player-profile-stats">
-          <button className="btn-close" onClick={handelClose}>
-            <IoClose className='close-icon'/>
-          </button>
-          <ul className="stats-list">
-            <h1 className="stats-label">Stats</h1>
-            <li>
-              Games: <span>{playerStats.games}</span>
-            </li>
-            <li>
-              Goals: <span>{playerStats.goals}</span>
-            </li>
-            <li>
-              Assists: <span>{playerStats.assists}</span>
-            </li>
-            <li>
-              Points: <span>{playerStats.points}</span>
-            </li>
-            <li>
-              PP Goals:{" "}
-              <span>{playerStats.powerPlayGoals}</span>
-            </li>
-            <li>
-              PP Points:{" "}
-              <span>{playerStats.powerPlayPoints}</span>
-            </li>
-            <li>
-              PIM: <span>{playerStats.penaltyMinutes}</span>
-            </li>
-            <li>
-              Plus/Minus: <span>{playerStats.plusMinus}</span>
-            </li>
-            <li>
-              Shots: <span>{playerStats.shots}</span>
-            </li>
-            <li>
-              Hits: <span>{playerStats.hits}</span>
-            </li>
-            <li>
-              Faceoffs: <span>{playerStats.faceOffPct}%</span>
-            </li>
-            <li>
-              Blocks Shots: <span>{playerStats.blocked}</span>
-            </li>
-            <li>
-              Average TOI: <span>{playerStats.timeOnIcePerGame}</span>
-            </li>
-          </ul>
-        </div>
-      </motion.div>
-      </ModalBackDrop>
+          <div className="player-profile-info">
+            <ul className="info-list">
+              <li>
+                Position: <span>{info.primaryPosition.name}</span>
+              </li>
+              <li>
+                Height: <span>{info.height}</span>
+              </li>
+              <li>
+                Weight: <span>{info.weight}lbs</span>
+              </li>
+              <li>
+                Shoots: <span>{info.shootsCatches}</span>
+              </li>
+              <li>
+                Age: <span>{info.currentAge}</span>
+              </li>
+              <li>
+                Nationality:{" "}
+                <span
+                  className={`${flagCode}`}
+                  style={{
+                    borderRadius: "50%",
+                    border: "1px solid var(--CBJ-silver)",
+                  }}
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <div className="player-profile-stats">
+            <button className="btn-close" onClick={handelClose}>
+              <IoClose className="close-icon" />
+            </button>
+            <ul className="stats-list">
+              <h1 className="stats-label">Stats</h1>
+              <li>
+                Games: <span>{playerStats.games}</span>
+              </li>
+              <li>
+                Goals: <span>{playerStats.goals}</span>
+              </li>
+              <li>
+                Assists: <span>{playerStats.assists}</span>
+              </li>
+              <li>
+                Points: <span>{playerStats.points}</span>
+              </li>
+              <li>
+                PP Goals: <span>{playerStats.powerPlayGoals}</span>
+              </li>
+              <li>
+                PP Points: <span>{playerStats.powerPlayPoints}</span>
+              </li>
+              <li>
+                PIM: <span>{playerStats.penaltyMinutes}</span>
+              </li>
+              <li>
+                Plus/Minus: <span>{playerStats.plusMinus}</span>
+              </li>
+              <li>
+                Shots: <span>{playerStats.shots}</span>
+              </li>
+              <li>
+                Hits: <span>{playerStats.hits}</span>
+              </li>
+              <li>
+                Faceoffs: <span>{playerStats.faceOffPct}%</span>
+              </li>
+              <li>
+                Blocks Shots: <span>{playerStats.blocked}</span>
+              </li>
+              <li>
+                Average TOI: <span>{playerStats.timeOnIcePerGame}</span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+    </ModalBackDrop>
   );
 }
