@@ -1,7 +1,9 @@
 import React from "react";
 import "./PlayerInfoModal.css";
 import Modal from "react-bootstrap/Modal";
-import playerItems from "../data/player.json";
+import { motion } from 'framer-motion'
+import ModalBackDrop from "../Backdrop/ModalBackDrop";
+import playerItems from "../../data/player.json";
 import { IoClose } from "react-icons/io5";
 import { IoBandage } from "react-icons/io5";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
@@ -28,9 +30,36 @@ export default function PlayerInfoModal({
     return formatted;
   }
 
+  const dropIn = {
+    hidden: {
+      y: '-100vh',
+      opacity: 0,
+    },
+    visible: {
+      y:  '0',
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        type: 'spring',
+        damping: 25,
+        stiffness: 500,
+      }
+    },
+    exit: {
+      y: '100vh',
+      opacity: 0,
+    },
+  };
+
   return (
-    <Modal className="player-info-container" show={show} onHide={handelClick}>
-      <div className="player-info-modal">
+    <ModalBackDrop show={show} onHide={handelClose} onClick={handelClose}>
+      <motion.div className="player-info-modal"
+       onClick={(e) => e.stopPropagation()}
+       variants={dropIn}
+       initial="hidden"
+       animate='visible'
+       exit='exit'
+       >
         <div className="player-profile-display">
           <div className="image-container">
             <img
@@ -148,7 +177,7 @@ export default function PlayerInfoModal({
             </li>
           </ul>
         </div>
-      </div>
-    </Modal>
+      </motion.div>
+      </ModalBackDrop>
   );
 }

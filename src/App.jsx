@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PlayerInfoModal from "./components/PlayerInfoModal";
-import GoalieInfoModal from "./components/GoalieInfoModal";
+import PlayerInfoModal from "./components/Modal/PlayerInfoModal";
+import GoalieInfoModal from "./components/Modal/GoalieInfoModal";
 import axios from "axios";
 import PlayerTile from "./components/PlayerTile";
 import { Container, Stack } from "react-bootstrap";
@@ -22,6 +22,9 @@ function App() {
   //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
+  const close = () => setShowPlayerInfoModal(false);
+  const open = () => setShowPlayerInfoModal(true)
+
   const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
   const [hasStats, setHasStats] = useState(true);
@@ -107,6 +110,7 @@ function App() {
 
     if (!selectedPlayer[0].primaryPosition.code.includes("G")) {
       setShowPlayerInfoModal(true);
+      console.log(showPlayerInfoModal)
     } else {
       setShowGoalieInfoModal(true);
     }
@@ -120,7 +124,7 @@ function App() {
     if (selectedPlayer[0].stats[0].splits[0] === undefined) {
       console.log('no stats avalible')
       setHasStats(false)
-   }
+   } 
     //   console.log(selectedPlayer[0].stats[0].splits)
 
       
@@ -305,7 +309,7 @@ function App() {
           </section>
         </Stack>
       </Container>
-      <PlayerInfoModal
+      {showPlayerInfoModal && <PlayerInfoModal
         show={showPlayerInfoModal}
         handleClick={() => setShowPlayerInfoModal(false)}
         handelClose={closePlayerInfoModal}
@@ -314,8 +318,8 @@ function App() {
         flagCode={flagCode}
         defaultStat={defaultStat}
         hasStats={hasStats}
-      />
-      <GoalieInfoModal
+      />}
+      {showGoalieInfoModal && <GoalieInfoModal
         show={showGoalieInfoModal}
         handleClick={() => setShowPlayerInfoModal(false)}
         handelClose={closeGoalieInfoModal}
@@ -324,7 +328,7 @@ function App() {
         flagCode={flagCode}
         defaultStat={defaultStat}
         hasStats={hasStats}
-      />
+      />}
     </>
   );
 }
