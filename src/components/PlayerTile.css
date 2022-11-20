@@ -42,6 +42,15 @@ body {
   position: relative;
 }
 
+.player-content-injury {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(70px);
+  position: absolute;
+  top: 0;
+}
+
 .player-tile-injury > .player-number {
   position: absolute;
   top: 0;
@@ -63,6 +72,15 @@ body {
 
 .player-tile-injury > div {
   opacity: 0;
+}
+
+.player-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(70px);
+  position: absolute;
+  top: 0;
 }
 
 .player-name {

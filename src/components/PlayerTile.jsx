@@ -41,14 +41,17 @@ export default function PlayerTile({
 
   const [isInjuredIcon, setIsInjuredIcon] = useState();
   const [isInjuredBorder, setIsInjuredBorder] = useState();
+  const [isInjuredContent, setIsInjuredContent] = useState();
 
   useEffect(() => {
     if (rosterStatus.includes("I")) {
       setIsInjuredIcon("injury-icon-active");
       setIsInjuredBorder("player-tile-injury");
+      setIsInjuredContent('player-content-injury')
     } else {
       setIsInjuredIcon("injury-icon");
       setIsInjuredBorder("player-tile");
+      setIsInjuredContent('player-content')
     }
   }, [isInjuredBorder]);
 
@@ -65,7 +68,7 @@ export default function PlayerTile({
       <div
         className={`${isInjuredBorder}`}
         onClick={currentPlayerHandler}
-        style={{ transform: "translateZ(50px)" }}
+        style={{ transform: "translateZ(70px)" }}
       >
         <div className="navy-border"></div>
         <div className="red-border"></div>
