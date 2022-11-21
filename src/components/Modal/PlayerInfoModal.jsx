@@ -23,9 +23,9 @@ export default function PlayerInfoModal({
   const [playerStats, setPlayerStats] = useState({
     games: localCurrentPlayer[0].stats[0].splits[0].stat.games,
     goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
-    assets: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
+    assists: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
     points: localCurrentPlayer[0].stats[0].splits[0].stat.points,
-    powerPlayerGoals:
+    powerPlayGoals:
       localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
     powerPlayPoints:
       localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,

@@ -1,0 +1,157 @@
+{
+  "players": [
+    {
+      "id": 0,
+      "fullName": "Default Goalie",
+      "link": "",
+      "firstName": "",
+      "lastName": "",
+      "primaryNumber": "",
+      "birthDate": "",
+      "currentAge": 0,
+      "birthCity": "",
+      "birthCountry": "",
+      "nationality": "",
+      "height": "",
+      "weight": 0,
+      "active": false,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "",
+      "rosterStatus": "",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "G",
+        "name": "Goalie",
+        "type": "Goalie",
+        "abbreviation": "G"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "0",
+                "ot": 0,
+                "shutouts": 0,
+                "ties": 0,
+                "wins": 0,
+                "losses": 0,
+                "saves": 0,
+                "powerPlaySaves": 0,
+                "shortHandedSaves": 0,
+                "evenSaves": 0,
+                "shortHandedShots": 0,
+                "evenShots": 0,
+                "powerPlayShots": 0,
+                "savePercentage": 0,
+                "goalAgainstAverage": 0,
+                "games": 0,
+                "gamesStarted": 0,
+                "shotsAgainst": 0,
+                "goalsAgainst": 0,
+                "timeOnIcePerGame": "0",
+                "powerPlaySavePercentage": 0,
+                "shortHandedSavePercentage": 0,
+                "evenStrengthSavePercentage": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "fullName": "Default Player",
+      "link": "",
+      "firstName": "",
+      "lastName": "",
+      "primaryNumber": "",
+      "birthDate": "",
+      "currentAge": 0,
+      "birthCity": "",
+      "birthStateProvince": "",
+      "birthCountry": "",
+      "nationality": "",
+      "height": "",
+      "weight": 0,
+      "active": false,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "",
+      "rosterStatus": "",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "",
+        "name": "",
+        "type": "",
+        "abbreviation": ""
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "",
+                "assists": 0,
+                "goals": 0,
+                "pim": 0,
+                "shots": 0,
+                "games": 0,
+                "hits": 0,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "0",
+                "evenTimeOnIce": "0",
+                "penaltyMinutes": "0",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "0",
+                "blocked": 0,
+                "plusMinus": 0,
+                "points": 0,
+                "shifts": 0,
+                "timeOnIcePerGame": "0",
+                "evenTimeOnIcePerGame": "0",
+                "shortHandedTimeOnIcePerGame": "0",
+                "powerPlayTimeOnIcePerGame": "0"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
