@@ -152,6 +152,2320 @@
           ]
         }
       ]
+    },
+    {
+      "id": 8474161,
+      "fullName": "Jakub Voracek",
+      "link": "/api/v1/people/8474161",
+      "firstName": "Jakub",
+      "lastName": "Voracek",
+      "primaryNumber": "93",
+      "birthDate": "1989-08-15",
+      "currentAge": 33,
+      "birthCity": "Kladno",
+      "birthCountry": "CZE",
+      "nationality": "CZE",
+      "height": "6' 2\"",
+      "weight": 216,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "I",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "175:33",
+                "assists": 5,
+                "goals": 1,
+                "pim": 0,
+                "shots": 17,
+                "games": 11,
+                "hits": 2,
+                "powerPlayGoals": 1,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "34:46",
+                "evenTimeOnIce": "140:47",
+                "penaltyMinutes": "0",
+                "faceOffPct": 33.33,
+                "shotPct": 5.9,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:00",
+                "blocked": 7,
+                "plusMinus": -7,
+                "points": 6,
+                "shifts": 211,
+                "timeOnIcePerGame": "15:57",
+                "evenTimeOnIcePerGame": "12:47",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "03:09"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479339,
+      "fullName": "Patrik Laine",
+      "link": "/api/v1/people/8479339",
+      "firstName": "Patrik",
+      "lastName": "Laine",
+      "primaryNumber": "29",
+      "birthDate": "1998-04-19",
+      "currentAge": 24,
+      "birthCity": "Tampere",
+      "birthCountry": "FIN",
+      "nationality": "FIN",
+      "height": "6' 5\"",
+      "weight": 205,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "L",
+        "name": "Left Wing",
+        "type": "Forward",
+        "abbreviation": "LW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "158:56",
+                "assists": 2,
+                "goals": 2,
+                "pim": 4,
+                "shots": 29,
+                "games": 8,
+                "hits": 8,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "26:28",
+                "evenTimeOnIce": "132:16",
+                "penaltyMinutes": "4",
+                "faceOffPct": 55.56,
+                "shotPct": 6.9,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:12",
+                "blocked": 6,
+                "plusMinus": -4,
+                "points": 4,
+                "shifts": 168,
+                "timeOnIcePerGame": "19:52",
+                "evenTimeOnIcePerGame": "16:32",
+                "shortHandedTimeOnIcePerGame": "00:01",
+                "powerPlayTimeOnIcePerGame": "03:18"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8478007,
+      "fullName": "Elvis Merzlikins",
+      "link": "/api/v1/people/8478007",
+      "firstName": "Elvis",
+      "lastName": "Merzlikins",
+      "primaryNumber": "90",
+      "birthDate": "1994-04-13",
+      "currentAge": 28,
+      "birthCity": "Riga",
+      "birthCountry": "LVA",
+      "nationality": "LVA",
+      "height": "6' 3\"",
+      "weight": 183,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "I",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "G",
+        "name": "Goalie",
+        "type": "Goalie",
+        "abbreviation": "G"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "455:55",
+                "ot": 0,
+                "shutouts": 0,
+                "ties": 0,
+                "wins": 2,
+                "losses": 5,
+                "saves": 229,
+                "powerPlaySaves": 45,
+                "shortHandedSaves": 8,
+                "evenSaves": 176,
+                "shortHandedShots": 10,
+                "evenShots": 206,
+                "powerPlayShots": 49,
+                "savePercentage": 0.864151,
+                "goalAgainstAverage": 4.737708,
+                "games": 9,
+                "gamesStarted": 8,
+                "shotsAgainst": 265,
+                "goalsAgainst": 36,
+                "timeOnIcePerGame": "50:39",
+                "powerPlaySavePercentage": 91.83673469387756,
+                "shortHandedSavePercentage": 80,
+                "evenStrengthSavePercentage": 85.43689320388349
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479402,
+      "fullName": "Jake Bean",
+      "link": "/api/v1/people/8479402",
+      "firstName": "Jake",
+      "lastName": "Bean",
+      "primaryNumber": "22",
+      "birthDate": "1998-06-09",
+      "currentAge": 24,
+      "birthCity": "Calgary",
+      "birthStateProvince": "AB",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 1\"",
+      "weight": 196,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "I",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "219:51",
+                "assists": 5,
+                "goals": 1,
+                "pim": 6,
+                "shots": 16,
+                "games": 14,
+                "hits": 13,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "16:01",
+                "evenTimeOnIce": "199:55",
+                "penaltyMinutes": "6",
+                "faceOffPct": 0,
+                "shotPct": 6.3,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "03:55",
+                "blocked": 21,
+                "plusMinus": -2,
+                "points": 6,
+                "shifts": 287,
+                "timeOnIcePerGame": "15:42",
+                "evenTimeOnIcePerGame": "14:16",
+                "shortHandedTimeOnIcePerGame": "00:16",
+                "powerPlayTimeOnIcePerGame": "01:08"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8478460,
+      "fullName": "Zach Werenski",
+      "link": "/api/v1/people/8478460",
+      "firstName": "Zach",
+      "lastName": "Werenski",
+      "primaryNumber": "8",
+      "birthDate": "1997-07-19",
+      "currentAge": 25,
+      "birthCity": "Grosse Pointe",
+      "birthStateProvince": "MI",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 2\"",
+      "weight": 213,
+      "active": true,
+      "alternateCaptain": true,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "306:45",
+                "assists": 5,
+                "goals": 3,
+                "pim": 0,
+                "shots": 41,
+                "games": 13,
+                "hits": 5,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 2,
+                "powerPlayTimeOnIce": "39:54",
+                "evenTimeOnIce": "254:11",
+                "penaltyMinutes": "0",
+                "faceOffPct": 0,
+                "shotPct": 7.3,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "12:40",
+                "blocked": 24,
+                "plusMinus": -6,
+                "points": 8,
+                "shifts": 332,
+                "timeOnIcePerGame": "23:35",
+                "evenTimeOnIcePerGame": "19:33",
+                "shortHandedTimeOnIcePerGame": "00:58",
+                "powerPlayTimeOnIcePerGame": "03:04"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479941,
+      "fullName": "Justin Danforth",
+      "link": "/api/v1/people/8479941",
+      "firstName": "Justin",
+      "lastName": "Danforth",
+      "primaryNumber": "17",
+      "birthDate": "1993-03-15",
+      "currentAge": 29,
+      "birthCity": "Oshawa",
+      "birthStateProvince": "ON",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "5' 9\"",
+      "weight": 190,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "I",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "80:20",
+                "assists": 1,
+                "goals": 2,
+                "pim": 4,
+                "shots": 10,
+                "games": 6,
+                "hits": 7,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "11:11",
+                "evenTimeOnIce": "65:33",
+                "penaltyMinutes": "4",
+                "faceOffPct": 30.77,
+                "shotPct": 20,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "03:36",
+                "blocked": 1,
+                "plusMinus": -3,
+                "points": 3,
+                "shifts": 104,
+                "timeOnIcePerGame": "13:23",
+                "evenTimeOnIcePerGame": "10:55",
+                "shortHandedTimeOnIcePerGame": "00:36",
+                "powerPlayTimeOnIcePerGame": "01:51"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480871,
+      "fullName": "Adam Boqvist",
+      "link": "/api/v1/people/8480871",
+      "firstName": "Adam",
+      "lastName": "Boqvist",
+      "primaryNumber": "27",
+      "birthDate": "2000-08-15",
+      "currentAge": 22,
+      "birthCity": "Falun",
+      "birthCountry": "SWE",
+      "nationality": "SWE",
+      "height": "6' 0\"",
+      "weight": 182,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "I",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "63:45",
+                "assists": 0,
+                "goals": 0,
+                "pim": 0,
+                "shots": 3,
+                "games": 4,
+                "hits": 2,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "07:09",
+                "evenTimeOnIce": "56:36",
+                "penaltyMinutes": "0",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:00",
+                "blocked": 4,
+                "plusMinus": -1,
+                "points": 0,
+                "shifts": 86,
+                "timeOnIcePerGame": "15:56",
+                "evenTimeOnIcePerGame": "14:09",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "01:47"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8483565,
+      "fullName": "Nick Blankenburg",
+      "link": "/api/v1/people/8483565",
+      "firstName": "Nick",
+      "lastName": "Blankenburg",
+      "primaryNumber": "77",
+      "birthDate": "1998-05-12",
+      "currentAge": 24,
+      "birthCity": "Washington",
+      "birthStateProvince": "MI",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "5' 9\"",
+      "weight": 177,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "126:17",
+                "assists": 1,
+                "goals": 2,
+                "pim": 4,
+                "shots": 13,
+                "games": 7,
+                "hits": 12,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "01:51",
+                "evenTimeOnIce": "117:32",
+                "penaltyMinutes": "4",
+                "faceOffPct": 0,
+                "shotPct": 15.4,
+                "gameWinningGoals": 1,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "06:54",
+                "blocked": 13,
+                "plusMinus": -5,
+                "points": 3,
+                "shifts": 170,
+                "timeOnIcePerGame": "18:02",
+                "evenTimeOnIcePerGame": "16:47",
+                "shortHandedTimeOnIcePerGame": "00:59",
+                "powerPlayTimeOnIcePerGame": "00:15"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8474679,
+      "fullName": "Gustav Nyquist",
+      "link": "/api/v1/people/8474679",
+      "firstName": "Gustav",
+      "lastName": "Nyquist",
+      "primaryNumber": "14",
+      "birthDate": "1989-09-01",
+      "currentAge": 33,
+      "birthCity": "Halmstad",
+      "birthCountry": "SWE",
+      "nationality": "SWE",
+      "height": "5' 11\"",
+      "weight": 180,
+      "active": true,
+      "alternateCaptain": true,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "L",
+        "name": "Left Wing",
+        "type": "Forward",
+        "abbreviation": "LW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "310:44",
+                "assists": 5,
+                "goals": 3,
+                "pim": 10,
+                "shots": 28,
+                "games": 18,
+                "hits": 14,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "23:39",
+                "evenTimeOnIce": "256:11",
+                "penaltyMinutes": "10",
+                "faceOffPct": 25,
+                "shotPct": 10.7,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "30:54",
+                "blocked": 11,
+                "plusMinus": -2,
+                "points": 8,
+                "shifts": 405,
+                "timeOnIcePerGame": "17:15",
+                "evenTimeOnIcePerGame": "14:13",
+                "shortHandedTimeOnIcePerGame": "01:43",
+                "powerPlayTimeOnIcePerGame": "01:18"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8475790,
+      "fullName": "Erik Gudbranson",
+      "link": "/api/v1/people/8475790",
+      "firstName": "Erik",
+      "lastName": "Gudbranson",
+      "primaryNumber": "44",
+      "birthDate": "1992-01-07",
+      "currentAge": 30,
+      "birthCity": "Ottawa",
+      "birthStateProvince": "ON",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 5\"",
+      "weight": 222,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "323:30",
+                "assists": 5,
+                "goals": 0,
+                "pim": 10,
+                "shots": 21,
+                "games": 17,
+                "hits": 36,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:26",
+                "evenTimeOnIce": "292:50",
+                "penaltyMinutes": "10",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "30:14",
+                "blocked": 26,
+                "plusMinus": -4,
+                "points": 5,
+                "shifts": 406,
+                "timeOnIcePerGame": "19:01",
+                "evenTimeOnIcePerGame": "17:13",
+                "shortHandedTimeOnIcePerGame": "01:46",
+                "powerPlayTimeOnIcePerGame": "00:01"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8476346,
+      "fullName": "Johnny Gaudreau",
+      "link": "/api/v1/people/8476346",
+      "firstName": "Johnny",
+      "lastName": "Gaudreau",
+      "primaryNumber": "13",
+      "birthDate": "1993-08-13",
+      "currentAge": 29,
+      "birthCity": "Salem",
+      "birthStateProvince": "NJ",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "5' 9\"",
+      "weight": 165,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "L",
+        "name": "Left Wing",
+        "type": "Forward",
+        "abbreviation": "LW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "354:19",
+                "assists": 11,
+                "goals": 7,
+                "pim": 6,
+                "shots": 52,
+                "games": 18,
+                "hits": 1,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 3,
+                "powerPlayTimeOnIce": "49:15",
+                "evenTimeOnIce": "304:58",
+                "penaltyMinutes": "6",
+                "faceOffPct": 0,
+                "shotPct": 13.5,
+                "gameWinningGoals": 1,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:06",
+                "blocked": 3,
+                "plusMinus": -3,
+                "points": 18,
+                "shifts": 409,
+                "timeOnIcePerGame": "19:41",
+                "evenTimeOnIcePerGame": "16:56",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "02:44"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8476374,
+      "fullName": "Sean Kuraly",
+      "link": "/api/v1/people/8476374",
+      "firstName": "Sean",
+      "lastName": "Kuraly",
+      "primaryNumber": "7",
+      "birthDate": "1993-01-20",
+      "currentAge": 29,
+      "birthCity": "Niagara Falls",
+      "birthStateProvince": "NY",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 2\"",
+      "weight": 213,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "218:49",
+                "assists": 3,
+                "goals": 6,
+                "pim": 6,
+                "shots": 26,
+                "games": 16,
+                "hits": 42,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:27",
+                "evenTimeOnIce": "178:50",
+                "penaltyMinutes": "6",
+                "faceOffPct": 50.39,
+                "shotPct": 23.1,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 1,
+                "shortHandedPoints": 1,
+                "shortHandedTimeOnIce": "39:32",
+                "blocked": 15,
+                "plusMinus": -4,
+                "points": 9,
+                "shifts": 300,
+                "timeOnIcePerGame": "13:40",
+                "evenTimeOnIcePerGame": "11:10",
+                "shortHandedTimeOnIcePerGame": "02:28",
+                "powerPlayTimeOnIcePerGame": "00:01"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8478882,
+      "fullName": "Vladislav Gavrikov",
+      "link": "/api/v1/people/8478882",
+      "firstName": "Vladislav",
+      "lastName": "Gavrikov",
+      "primaryNumber": "4",
+      "birthDate": "1995-11-21",
+      "currentAge": 27,
+      "birthCity": "Yaroslavl",
+      "birthCountry": "RUS",
+      "nationality": "RUS",
+      "height": "6' 3\"",
+      "weight": 221,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "404:27",
+                "assists": 2,
+                "goals": 2,
+                "pim": 8,
+                "shots": 21,
+                "games": 18,
+                "hits": 21,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "03:35",
+                "evenTimeOnIce": "341:58",
+                "penaltyMinutes": "8",
+                "faceOffPct": 0,
+                "shotPct": 9.5,
+                "gameWinningGoals": 2,
+                "overTimeGoals": 2,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "58:54",
+                "blocked": 36,
+                "plusMinus": -1,
+                "points": 4,
+                "shifts": 485,
+                "timeOnIcePerGame": "22:28",
+                "evenTimeOnIcePerGame": "18:59",
+                "shortHandedTimeOnIcePerGame": "03:16",
+                "powerPlayTimeOnIcePerGame": "00:11"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8476432,
+      "fullName": "Boone Jenner",
+      "link": "/api/v1/people/8476432",
+      "firstName": "Boone",
+      "lastName": "Jenner",
+      "primaryNumber": "38",
+      "birthDate": "1993-06-15",
+      "currentAge": 29,
+      "birthCity": "Dorchester",
+      "birthStateProvince": "ON",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 2\"",
+      "weight": 203,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": true,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "356:30",
+                "assists": 6,
+                "goals": 8,
+                "pim": 10,
+                "shots": 61,
+                "games": 18,
+                "hits": 29,
+                "powerPlayGoals": 3,
+                "powerPlayPoints": 3,
+                "powerPlayTimeOnIce": "36:30",
+                "evenTimeOnIce": "308:56",
+                "penaltyMinutes": "10",
+                "faceOffPct": 55.61,
+                "shotPct": 13.1,
+                "gameWinningGoals": 1,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "11:04",
+                "blocked": 28,
+                "plusMinus": -5,
+                "points": 14,
+                "shifts": 431,
+                "timeOnIcePerGame": "19:48",
+                "evenTimeOnIcePerGame": "17:09",
+                "shortHandedTimeOnIcePerGame": "00:36",
+                "powerPlayTimeOnIcePerGame": "02:01"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479369,
+      "fullName": "Andrew Peeke",
+      "link": "/api/v1/people/8479369",
+      "firstName": "Andrew",
+      "lastName": "Peeke",
+      "primaryNumber": "2",
+      "birthDate": "1998-03-17",
+      "currentAge": 24,
+      "birthCity": "Parkland",
+      "birthStateProvince": "FL",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 3\"",
+      "weight": 210,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "364:27",
+                "assists": 2,
+                "goals": 2,
+                "pim": 10,
+                "shots": 18,
+                "games": 18,
+                "hits": 33,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:42",
+                "evenTimeOnIce": "314:14",
+                "penaltyMinutes": "10",
+                "faceOffPct": 0,
+                "shotPct": 11.1,
+                "gameWinningGoals": 1,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 1,
+                "shortHandedTimeOnIce": "49:31",
+                "blocked": 38,
+                "plusMinus": -7,
+                "points": 4,
+                "shifts": 477,
+                "timeOnIcePerGame": "20:14",
+                "evenTimeOnIcePerGame": "17:27",
+                "shortHandedTimeOnIcePerGame": "02:45",
+                "powerPlayTimeOnIcePerGame": "00:02"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479671,
+      "fullName": "Mathieu Olivier",
+      "link": "/api/v1/people/8479671",
+      "firstName": "Mathieu",
+      "lastName": "Olivier",
+      "primaryNumber": "24",
+      "birthDate": "1997-02-11",
+      "currentAge": 25,
+      "birthCity": "Biloxi",
+      "birthStateProvince": "MS",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 1\"",
+      "weight": 217,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "176:25",
+                "assists": 2,
+                "goals": 1,
+                "pim": 28,
+                "shots": 18,
+                "games": 16,
+                "hits": 33,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:00",
+                "evenTimeOnIce": "170:30",
+                "penaltyMinutes": "28",
+                "faceOffPct": 0,
+                "shotPct": 5.6,
+                "gameWinningGoals": 1,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "05:55",
+                "blocked": 15,
+                "plusMinus": -4,
+                "points": 3,
+                "shifts": 250,
+                "timeOnIcePerGame": "11:01",
+                "evenTimeOnIcePerGame": "10:39",
+                "shortHandedTimeOnIcePerGame": "00:22",
+                "powerPlayTimeOnIcePerGame": "00:00"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8476867,
+      "fullName": "Brendan Gaunce",
+      "link": "/api/v1/people/8476867",
+      "firstName": "Brendan",
+      "lastName": "Gaunce",
+      "primaryNumber": "16",
+      "birthDate": "1994-03-25",
+      "currentAge": 28,
+      "birthCity": "Sudbury",
+      "birthStateProvince": "ON",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 3\"",
+      "weight": 219,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "52:19",
+                "assists": 1,
+                "goals": 0,
+                "pim": 2,
+                "shots": 9,
+                "games": 5,
+                "hits": 4,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "01:12",
+                "evenTimeOnIce": "50:41",
+                "penaltyMinutes": "2",
+                "faceOffPct": 58.93,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:26",
+                "blocked": 2,
+                "plusMinus": -1,
+                "points": 1,
+                "shifts": 75,
+                "timeOnIcePerGame": "10:27",
+                "evenTimeOnIcePerGame": "10:08",
+                "shortHandedTimeOnIcePerGame": "00:05",
+                "powerPlayTimeOnIcePerGame": "00:14"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8479945,
+      "fullName": "Gavin Bayreuther",
+      "link": "/api/v1/people/8479945",
+      "firstName": "Gavin",
+      "lastName": "Bayreuther",
+      "primaryNumber": "15",
+      "birthDate": "1994-05-12",
+      "currentAge": 28,
+      "birthCity": "Canaan",
+      "birthStateProvince": "NH",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 1\"",
+      "weight": 196,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "78:29",
+                "assists": 1,
+                "goals": 0,
+                "pim": 0,
+                "shots": 4,
+                "games": 5,
+                "hits": 5,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:00",
+                "evenTimeOnIce": "75:05",
+                "penaltyMinutes": "0",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "03:24",
+                "blocked": 8,
+                "plusMinus": -1,
+                "points": 1,
+                "shifts": 103,
+                "timeOnIcePerGame": "15:41",
+                "evenTimeOnIcePerGame": "15:01",
+                "shortHandedTimeOnIcePerGame": "00:40",
+                "powerPlayTimeOnIcePerGame": "00:00"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480193,
+      "fullName": "Daniil Tarasov",
+      "link": "/api/v1/people/8480193",
+      "firstName": "Daniil",
+      "lastName": "Tarasov",
+      "primaryNumber": "40",
+      "birthDate": "1999-03-27",
+      "currentAge": 23,
+      "birthCity": "Novokuznetsk",
+      "birthCountry": "RUS",
+      "nationality": "RUS",
+      "height": "6' 5\"",
+      "weight": 196,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "G",
+        "name": "Goalie",
+        "type": "Goalie",
+        "abbreviation": "G"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "295:07",
+                "ot": 0,
+                "shutouts": 0,
+                "ties": 0,
+                "wins": 2,
+                "losses": 3,
+                "saves": 164,
+                "powerPlaySaves": 19,
+                "shortHandedSaves": 1,
+                "evenSaves": 144,
+                "shortHandedShots": 1,
+                "evenShots": 157,
+                "powerPlayShots": 23,
+                "savePercentage": 0.906077,
+                "goalAgainstAverage": 3.45626,
+                "games": 6,
+                "gamesStarted": 5,
+                "shotsAgainst": 181,
+                "goalsAgainst": 17,
+                "timeOnIcePerGame": "49:11",
+                "powerPlaySavePercentage": 82.6086956521739,
+                "shortHandedSavePercentage": 100,
+                "evenStrengthSavePercentage": 91.71974522292994
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8476914,
+      "fullName": "Joonas Korpisalo",
+      "link": "/api/v1/people/8476914",
+      "firstName": "Joonas",
+      "lastName": "Korpisalo",
+      "primaryNumber": "70",
+      "birthDate": "1994-04-28",
+      "currentAge": 28,
+      "birthCity": "Pori",
+      "birthCountry": "FIN",
+      "nationality": "FIN",
+      "height": "6' 3\"",
+      "weight": 193,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "G",
+        "name": "Goalie",
+        "type": "Goalie",
+        "abbreviation": "G"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "331:28",
+                "ot": 1,
+                "shutouts": 0,
+                "ties": 0,
+                "wins": 3,
+                "losses": 2,
+                "saves": 201,
+                "powerPlaySaves": 17,
+                "shortHandedSaves": 4,
+                "evenSaves": 180,
+                "shortHandedShots": 4,
+                "evenShots": 199,
+                "powerPlayShots": 21,
+                "savePercentage": 0.897321,
+                "goalAgainstAverage": 4.163315,
+                "games": 6,
+                "gamesStarted": 5,
+                "shotsAgainst": 224,
+                "goalsAgainst": 23,
+                "timeOnIcePerGame": "55:14",
+                "powerPlaySavePercentage": 80.95238095238095,
+                "shortHandedSavePercentage": 100,
+                "evenStrengthSavePercentage": 90.45226130653266
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8478458,
+      "fullName": "Jack Roslovic",
+      "link": "/api/v1/people/8478458",
+      "firstName": "Jack",
+      "lastName": "Roslovic",
+      "primaryNumber": "96",
+      "birthDate": "1997-01-29",
+      "currentAge": 25,
+      "birthCity": "Columbus",
+      "birthStateProvince": "OH",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 1\"",
+      "weight": 200,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "245:18",
+                "assists": 5,
+                "goals": 1,
+                "pim": 0,
+                "shots": 24,
+                "games": 15,
+                "hits": 12,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "31:38",
+                "evenTimeOnIce": "187:02",
+                "penaltyMinutes": "0",
+                "faceOffPct": 51.61,
+                "shotPct": 4.2,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 1,
+                "shortHandedPoints": 1,
+                "shortHandedTimeOnIce": "26:38",
+                "blocked": 13,
+                "plusMinus": -6,
+                "points": 6,
+                "shifts": 311,
+                "timeOnIcePerGame": "16:21",
+                "evenTimeOnIcePerGame": "12:28",
+                "shortHandedTimeOnIcePerGame": "01:46",
+                "powerPlayTimeOnIcePerGame": "02:06"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480205,
+      "fullName": "Emil Bemstrom",
+      "link": "/api/v1/people/8480205",
+      "firstName": "Emil",
+      "lastName": "Bemstrom",
+      "primaryNumber": "52",
+      "birthDate": "1999-06-01",
+      "currentAge": 23,
+      "birthCity": "Nykoping",
+      "birthCountry": "SWE",
+      "nationality": "SWE",
+      "height": "6' 0\"",
+      "weight": 195,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "78:28",
+                "assists": 2,
+                "goals": 2,
+                "pim": 0,
+                "shots": 15,
+                "games": 6,
+                "hits": 4,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "08:24",
+                "evenTimeOnIce": "70:04",
+                "penaltyMinutes": "0",
+                "faceOffPct": 33.33,
+                "shotPct": 13.3,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:00",
+                "blocked": 1,
+                "plusMinus": 1,
+                "points": 4,
+                "shifts": 99,
+                "timeOnIcePerGame": "13:04",
+                "evenTimeOnIcePerGame": "11:40",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "01:24"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480441,
+      "fullName": "Trey Fix-Wolansky",
+      "link": "/api/v1/people/8480441",
+      "firstName": "Trey",
+      "lastName": "Fix-Wolansky",
+      "primaryNumber": "64",
+      "birthDate": "1999-05-26",
+      "currentAge": 23,
+      "birthCity": "Edmonton",
+      "birthStateProvince": "AB",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "5' 7\"",
+      "weight": 191,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "12:08",
+                "assists": 0,
+                "goals": 0,
+                "pim": 0,
+                "shots": 2,
+                "games": 1,
+                "hits": 2,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:00",
+                "evenTimeOnIce": "12:08",
+                "penaltyMinutes": "0",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:00",
+                "blocked": 1,
+                "plusMinus": 1,
+                "points": 0,
+                "shifts": 12,
+                "timeOnIcePerGame": "12:08",
+                "evenTimeOnIcePerGame": "12:08",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "00:00"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480762,
+      "fullName": "Eric Robinson",
+      "link": "/api/v1/people/8480762",
+      "firstName": "Eric",
+      "lastName": "Robinson",
+      "primaryNumber": "50",
+      "birthDate": "1995-06-14",
+      "currentAge": 27,
+      "birthCity": "Bellmawr",
+      "birthStateProvince": "NJ",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 2\"",
+      "weight": 205,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "L",
+        "name": "Left Wing",
+        "type": "Forward",
+        "abbreviation": "LW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "227:53",
+                "assists": 5,
+                "goals": 2,
+                "pim": 2,
+                "shots": 14,
+                "games": 17,
+                "hits": 28,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:23",
+                "evenTimeOnIce": "194:21",
+                "penaltyMinutes": "2",
+                "faceOffPct": 0,
+                "shotPct": 14.3,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 1,
+                "shortHandedTimeOnIce": "33:09",
+                "blocked": 8,
+                "plusMinus": -3,
+                "points": 7,
+                "shifts": 317,
+                "timeOnIcePerGame": "13:24",
+                "evenTimeOnIcePerGame": "11:25",
+                "shortHandedTimeOnIcePerGame": "01:57",
+                "powerPlayTimeOnIcePerGame": "00:01"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8480853,
+      "fullName": "Liam Foudy",
+      "link": "/api/v1/people/8480853",
+      "firstName": "Liam",
+      "lastName": "Foudy",
+      "primaryNumber": "19",
+      "birthDate": "2000-02-04",
+      "currentAge": 22,
+      "birthCity": "Scarborough",
+      "birthStateProvince": "ON",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 2\"",
+      "weight": 188,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "111:37",
+                "assists": 3,
+                "goals": 0,
+                "pim": 2,
+                "shots": 7,
+                "games": 10,
+                "hits": 4,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 0,
+                "powerPlayTimeOnIce": "00:02",
+                "evenTimeOnIce": "105:36",
+                "penaltyMinutes": "2",
+                "faceOffPct": 0,
+                "shotPct": 0,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "05:59",
+                "blocked": 1,
+                "plusMinus": -6,
+                "points": 3,
+                "shifts": 155,
+                "timeOnIcePerGame": "11:09",
+                "evenTimeOnIcePerGame": "10:33",
+                "shortHandedTimeOnIcePerGame": "00:35",
+                "powerPlayTimeOnIcePerGame": "00:00"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8482475,
+      "fullName": "Yegor Chinakhov",
+      "link": "/api/v1/people/8482475",
+      "firstName": "Yegor",
+      "lastName": "Chinakhov",
+      "primaryNumber": "59",
+      "birthDate": "2001-02-01",
+      "currentAge": 21,
+      "birthCity": "Omsk",
+      "birthCountry": "RUS",
+      "nationality": "RUS",
+      "height": "6' 1\"",
+      "weight": 204,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "R",
+        "name": "Right Wing",
+        "type": "Forward",
+        "abbreviation": "RW"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "237:15",
+                "assists": 7,
+                "goals": 3,
+                "pim": 4,
+                "shots": 24,
+                "games": 18,
+                "hits": 23,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "19:58",
+                "evenTimeOnIce": "217:17",
+                "penaltyMinutes": "4",
+                "faceOffPct": 33.33,
+                "shotPct": 12.5,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:00",
+                "blocked": 8,
+                "plusMinus": -6,
+                "points": 10,
+                "shifts": 317,
+                "timeOnIcePerGame": "13:10",
+                "evenTimeOnIcePerGame": "12:04",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "01:06"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8482399,
+      "fullName": "Billy Sweezey",
+      "link": "/api/v1/people/8482399",
+      "firstName": "Billy",
+      "lastName": "Sweezey",
+      "primaryNumber": "6",
+      "birthDate": "1996-02-06",
+      "currentAge": 26,
+      "birthCity": "Hanson",
+      "birthStateProvince": "MA",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 1\"",
+      "weight": 206,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": []
+        }
+      ]
+    },
+    {
+      "id": 8482660,
+      "fullName": "Kent Johnson",
+      "link": "/api/v1/people/8482660",
+      "firstName": "Kent",
+      "lastName": "Johnson",
+      "primaryNumber": "91",
+      "birthDate": "2002-10-18",
+      "currentAge": 20,
+      "birthCity": "Port Moody",
+      "birthStateProvince": "BC",
+      "birthCountry": "CAN",
+      "nationality": "CAN",
+      "height": "6' 0\"",
+      "weight": 175,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "189:51",
+                "assists": 5,
+                "goals": 4,
+                "pim": 2,
+                "shots": 18,
+                "games": 15,
+                "hits": 4,
+                "powerPlayGoals": 1,
+                "powerPlayPoints": 2,
+                "powerPlayTimeOnIce": "21:47",
+                "evenTimeOnIce": "167:50",
+                "penaltyMinutes": "2",
+                "faceOffPct": 0,
+                "shotPct": 22.2,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "00:14",
+                "blocked": 6,
+                "plusMinus": -3,
+                "points": 9,
+                "shifts": 242,
+                "timeOnIcePerGame": "12:39",
+                "evenTimeOnIcePerGame": "11:11",
+                "shortHandedTimeOnIcePerGame": "00:00",
+                "powerPlayTimeOnIcePerGame": "01:27"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8482705,
+      "fullName": "Cole Sillinger",
+      "link": "/api/v1/people/8482705",
+      "firstName": "Cole",
+      "lastName": "Sillinger",
+      "primaryNumber": "34",
+      "birthDate": "2003-05-16",
+      "currentAge": 19,
+      "birthCity": "Columbus",
+      "birthStateProvince": "OH",
+      "birthCountry": "USA",
+      "nationality": "USA",
+      "height": "6' 1\"",
+      "weight": 201,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": false,
+      "shootsCatches": "L",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "C",
+        "name": "Center",
+        "type": "Forward",
+        "abbreviation": "C"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "240:48",
+                "assists": 3,
+                "goals": 2,
+                "pim": 8,
+                "shots": 31,
+                "games": 18,
+                "hits": 28,
+                "powerPlayGoals": 1,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "12:57",
+                "evenTimeOnIce": "221:06",
+                "penaltyMinutes": "8",
+                "faceOffPct": 46.19,
+                "shotPct": 6.5,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "06:45",
+                "blocked": 5,
+                "plusMinus": -3,
+                "points": 5,
+                "shifts": 328,
+                "timeOnIcePerGame": "13:22",
+                "evenTimeOnIcePerGame": "12:17",
+                "shortHandedTimeOnIcePerGame": "00:22",
+                "powerPlayTimeOnIcePerGame": "00:43"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8483620,
+      "fullName": "Marcus Bjork",
+      "link": "/api/v1/people/8483620",
+      "firstName": "Marcus",
+      "lastName": "Bjork",
+      "primaryNumber": "47",
+      "birthDate": "1997-11-24",
+      "currentAge": 24,
+      "birthCity": "Umea",
+      "birthCountry": "SWE",
+      "nationality": "SWE",
+      "height": "6' 4\"",
+      "weight": 211,
+      "active": true,
+      "alternateCaptain": false,
+      "captain": false,
+      "rookie": true,
+      "shootsCatches": "R",
+      "rosterStatus": "Y",
+      "currentTeam": {
+        "id": 29,
+        "name": "Columbus Blue Jackets",
+        "link": "/api/v1/teams/29"
+      },
+      "primaryPosition": {
+        "code": "D",
+        "name": "Defenseman",
+        "type": "Defenseman",
+        "abbreviation": "D"
+      },
+      "stats": [
+        {
+          "type": {
+            "displayName": "statsSingleSeason",
+            "gameType": {
+              "id": "R",
+              "description": "Regular season",
+              "postseason": false
+            }
+          },
+          "splits": [
+            {
+              "season": "20222023",
+              "stat": {
+                "timeOnIce": "92:12",
+                "assists": 2,
+                "goals": 1,
+                "pim": 4,
+                "shots": 7,
+                "games": 5,
+                "hits": 7,
+                "powerPlayGoals": 0,
+                "powerPlayPoints": 1,
+                "powerPlayTimeOnIce": "04:59",
+                "evenTimeOnIce": "86:01",
+                "penaltyMinutes": "4",
+                "faceOffPct": 0,
+                "shotPct": 14.3,
+                "gameWinningGoals": 0,
+                "overTimeGoals": 0,
+                "shortHandedGoals": 0,
+                "shortHandedPoints": 0,
+                "shortHandedTimeOnIce": "01:12",
+                "blocked": 8,
+                "plusMinus": 1,
+                "points": 3,
+                "shifts": 127,
+                "timeOnIcePerGame": "18:26",
+                "evenTimeOnIcePerGame": "17:12",
+                "shortHandedTimeOnIcePerGame": "00:14",
+                "powerPlayTimeOnIcePerGame": "00:59"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

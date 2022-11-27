@@ -16,6 +16,9 @@ export default function PlayerInfoModal({
   flagCode,
   defaultStat,
   hasStats,
+  currentSelectedPlayer,
+  playerInfoModalID, 
+  getPlayers
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -45,11 +48,19 @@ export default function PlayerInfoModal({
   useEffect(() => {
     if (hasStats === true) {
       console.log("hasStats: " + hasStats);
-      setCurrentStats(() => {
-        localCurrentPlayer[0].stats[0].splits[0].stat;
-      });
-      console.log(currentStats);
+      console.log(playerStats)
+    
+      // console.log(playerStats.games)
+      // console.log(currentSelectedPlayer)
+      // console.log(currentSelectedPlayer.stats[0].splits[0].stat.games)
+      // setCurrentStats(() => {
+      //   localCurrentPlayer[0].stats[0].splits[0].stat;
+      // });
+      // console.log(currentStats);
+    } else {
+      console.log(currentSelectedPlayer)
     }
+    console.log(defaultStat)
   }, []);
 
   // const [playerStats, setPlayerStats] = useState({
@@ -106,6 +117,8 @@ export default function PlayerInfoModal({
 
   useEffect(() => {
     console.log(...localCurrentPlayer);
+    console.log(playerStats.goals)
+    // getPlayers(playerInfoModalID)
     // console.log(playerStats.games);
     // console.log(defaultStat.games)
   }, [localCurrentPlayer]);
@@ -169,19 +182,19 @@ export default function PlayerInfoModal({
           <div className="player-profile-info">
             <ul className="info-list">
               <li>
-                Position: <span>{info.primaryPosition.name}</span>
+                Position: <span className='space-span'>{info.primaryPosition.name}</span>
               </li>
               <li>
-                Height: <span>{info.height}</span>
+                Height: <span className='space-span'>{info.height}</span>
               </li>
               <li>
-                Weight: <span>{info.weight}lbs</span>
+                Weight: <span className='space-span'>{info.weight}lbs</span>
               </li>
               <li>
-                Shoots: <span>{info.shootsCatches}</span>
+                Shoots: <span className='space-span'>{info.shootsCatches}</span>
               </li>
               <li>
-                Age: <span>{info.currentAge}</span>
+                Age: <span className='space-span'>{info.currentAge}</span>
               </li>
               <li>
                 Nationality:{" "}
@@ -202,43 +215,43 @@ export default function PlayerInfoModal({
             <ul className="stats-list">
               <h1 className="stats-label">Stats</h1>
               <li>
-                Games: <span>{playerStats.games}</span>
+                Games: <span className='space-span'>{playerStats.games}</span>
               </li>
               <li>
-                Goals: <span>{playerStats.goals}</span>
+                Goals: <span className='space-span'>{playerStats.goals}</span>
               </li>
               <li>
-                Assists: <span>{playerStats.assists}</span>
+                Assists: <span className='space-span'>{playerStats.assists}</span>
               </li>
               <li>
-                Points: <span>{playerStats.points}</span>
+                Points: <span className='space-span'>{playerStats.points}</span>
               </li>
               <li>
-                PP Goals: <span>{playerStats.powerPlayGoals}</span>
+                PP Goals: <span className='space-span'>{playerStats.powerPlayGoals}</span>
               </li>
               <li>
-                PP Points: <span>{playerStats.powerPlayPoints}</span>
+                PP Points: <span className='space-span'>{playerStats.powerPlayPoints}</span>
               </li>
               <li>
-                PIM: <span>{playerStats.penaltyMinutes}</span>
+                PIM: <span className='space-span'>{playerStats.penaltyMinutes}</span>
               </li>
               <li>
-                Plus/Minus: <span>{playerStats.plusMinus}</span>
+                Plus/Minus: <span className='space-span'>{playerStats.plusMinus}</span>
               </li>
               <li>
-                Shots: <span>{playerStats.shots}</span>
+                Shots: <span className='space-span'>{playerStats.shots}</span>
               </li>
               <li>
-                Hits: <span>{playerStats.hits}</span>
+                Hits: <span className='space-span'>{playerStats.hits}</span>
               </li>
               <li>
-                Faceoffs: <span>{playerStats.faceOffPct}%</span>
+                Faceoffs: <span className='space-span'>{playerStats.faceOffPct}%</span>
               </li>
               <li>
-                Blocks Shots: <span>{playerStats.blocked}</span>
+                Blocks Shots: <span className='space-span'>{playerStats.blocked}</span>
               </li>
               <li>
-                Average TOI: <span>{playerStats.timeOnIcePerGame}</span>
+                Average TOI: <span className='space-span'>{playerStats.timeOnIcePerGame}</span>
               </li>
             </ul>
           </div>

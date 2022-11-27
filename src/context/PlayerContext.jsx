@@ -10,6 +10,7 @@ export function usePlayers() {
 
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
+  const [dbData, setDB] = useState();
   const [xtraPlayers, setXtraPlayers] = useState([]);
   const defaultCurrentPlayer = {
     id: 0,
@@ -43,6 +44,28 @@ export const PlayerProvider = ({ children }) => {
       },
     },
   };
+
+  const defaultStat = {
+      splits: {
+        stat: {
+          games: 0,
+          goals: 0,
+          assets: 0,
+          points: 0,
+          powerPlayerGoals: 0,
+          powerPlayPoints: 0,
+          penaltyMinutes: 0,
+          plusMinus: 0,
+          shots: 0,
+          hits: 0,
+          faceOffPct: 0,
+          blocked: 0,
+          timeOnIcePerGame: 0,
+        },
+      },
+  }
+
+  const API_URL = "http://localhost:3500/players";
   
 
   // const [isSet, setIsSet] = useState(false);
@@ -117,7 +140,13 @@ export const PlayerProvider = ({ children }) => {
   );
 
   function getPlayers(id) {
-    console.log( players.filter((p) => p.id === id))
+   const currentPlayer = (players.filter((p) => p.id === id))
+   if(currentPlayer[0].stats[0].splits[0] === undefined) {
+    console.log('stats length 0')
+    console.log(currentPlayer[0].fullName)
+    setCurrentPlayer(currentPlayer[0])
+   }
+   console.log(currentPlayer[0].stats[0].splits[0])
   }
 
   function addCurrentPlayer(player) {
@@ -130,6 +159,19 @@ export const PlayerProvider = ({ children }) => {
     return [player];
   }
 
+  // function postAllPlayerData (data) {
+  //   setDB(data);
+  //   return [data]
+  // }
+
+  const postAllPlayerData = (data) => {
+      data.map((p) => {
+        axios.post(API_URL, p);
+      });
+      return [data]
+    }
+
+
   return (
     <PlayerContext.Provider
       value={{
@@ -137,8 +179,11 @@ export const PlayerProvider = ({ children }) => {
         getPlayers,
         // addForward,
         addPlayers,
+        postAllPlayerData,
+        dbData,
         addCurrentPlayer,
         localCurrentPlayer,
+        getPlayers
         // getXtraPlayer,
         // xtraPlayers,
         // isSet

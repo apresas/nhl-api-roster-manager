@@ -7,6 +7,7 @@ import { Container, Stack } from "react-bootstrap";
 import { usePlayers } from "./context/PlayerContext";
 import CBJLogo from "./img/cbj_logo.svg";
 import { AnimatePresence } from "framer-motion";
+import apiRequest from "./utils/apiRequest";
 
 function App() {
   const {
@@ -14,39 +15,39 @@ function App() {
     localCurrentPlayer,
     addPlayers,
     players,
-    getXtraPlayer,
-    xtraPlayers,
-    isSet
-
+    getPlayers
   } = usePlayers();
+
+  const API_URL = "http://localhost:3500/players";
+
+  const [playerItems, setPlayerItems] = useState([]);
 
   //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
   const [showGoalieInfoModal, setShowGoalieInfoModal] = useState(false);
-  const close = () => setShowPlayerInfoModal(false);
-  const open = () => setShowPlayerInfoModal(true)
 
-  const [viewPlayerInfoModalID, setPlayerInfoModalID] = useState();
+  const [currentSelectedPlayer, setCurrentSelectedPlayer] = useState([{}]);
+
+  const [playerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
   const [hasStats, setHasStats] = useState(true);
-  const [defaultStat, setDefaultStat] = useState({
-    
-        games: 0,
-        goals: 0,
-        assets: 0,
-        points: 0,
-        powerPlayerGoals: 0,
-        powerPlayPoints: 0,
-        penaltyMinutes: 0,
-        plusMinus: 0,
-        shots: 0,
-        hits: 0,
-        faceOffPct: 0,
-        blocked: 0,
-        timeOnIcePerGame: 0,
-      });
+  const [defaultStat, setDefaultStat] = useState({season:'NA', stat:{
+    games: 0,
+    goals: 0,
+    assets: 0,
+    points: 0,
+    powerPlayerGoals: 0,
+    powerPlayPoints: 0,
+    penaltyMinutes: 0,
+    plusMinus: 0,
+    shots: 0,
+    hits: 0,
+    faceOffPct: 0,
+    blocked: 0,
+    timeOnIcePerGame: 0,
+  }});
 
-  const [noStats, setNoStats] = useState(); 
+  const [noStats, setNoStats] = useState();
 
   // ROSTERDATA ROSTERURL USESTATES
   const [rosterData, setRosterData] = useState([]);
@@ -90,12 +91,28 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
+    // rosterData.map(p => {
+    //   axios.post(API_URL, p)
+    // })
   }, [rosterData]);
 
+  useEffect(() => {
+    setPlayerItems(rosterData);
+  }, [players]);
+
   // useEffect(() => {
-  //   getXtraPlayer();
-  //   console.log(xtraPlayers)
-  // }, [])
+  //   const getPlayerItems = async () => {
+  //     const reponse = await axios.get(API_URL);
+  //     const playerDataItem = await reponse.data;
+  //     console.log(playerDataItem);
+  //     setPlayerItems(playerDataItem);
+  //   };
+  //   getPlayerItems();
+  // }, []);
+
+  useEffect(() => {
+    // postAllPlayerData(rosterData);
+  }, [playerItems]);
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
@@ -103,15 +120,27 @@ function App() {
     return formatted;
   }
 
+
   // MODAL CONTROLS
   function openPlayerInfoModal(playerID) {
     setPlayerInfoModalID(playerID);
+    // console.log(playerItems);
 
     const selectedPlayer = rosterData.filter((p) => p.id === playerID);
 
+    setCurrentSelectedPlayer(...selectedPlayer);
+
+    if (selectedPlayer[0].stats[0].splits[0] === undefined) {
+      console.log("no stats avalible");
+      console.log(selectedPlayer[0])
+      selectedPlayer[0].stats[0].splits.push(defaultStat)
+      setHasStats(false);
+      addCurrentPlayer(selectedPlayer)
+    } else {
+
     if (!selectedPlayer[0].primaryPosition.code.includes("G")) {
       setShowPlayerInfoModal(true);
-      console.log(showPlayerInfoModal)
+      // console.log(showPlayerInfoModal);
     } else {
       setShowGoalieInfoModal(true);
     }
@@ -122,57 +151,6 @@ function App() {
       setInjuryStatus("player-modal-injury-icon");
     }
 
-    if (selectedPlayer[0].stats[0].splits[0] === undefined) {
-      console.log('no stats avalible')
-      setHasStats(false)
-   } 
-    //   console.log(selectedPlayer[0].stats[0].splits)
-
-      
-      // const statArray = selectedPlayer[0].stats[0].splits
-
-      // const statArray = []
-
-      // const defaultStat = 
-      //   {
-      //       games: 0,
-      //       goals: 0,
-      //       assets: 0,
-      //       points: 0,
-      //       powerPlayerGoals: 0,
-      //       powerPlayPoints: 0,
-      //       penaltyMinutes: 0,
-      //       plusMinus: 0,
-      //       shots: 0,
-      //       hits: 0,
-      //       faceOffPct: 0,
-      //       blocked: 0,
-      //       timeOnIcePerGame: 0,
-      //     }
-
-      //     statArray.push(defaultStat);
-      //     console.log(statArray);
-
-//           stat.push(defaultStat)
-      
-
-// console.log(statArray);
-
-        // stat.push(defaultStat);
-
-        // statArray.concat(stat);
-        
-    // ]
-        // setDefaultStat((state) => {
-        //   state = [...state, ...stat]
-        //   return s
-        // });
-        // console.log(defaultStat)
-        // statArray.push(defaultStat);
-        // console.log(selectedPlayer);
-        // console.log(statArray)
-        // statArray.push(defaultStat);
-      // }
 
 
     const countryCode = selectedPlayer[0].nationality;
@@ -187,6 +165,7 @@ function App() {
     }
 
     addCurrentPlayer(selectedPlayer);
+  }
   }
 
   function closePlayerInfoModal() {
@@ -206,7 +185,7 @@ function App() {
             <h2 className="player-list-year">
               2022<span>-</span>2023
             </h2>
-            <img className='cbj-logo' src={CBJLogo} alt="CBJ Logo"></img>
+            <img className="cbj-logo" src={CBJLogo} alt="CBJ Logo"></img>
           </header>
           <h1 className="player-list-type-title">Forwards</h1>
           <section className="player-list forward-list">
@@ -280,7 +259,6 @@ function App() {
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
                     rosterStatus={goalie.rosterStatus}
-
                   />
                 </li>
               ))}
@@ -303,7 +281,6 @@ function App() {
                     shoots={goalie.shootsCatches}
                     stats={goalie.stats.splits}
                     rosterStatus={goalie.rosterStatus}
-
                   />
                 </li>
               ))}
@@ -311,28 +288,35 @@ function App() {
         </Stack>
       </Container>
       <AnimatePresence>
-      {showPlayerInfoModal && <PlayerInfoModal
-        show={showPlayerInfoModal}
-        handleClick={() => setShowPlayerInfoModal(false)}
-        handelClose={closePlayerInfoModal}
-        localCurrentPlayer={localCurrentPlayer}
-        injuryStatus={injuryStatus}
-        flagCode={flagCode}
-        defaultStat={defaultStat}
-        hasStats={hasStats}
-      />}
+        {showPlayerInfoModal && (
+          <PlayerInfoModal
+            show={showPlayerInfoModal}
+            handleClick={() => setShowPlayerInfoModal(false)}
+            handelClose={closePlayerInfoModal}
+            localCurrentPlayer={localCurrentPlayer}
+            injuryStatus={injuryStatus}
+            flagCode={flagCode}
+            defaultStat={defaultStat}
+            hasStats={hasStats}
+            currentSelectedPlayer={currentSelectedPlayer}
+            playerInfoModalID={playerInfoModalID}
+            getPlayers={getPlayers}
+          />
+        )}
       </AnimatePresence>
       <AnimatePresence>
-      {showGoalieInfoModal && <GoalieInfoModal
-        show={showGoalieInfoModal}
-        handleClick={() => setShowPlayerInfoModal(false)}
-        handelClose={closeGoalieInfoModal}
-        localCurrentPlayer={localCurrentPlayer}
-        injuryStatus={injuryStatus}
-        flagCode={flagCode}
-        defaultStat={defaultStat}
-        hasStats={hasStats}
-      />}
+        {showGoalieInfoModal && (
+          <GoalieInfoModal
+            show={showGoalieInfoModal}
+            handleClick={() => setShowPlayerInfoModal(false)}
+            handelClose={closeGoalieInfoModal}
+            localCurrentPlayer={localCurrentPlayer}
+            injuryStatus={injuryStatus}
+            flagCode={flagCode}
+            defaultStat={defaultStat}
+            hasStats={hasStats}
+          />
+        )}
       </AnimatePresence>
     </>
   );
