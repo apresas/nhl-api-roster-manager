@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./PlayerInfoModal.css";
-import Modal from "react-bootstrap/Modal";
 import { motion } from 'framer-motion'
 import ModalBackDrop from "../Backdrop/ModalBackDrop";
 import playerItems from "../../data/player.json";
@@ -11,13 +10,50 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 export default function PlayerInfoModal({
   handelClose,
   show,
-  handelClick,
   localCurrentPlayer,
   flagCode,
   injuryStatus,
+  hasStats
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
+
+  const [goalieStats, setGoalieStats] = useState({
+    games: 0,
+    gamesStarted: 0,
+    wins: 0,
+    losses: 0,
+    ot: 0,
+    shutouts: 0,
+    savePercentage: 0,
+    goalAgainstAverage: 0,
+    shotsAgainst: 0,
+    goalsAgainst: 0,
+    evenStrengthSavePercentage: 0,
+    powerPlaySavePercentage: 0,
+    shortHandedSavePercentage: 0,
+  });
+
+  useEffect(() => {
+    if (hasStats === true) {
+      setGoalieStats({
+        games: localCurrentPlayer[0].stats[0].splits[0].stat.games,
+        gamesStarted: localCurrentPlayer[0].stats[0].splits[0].stat.gamesStarted,
+        wins: localCurrentPlayer[0].stats[0].splits[0].stat.wins,
+        losses: localCurrentPlayer[0].stats[0].splits[0].stat.losses,
+        ot: localCurrentPlayer[0].stats[0].splits[0].stat.ot,
+        shutouts: localCurrentPlayer[0].stats[0].splits[0].stat.shutouts,
+        savePercentage: localCurrentPlayer[0].stats[0].splits[0].stat.savePercentage,
+        goalAgainstAverage: localCurrentPlayer[0].stats[0].splits[0].stat.goalAgainstAverage,
+        shotsAgainst: localCurrentPlayer[0].stats[0].splits[0].stat.shotsAgainst,
+        goalsAgainst: localCurrentPlayer[0].stats[0].splits[0].stat.goalsAgainst,
+        evenStrengthSavePercentage: localCurrentPlayer[0].stats[0].splits[0].stat.evenStrengthSavePercentage,
+        powerPlaySavePercentage: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlaySavePercentage,
+        shortHandedSavePercentage: localCurrentPlayer[0].stats[0].splits[0].stat.shortHandedSavePercentage,
+      });
+      // console.log(playerStats);
+    }
+  }, []);
 
 
   const info = localCurrentPlayer[0];
@@ -111,48 +147,48 @@ export default function PlayerInfoModal({
           <ul className="stats-list">
             <h1 className="stats-label">Stats</h1>
             <li>
-              Games: <span>{info.stats[0].splits[0].stat.games}</span>
+              Games: <span>{goalieStats.games}</span>
             </li>
             <li>
               Games Started:{" "}
-              <span>{info.stats[0].splits[0].stat.gamesStarted}</span>
+              <span>{goalieStats.gamesStarted}</span>
             </li>
             <li>
               Record:{" "}
               <span>
-                {info.stats[0].splits[0].stat.wins} -{" "}
-                {info.stats[0].splits[0].stat.losses} -{" "}
-                {info.stats[0].splits[0].stat.ot}{" "}
+                {goalieStats.wins} -{" "}
+                {goalieStats.losses} -{" "}
+                {goalieStats.ot}{" "}
               </span>
             </li>
             <li>
-              Shutouts: <span>{info.stats[0].splits[0].stat.shutouts}</span>
+              Shutouts: <span>{goalieStats.shutouts}</span>
             </li>
             <li>
               Save %:{" "}
               <span>
-                {percentFormatter(info.stats[0].splits[0].stat.savePercentage)}%
+                {percentFormatter(goalieStats.savePercentage)}%
               </span>
             </li>
             <li>
               GAA:{" "}
               <span>
                 {percentFormatter(
-                  info.stats[0].splits[0].stat.goalAgainstAverage
+                  goalieStats.goalAgainstAverage
                 )}
               </span>
             </li>
             <li>
-              SA: <span>{info.stats[0].splits[0].stat.shotsAgainst}</span>
+              SA: <span>{goalieStats.shotsAgainst}</span>
             </li>
             <li>
-              GA: <span>{info.stats[0].splits[0].stat.goalsAgainst}</span>
+              GA: <span>{goalieStats.goalsAgainst}</span>
             </li>
             <li>
               EV Save %:{" "}
               <span>
                 {percentFormatter(
-                  info.stats[0].splits[0].stat.evenStrengthSavePercentage
+                  goalieStats.evenStrengthSavePercentage
                 )}
                 %
               </span>
@@ -161,7 +197,7 @@ export default function PlayerInfoModal({
               PP Save %:{" "}
               <span>
                 {percentFormatter(
-                  info.stats[0].splits[0].stat.powerPlaySavePercentage
+                  goalieStats.powerPlaySavePercentage
                 )}
                 %
               </span>
@@ -170,7 +206,7 @@ export default function PlayerInfoModal({
               PK Save %:{" "}
               <span>
                 {percentFormatter(
-                  info.stats[0].splits[0].stat.shortHandedSavePercentage
+                  goalieStats.shortHandedSavePercentage
                 )}
                 %
               </span>

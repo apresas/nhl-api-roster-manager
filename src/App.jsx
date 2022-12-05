@@ -14,7 +14,9 @@ function App() {
     addCurrentPlayer,
     localCurrentPlayer,
     addPlayers,
+    addPlayerList,
     players,
+    playerList,
     getPlayers
   } = usePlayers();
 
@@ -91,6 +93,7 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
+    addPlayerList(rosterData);
     // rosterData.map(p => {
     //   axios.post(API_URL, p)
     // })
@@ -110,9 +113,19 @@ function App() {
   //   getPlayerItems();
   // }, []);
 
-  useEffect(() => {
-    // postAllPlayerData(rosterData);
-  }, [playerItems]);
+  // useEffect(() => {
+  //   console.log(playerList)
+  //   // getPlayers(8476374);
+  // }, [playerItems]);
+
+  // useEffect(() => {
+  //   const noStats = players.filter(player => player.stats[0].splits[0] === undefined)
+  //   const noStatsID = noStats[0].id
+  //   getPlayers(noStatsID)
+  //   noStats[0].stats[0].splits.push(defaultStat)
+  //   addCurrentPlayer(noStats)
+  //   console.log(noStats)
+  // }, [])
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
@@ -124,7 +137,6 @@ function App() {
   // MODAL CONTROLS
   function openPlayerInfoModal(playerID) {
     setPlayerInfoModalID(playerID);
-    // console.log(playerItems);
 
     const selectedPlayer = rosterData.filter((p) => p.id === playerID);
 
@@ -132,15 +144,14 @@ function App() {
 
     if (selectedPlayer[0].stats[0].splits[0] === undefined) {
       console.log("no stats avalible");
-      console.log(selectedPlayer[0])
-      selectedPlayer[0].stats[0].splits.push(defaultStat)
       setHasStats(false);
-      addCurrentPlayer(selectedPlayer)
     } else {
+      console.log("stats avalible");
+      setHasStats(true);
+    }
 
     if (!selectedPlayer[0].primaryPosition.code.includes("G")) {
       setShowPlayerInfoModal(true);
-      // console.log(showPlayerInfoModal);
     } else {
       setShowGoalieInfoModal(true);
     }
@@ -165,7 +176,7 @@ function App() {
     }
 
     addCurrentPlayer(selectedPlayer);
-  }
+  
   }
 
   function closePlayerInfoModal() {

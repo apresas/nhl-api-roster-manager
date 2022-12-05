@@ -82,7 +82,7 @@
   {
     "id": 8480893,
     "name": "Kirill Marchenko",
-    "imgURL": "../assets/kirill_marchenko_img2.png"
+    "imgURL": "../assets/kirill_marchenko_img.png"
   },
   {
     "id": 8480074,
@@ -155,9 +155,14 @@
     "imgURL": "../assets/jake_christiansen_img2.png"
   },
   {
-    "id": "8482399",
+    "id": 8482399,
     "name": "Billy Sweezey",
     "imgURL": "../assets/billy_sweezey_img2.png"
+  },
+  {
+    "id": 8481072,
+    "name": "Tim Berni",
+    "imgURL": "../assets/tim_berni_img.png"
   },
   {
     "id": 8476914,

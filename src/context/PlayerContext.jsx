@@ -10,7 +10,7 @@ export function usePlayers() {
 
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
-  const [dbData, setDB] = useState();
+  const [playerList, setPlayerList] = useState();
   const [xtraPlayers, setXtraPlayers] = useState([]);
   const defaultCurrentPlayer = {
     id: 0,
@@ -139,14 +139,24 @@ export const PlayerProvider = ({ children }) => {
     [{ defaultCurrentPlayer }]
   );
 
+  // useEffect(() => {
+  //   const noStats = players.filter(player => player.stats[0].splits[0] === undefined)
+  //   const noStatsID = noStats[0].id
+  //   getPlayers(noStatsID)
+  //   noStats[0].stats[0].splits.push(defaultStat)
+  //   addCurrentPlayer(noStats)
+  //   console.log(noStats)
+  // }, [])
+
   function getPlayers(id) {
    const currentPlayer = (players.filter((p) => p.id === id))
-   if(currentPlayer[0].stats[0].splits[0] === undefined) {
-    console.log('stats length 0')
-    console.log(currentPlayer[0].fullName)
-    setCurrentPlayer(currentPlayer[0])
-   }
-   console.log(currentPlayer[0].stats[0].splits[0])
+  //  if(currentPlayer[0].stats[0].splits[0] === undefined) {
+  //   console.log('stats length 0')
+  //   console.log(currentPlayer[0])
+  //   setCurrentPlayer(currentPlayer[0])
+  //  }
+  //  console.log(currentPlayer[0].stats[0].splits)
+  console.log(currentPlayer)
   }
 
   function addCurrentPlayer(player) {
@@ -156,6 +166,12 @@ export const PlayerProvider = ({ children }) => {
 
   function addPlayers(player) {
     setPlayers(player);
+    return [player];
+  }
+
+  function addPlayerList(player) {
+    setPlayerList(player);
+    // console.info(playerList);
     return [player];
   }
 
@@ -176,14 +192,14 @@ export const PlayerProvider = ({ children }) => {
     <PlayerContext.Provider
       value={{
         players,
+        playerList,
         getPlayers,
-        // addForward,
+        addPlayerList,
         addPlayers,
         postAllPlayerData,
-        dbData,
         addCurrentPlayer,
         localCurrentPlayer,
-        getPlayers
+        // dbData,
         // getXtraPlayer,
         // xtraPlayers,
         // isSet
