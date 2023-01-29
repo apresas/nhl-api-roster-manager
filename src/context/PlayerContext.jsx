@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import axios from "axios";
+import useBodyScrollLock from "../hooks/useBodyScrollLock";
 
 const PlayerContext = React.createContext();
 
@@ -11,7 +12,6 @@ export function usePlayers() {
 export const PlayerProvider = ({ children }) => {
   const [players, setPlayers] = useLocalStorage("players", []);
   const [playerList, setPlayerList] = useState();
-  const [xtraPlayers, setXtraPlayers] = useState([]);
   const defaultCurrentPlayer = {
     id: 0,
     fullName: "default",
@@ -44,119 +44,50 @@ export const PlayerProvider = ({ children }) => {
       },
     },
   };
-
-  const defaultStat = {
-      splits: {
-        stat: {
-          games: 0,
-          goals: 0,
-          assets: 0,
-          points: 0,
-          powerPlayerGoals: 0,
-          powerPlayPoints: 0,
-          penaltyMinutes: 0,
-          plusMinus: 0,
-          shots: 0,
-          hits: 0,
-          faceOffPct: 0,
-          blocked: 0,
-          timeOnIcePerGame: 0,
-        },
-      },
-  }
-
+  const[isLocked,toggle] = useBodyScrollLock();
   const API_URL = "http://localhost:3500/players";
-  
-
-  // const [isSet, setIsSet] = useState(false);
-
-  // const getXtraPlayer = async () => {
-  //   const result = await axios.get("https://statsapi.web.nhl.com/api/v1/people/8481161?hydrate=stats(splits=statsSingleSeason)")
-  //   // xtraPlayers.map(...players, )
-  //   result.data.people[0].rosterStatus = 'Y';
-  //   setXtraPlayers(player => [...player, ...players ])
-
-  //   setIsSet(true)
-  //   setXtraPlayers((prevArray) => [...prevArray, result.data.people[0]])
-  //   // console.log(players)
-
-  //   console.log(xtraPlayers)
-  // }
-
-  // const makeInjuredPlayer= async () => {
-  //   const result = players.filter(p => p.id === 8478460)
-  //   result.rosterStatus = 'I';
-  // }
-  // // JAKE Christiansen
-  // const [jcItem, setJCItem] = useState();
-
-
-  // // Get Jake Christiansen
-  // const getJC = async () => {
-  //   // const jcURL = starterURL.concat('/api/v1/people/8481161').concat(statsURL);
-  //   // // const result = await axios.get(jcURL)
-  //   // console.log(jcURL);
-
-  //   const result = await axios.get(
-  //     "https://statsapi.web.nhl.com/api/v1/people/8481161?hydrate=stats(splits=statsSingleSeason"
-  //   );
-  //   players.push(...result.data.people)
-
-    // result.data.people[0].rosterStatus = 'Y'
-  //   addPlayers(players)
-  //   console.log(result.data.people[0].rosterStatus)
-  //   // console.log(players)
-
-  //   setIsSet(true);
-  // };
-
-
-  // console.log(jcItem);
-
-  // useEffect(() => {
-  //   getJC();
-  //   console.log(jcItem);
-  // }, [isSet]);
-
-    // Get Jake Christiansen
-
-    // const getPlayerData = async (id) => {
-    //   const starterURL = "https://statsapi.web.nhl.com";
-    //   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
-    //   const playerURL = '/api/v1/people/';
-    //   const newURL = starterURL.concat(playerURL).concat(id).concat(statsURL);
-    //   const result = await axios.get(newURL);
-    //   players.filter(p => p.id !== id).map(p => setPlayers(p))
-    //   setIsSet(true);
-    // };
-
-    // useEffect(() => {
-    //   console.log(players)
-    // }, [setIsSet]);
 
   const [localCurrentPlayer, setCurrentPlayer] = useLocalStorage(
     "currentPlayer",
     [{ defaultCurrentPlayer }]
   );
 
-  // useEffect(() => {
-  //   const noStats = players.filter(player => player.stats[0].splits[0] === undefined)
-  //   const noStatsID = noStats[0].id
-  //   getPlayers(noStatsID)
-  //   noStats[0].stats[0].splits.push(defaultStat)
-  //   addCurrentPlayer(noStats)
-  //   console.log(noStats)
-  // }, [])
+  // *** GET JAKE CHRISTIANSEN ***
+  const starterURL = "https://statsapi.web.nhl.com";
+
+  const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
+
+  const teamStatsURL = "/api/v1/teams/29/?expand=team.stats"
+
+  const jcURL = "/api/v1/people/8481161";
+
+  const [jcData, setJCData] = useState({});
+
+  const getJC = async () => {
+    const newURL = starterURL.concat(jcURL).concat(statsURL);
+    const result = await axios.get(newURL);
+    setJCData(...result.data.people);
+  };
+
+  const setStatus = (data) => {
+    if (data.rosterStatus === 'N') {
+    data.rosterStatus = "Y";
+    players.push(data);
+  }
+  };
+
+  useEffect(() => {
+    getJC();
+  }, []);
+
+  useEffect(() => {
+    setStatus(jcData);
+  }, [jcData]);
+  // *** END GET JAKE CHRISTIANSEN ***
 
   function getPlayers(id) {
-   const currentPlayer = (players.filter((p) => p.id === id))
-  //  if(currentPlayer[0].stats[0].splits[0] === undefined) {
-  //   console.log('stats length 0')
-  //   console.log(currentPlayer[0])
-  //   setCurrentPlayer(currentPlayer[0])
-  //  }
-  //  console.log(currentPlayer[0].stats[0].splits)
-  console.log(currentPlayer)
+    const currentPlayer = players.filter((p) => p.id === id);
+    console.log(currentPlayer);
   }
 
   function addCurrentPlayer(player) {
@@ -165,28 +96,83 @@ export const PlayerProvider = ({ children }) => {
   }
 
   function addPlayers(player) {
+    const changePlayerNumber = player.filter((p) => p.id === 8478967);
+    changePlayerNumber.map((p) => {
+      p.primaryNumber = 18;
+      p.rosterStatus = "S";
+    });
+
+    const manualInjury = player.filter(
+      (p) => p.id === 8478460 || p.id === 8483565 || p.id === 8474679
+    );
+    manualInjury.map((p) => {
+      p.rosterStatus = "I";
+    });
+
+    const manualScratch = player.filter((p) => p.id === 8483565 || p.id === 8481161);
+    manualScratch.map((p) => {
+      p.rosterStatus = "S";
+    });
+
     setPlayers(player);
     return [player];
   }
 
   function addPlayerList(player) {
     setPlayerList(player);
-    // console.info(playerList);
     return [player];
   }
 
-  // function postAllPlayerData (data) {
-  //   setDB(data);
-  //   return [data]
-  // }
-
   const postAllPlayerData = (data) => {
-      data.map((p) => {
-        axios.post(API_URL, p);
-      });
-      return [data]
-    }
+    data.map((p) => {
+      axios.post(API_URL, p);
+    });
+    return [data];
+  };
 
+  const [birthPlace, setBirthPlace] = useState();
+
+  function addBirthPlace(birthCity, birthCountry, birthStateProvince) {
+    if (birthStateProvince === undefined) {
+      const birthPlace = birthCity + ", " + birthCountry;
+      setBirthPlace(birthPlace);
+      // console.log(birthPlace);
+    } else {
+      const birthPlace =
+        birthCity + ", " + birthStateProvince + ", " + birthCountry;
+      setBirthPlace(birthPlace);
+      // console.log(birthPlace);
+    }
+  }
+
+  function percentFormatter(percent) {
+    const formatted = parseFloat(Math.round(percent * 100) / 100).toFixed(2);
+    return formatted;
+  }
+
+  const [shoots, setShoots] = useState()
+
+  function shootsFormatter(shoots) {
+    if (shoots === 'L') {
+      const hand = "Left"
+      setShoots(hand);
+    } else {
+      const hand = "Right"
+      setShoots(hand);
+    }
+  }
+  // useEffect(() => {
+  //   // console.log(players[1].rosterStatus)
+  //   // const playerID = players[1].id
+  //   // players[1].rosterStatus = "I"
+  //   // const selectedPlayer = getPlayers(playerID)
+  //   // players.pop(selectedPlayer)
+  //   // players.push(selectedPlayer)
+  //   console.log(players[1])
+  //   players[1].rosterStatus = "I"
+  //   console.log(players[1])
+
+  // }, [])
 
   return (
     <PlayerContext.Provider
@@ -199,10 +185,13 @@ export const PlayerProvider = ({ children }) => {
         postAllPlayerData,
         addCurrentPlayer,
         localCurrentPlayer,
+        addBirthPlace,
+        birthPlace,
+        percentFormatter,
+        shootsFormatter,
+        shoots,
+        toggle
         // dbData,
-        // getXtraPlayer,
-        // xtraPlayers,
-        // isSet
       }}
     >
       {children}

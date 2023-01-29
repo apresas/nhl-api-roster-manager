@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import ModalBackDrop from "../Backdrop/ModalBackDrop";
 import playerItems from "../../data/player.json";
 import { IoClose } from "react-icons/io5";
+import { IoMdPulse } from "react-icons/io";
 import { IoBandage } from "react-icons/io5";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
@@ -13,7 +14,10 @@ export default function PlayerInfoModal({
   localCurrentPlayer,
   flagCode,
   injuryStatus,
-  hasStats
+  hasStats,
+  birthPlace,
+  addBirthPlace,
+  percentFormatter
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -61,10 +65,11 @@ export default function PlayerInfoModal({
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
 
-  function percentFormatter(percent) {
-    const formatted = parseFloat(Math.round(percent * 100) / 100).toFixed(2);
-    return formatted;
-  }
+  useEffect(() => {
+    addBirthPlace(info.birthCity, info.birthCountry, info.birthStateProvince)
+  }, []);
+
+
 
   const dropIn = {
     hidden: {
@@ -96,6 +101,7 @@ export default function PlayerInfoModal({
        animate='visible'
        exit='exit'
        >
+                <div className="player-info-container">
         <div className="player-profile-display">
           <div className="image-container">
             <img
@@ -105,7 +111,7 @@ export default function PlayerInfoModal({
             ></img>
           </div>
           <h1>
-            <IoBandage className={`${injuryStatus}`} />
+            <IoMdPulse className={`${injuryStatus}`} />
             {info.fullName}
           </h1>
           <h2>{info.primaryNumber}</h2>
@@ -113,6 +119,7 @@ export default function PlayerInfoModal({
         </div>
         <div className="player-profile-info">
           <ul className="info-list">
+            <div className="info-left">
             <li>
               Position: <span>{info.primaryPosition.name}</span>
             </li>
@@ -125,20 +132,31 @@ export default function PlayerInfoModal({
             <li>
               Shoots: <span>{info.shootsCatches}</span>
             </li>
+            </div>
+            <div className="info-right">
             <li>
               Age: <span>{info.currentAge}</span>
             </li>
             <li>
-              Nationality:{" "}
+              Nationality:
               <span
-                className={`${flagCode}`}
+                className={`${flagCode} flag`}
                 style={{
                   borderRadius: "50%",
                   border: "1px solid var(--CBJ-silver)",
+                  height: '1.2rem',
+                  width: '1.2rem',
+                  top: '-1px',
+                  left: '2.5px',
+                  backgroundSize: "cover"
                 }}
               ></span>
             </li>
-          </ul>
+            <li>
+             Birthplace : <span className="space-span">{birthPlace}</span>
+            </li>
+            </div>
+          </ul></div>
         </div>
         <div className="player-profile-stats">
           <button className="btn-close" onClick={handelClose}>

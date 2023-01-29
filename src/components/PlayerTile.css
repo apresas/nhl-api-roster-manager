@@ -104,8 +104,8 @@ body {
   top: 15px;
   margin-left: 2px;
   /* bottom: 1.5px; */
-  /* -webkit-text-stroke: 1px var(--color-red); */
-  /* -webkit-text-stroke-color: var(--color-red); */
+  /* -webkit-text-stroke: 1px var(--color-red);
+  -webkit-text-stroke-color: var(--color-red); */
 }
 
 .position-container {
@@ -148,7 +148,7 @@ body {
 
 .injury-icon {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   bottom: 15px;
   opacity: 0;
 }
@@ -156,7 +156,7 @@ body {
 .injury-icon-active {
   position: absolute;
   display: inline-block;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   opacity: 1;
   bottom: 15px;
   opacity: 0.4;

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./PlayerTile.css";
 import { GiAmbulance } from "react-icons/gi";
+import { MdPersonalInjury } from "react-icons/md";
+import { FaUserInjured } from "react-icons/fa";
 import { GrStar } from "react-icons/gr";
 import VanillaTilt from "vanilla-tilt";
 
@@ -78,13 +80,13 @@ export default function PlayerTile({
         <div className="position-container">
           <h4 className="player-position">
             <div className="left-divider">
-              <GrStar />
+              {/* <GrStar /> */}
               <GrStar />
             </div>
             {position}
             <div className="right-divider">
               <GrStar />
-              <GrStar />
+              {/* <GrStar /> */}
             </div>
           </h4>
         </div>

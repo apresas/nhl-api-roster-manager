@@ -18,6 +18,16 @@
   src: url(/fonts/ApexMk2-LightCondensed.otf);
 }
 
+@font-face {
+  font-family: 'NHL-Columbus';
+  src:url(/fonts/NHL-Columbus.ttf.woff) format('woff'),
+      url(/fonts/NHL-Columbus.ttf.svg#NHL-Columbus) format('svg'),
+      url(/fonts/NHL-Columbus.ttf.eot),
+      url(/fonts/NHL-Columbus.ttf.eot?#iefix) format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* --color-bg: #0d1b2c;
    --color-bg-varient: #182941; */
@@ -75,6 +85,40 @@
 .player-list-title {
   margin: 3rem 0 0 0;
   transform: scale(1, 1.25);
+}
+
+.scratches-list-title {
+  position: relative;
+  color: var(--color-white);
+  font-weight: 300;
+}
+
+.scratchs-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.scratches-list-title::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-primary-varient);
+  height: 3px;
+  width: 70%;
+  left: -7rem;
+  top: 45%;
+}
+
+.scratches-list-title::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-primary-varient);
+  height: 3px;
+  width: 70%;
+  right: -7rem;
+  top: 45%;
 }
 
 .player-list-year {

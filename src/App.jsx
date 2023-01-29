@@ -8,6 +8,7 @@ import { usePlayers } from "./context/PlayerContext";
 import CBJLogo from "./img/cbj_logo.svg";
 import { AnimatePresence } from "framer-motion";
 import apiRequest from "./utils/apiRequest";
+import { assign } from "lodash";
 
 function App() {
   const {
@@ -15,14 +16,16 @@ function App() {
     localCurrentPlayer,
     addPlayers,
     addPlayerList,
-    players,
     playerList,
-    getPlayers
+    players,
+    getPlayers,
+    addBirthPlace,
+    birthPlace, 
+    percentFormatter,
+    shootsFormatter,
+    shoots,
+    toggle
   } = usePlayers();
-
-  const API_URL = "http://localhost:3500/players";
-
-  const [playerItems, setPlayerItems] = useState([]);
 
   //MODAL CONTROL USESTATES
   const [showPlayerInfoModal, setShowPlayerInfoModal] = useState(false);
@@ -33,23 +36,6 @@ function App() {
   const [playerInfoModalID, setPlayerInfoModalID] = useState();
   const [flagCode, setFlagCode] = useState();
   const [hasStats, setHasStats] = useState(true);
-  const [defaultStat, setDefaultStat] = useState({season:'NA', stat:{
-    games: 0,
-    goals: 0,
-    assets: 0,
-    points: 0,
-    powerPlayerGoals: 0,
-    powerPlayPoints: 0,
-    penaltyMinutes: 0,
-    plusMinus: 0,
-    shots: 0,
-    hits: 0,
-    faceOffPct: 0,
-    blocked: 0,
-    timeOnIcePerGame: 0,
-  }});
-
-  const [noStats, setNoStats] = useState();
 
   // ROSTERDATA ROSTERURL USESTATES
   const [rosterData, setRosterData] = useState([]);
@@ -64,8 +50,12 @@ function App() {
 
   const statsURL = "?hydrate=stats(splits=statsSingleSeason)";
 
+
   // GET INJURY STATUS
   const [injuryStatus, setInjuryStatus] = useState([]);
+
+  // GET SCRATHED STATUS
+  const [scratchedStatus, setScratchedStatus] = useState([]);
 
   // GET ROSTER
   const getRoster = async (res) => {
@@ -81,6 +71,7 @@ function App() {
     });
   };
 
+
   // SET PLAYER
   const playerFun = async () => {
     const res = await axios.get(rosterUrl);
@@ -93,46 +84,30 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
+
     addPlayerList(rosterData);
-    // rosterData.map(p => {
-    //   axios.post(API_URL, p)
-    // })
   }, [rosterData]);
 
-  useEffect(() => {
-    setPlayerItems(rosterData);
-  }, [players]);
-
   // useEffect(() => {
-  //   const getPlayerItems = async () => {
-  //     const reponse = await axios.get(API_URL);
-  //     const playerDataItem = await reponse.data;
-  //     console.log(playerDataItem);
-  //     setPlayerItems(playerDataItem);
-  //   };
-  //   getPlayerItems();
-  // }, []);
+  //   console.log(players.key)
+  //   console.log('Player List Changed')
+  // }, [players])
 
-  // useEffect(() => {
-  //   console.log(playerList)
-  //   // getPlayers(8476374);
-  // }, [playerItems]);
 
-  // useEffect(() => {
-  //   const noStats = players.filter(player => player.stats[0].splits[0] === undefined)
-  //   const noStatsID = noStats[0].id
-  //   getPlayers(noStatsID)
-  //   noStats[0].stats[0].splits.push(defaultStat)
-  //   addCurrentPlayer(noStats)
-  //   console.log(noStats)
-  // }, [])
+
+
+
+  // console.log(playerList);
+
+
+
+
 
   // NATIONALITY FORMATTER
   function nationalityFormatter(nationality) {
     const formatted = nationality.toLowerCase().slice(0, 2);
     return formatted;
   }
-
 
   // MODAL CONTROLS
   function openPlayerInfoModal(playerID) {
@@ -143,17 +118,19 @@ function App() {
     setCurrentSelectedPlayer(...selectedPlayer);
 
     if (selectedPlayer[0].stats[0].splits[0] === undefined) {
-      console.log("no stats avalible");
+      // console.log("NO stats avalible");
       setHasStats(false);
     } else {
-      console.log("stats avalible");
+      // console.log("stats avalible");
       setHasStats(true);
     }
 
     if (!selectedPlayer[0].primaryPosition.code.includes("G")) {
       setShowPlayerInfoModal(true);
+      toggle()
     } else {
       setShowGoalieInfoModal(true);
+      toggle()
     }
 
     if (selectedPlayer[0].rosterStatus.includes("I")) {
@@ -162,7 +139,11 @@ function App() {
       setInjuryStatus("player-modal-injury-icon");
     }
 
-
+    if (selectedPlayer[0].rosterStatus.includes("S")) {
+      setScratchedStatus("player-modal-scratch-icon-active")
+    }else {
+      setScratchedStatus("player-modal-scratch-icon")
+    }
 
     const countryCode = selectedPlayer[0].nationality;
     if (countryCode === "SWE") {
@@ -176,15 +157,16 @@ function App() {
     }
 
     addCurrentPlayer(selectedPlayer);
-  
   }
 
   function closePlayerInfoModal() {
     setShowPlayerInfoModal(false);
+    toggle()
   }
 
   function closeGoalieInfoModal() {
     setShowGoalieInfoModal(false);
+    toggle()
   }
 
   return (
@@ -222,6 +204,30 @@ function App() {
                 />
               ))}
           </section>
+          <div className="scratchs-title-container">
+          <h2 className="player-list-type-title scratches-list-title">Scratches</h2>
+          </div>
+          <section className="player-list forward-list">
+          {players
+              .filter((player) => player.rosterStatus.includes("S") && player.primaryPosition.type.includes("Forward"))
+              .map((scratched) => (
+                <li key={scratched.id}>
+                  <PlayerTile
+                    onClick={openPlayerInfoModal}
+                    key={scratched.id}
+                    id={scratched.id}
+                    fullName={scratched.fullName}
+                    lastName={scratched.lastName}
+                    firstName={scratched.firstName}
+                    number={scratched.primaryNumber}
+                    position={scratched.primaryPosition.abbreviation}
+                    shoots={scratched.shootsCatches}
+                    stats={scratched.stats.splits}
+                    rosterStatus={scratched.rosterStatus}
+                  />
+                </li>
+              ))}
+              </section>
           <h1 className="player-list-type-title">Defense</h1>
           <section className="player-list defense-list">
             {players
@@ -248,6 +254,30 @@ function App() {
                 </li>
               ))}
           </section>
+          <div className="scratchs-title-container">
+          <h2 className="player-list-type-title scratches-list-title">Scratches</h2>
+          </div>
+          <section className="player-list defense-list">
+          {players
+              .filter((player) => player.rosterStatus.includes("S") && player.primaryPosition.type.includes("Defense"))
+              .map((scratched) => (
+                <li key={scratched.id}>
+                  <PlayerTile
+                    onClick={openPlayerInfoModal}
+                    key={scratched.id}
+                    id={scratched.id}
+                    fullName={scratched.fullName}
+                    lastName={scratched.lastName}
+                    firstName={scratched.firstName}
+                    number={scratched.primaryNumber}
+                    position={scratched.primaryPosition.abbreviation}
+                    shoots={scratched.shootsCatches}
+                    stats={scratched.stats.splits}
+                    rosterStatus={scratched.rosterStatus}
+                  />
+                </li>
+              ))}
+              </section>
           <h1 className="player-list-type-title">Goalies</h1>
           <section className="player-list goalie-list">
             {players
@@ -278,20 +308,20 @@ function App() {
           <section className="player-list injury-list">
             {players
               .filter((player) => player.rosterStatus.includes("I"))
-              .map((goalie) => (
-                <li key={goalie.id}>
+              .map((injured) => (
+                <li key={injured.id}>
                   <PlayerTile
                     onClick={openPlayerInfoModal}
-                    key={goalie.id}
-                    id={goalie.id}
-                    fullName={goalie.fullName}
-                    lastName={goalie.lastName}
-                    firstName={goalie.firstName}
-                    number={goalie.primaryNumber}
-                    position={goalie.primaryPosition.abbreviation}
-                    shoots={goalie.shootsCatches}
-                    stats={goalie.stats.splits}
-                    rosterStatus={goalie.rosterStatus}
+                    key={injured.id}
+                    id={injured.id}
+                    fullName={injured.fullName}
+                    lastName={injured.lastName}
+                    firstName={injured.firstName}
+                    number={injured.primaryNumber}
+                    position={injured.primaryPosition.abbreviation}
+                    shoots={injured.shootsCatches}
+                    stats={injured.stats.splits}
+                    rosterStatus={injured.rosterStatus}
                   />
                 </li>
               ))}
@@ -304,10 +334,14 @@ function App() {
             show={showPlayerInfoModal}
             handleClick={() => setShowPlayerInfoModal(false)}
             handelClose={closePlayerInfoModal}
+            addBirthPlace={addBirthPlace}
+            birthPlace={birthPlace}
+            shoots={shoots}
+            shootsFormatter={shootsFormatter}
             localCurrentPlayer={localCurrentPlayer}
             injuryStatus={injuryStatus}
+            scratchedStatus={scratchedStatus}
             flagCode={flagCode}
-            defaultStat={defaultStat}
             hasStats={hasStats}
             currentSelectedPlayer={currentSelectedPlayer}
             playerInfoModalID={playerInfoModalID}
@@ -321,10 +355,15 @@ function App() {
             show={showGoalieInfoModal}
             handleClick={() => setShowPlayerInfoModal(false)}
             handelClose={closeGoalieInfoModal}
+            addBirthPlace={addBirthPlace}
+            birthPlace={birthPlace}
+            shoots={shoots}
+            shootsFormatter={shootsFormatter}
+            percentFormatter={percentFormatter}
             localCurrentPlayer={localCurrentPlayer}
             injuryStatus={injuryStatus}
+            scratchedStatus={scratchedStatus}
             flagCode={flagCode}
-            defaultStat={defaultStat}
             hasStats={hasStats}
           />
         )}
