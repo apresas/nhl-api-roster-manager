@@ -89,6 +89,7 @@ body {
   top: 41.5px;
   letter-spacing: 0.12rem;
   font-size: 0.9rem;
+  font-weight:300;
   transform: scale(1.1, 1.5);
 }
 

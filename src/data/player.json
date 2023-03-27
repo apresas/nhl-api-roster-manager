@@ -125,6 +125,21 @@
     "imgURL": "../assets/lane_pederson_img.png"
   },
   {
+    "id": 8484125,
+    "name": "Hunter McKown",
+    "imgURL": "../assets/hunter_mckown_img2.png"
+  },
+  {
+    "id": 91671,
+    "name": "Connor Bedard",
+    "imgURL": "../assets/connor_bedard_img.png"
+  },
+  {
+    "id": 88839,
+    "name": "Adam Fantilli",
+    "imgURL": "../assets/adam_fantilli_img.png"
+  },
+  {
     "id": 8480871,
     "name": "Adam Boqvist",
     "imgURL": "../assets/adam_boqvist_img2.png"
@@ -200,6 +215,11 @@
     "imgURL": "../assets/samuel_knazko_img.png"
   },
   {
+    "id": 8482678,
+    "name": "Corson Ceulemans",
+    "imgURL": "../assets/corson_ceulemans_img.png"
+  },
+  {
     "id": 8476914,
     "name": "Joonas Korpisalo",
     "imgURL": "../assets/joonas_korpisalo_img2.png"
@@ -218,5 +238,15 @@
     "id": 8482982,
     "name": "Jet Greaves",
     "imgURL": "../assets/jet_greaves_img.png"
+  },
+  {
+    "id": 8474636,
+    "name": "Michael Hutchinson",
+    "imgURL": "../assets/michael_hutchinson_img.png"
+  },
+  {
+    "id": 8476903,
+    "name": "Jon Gillies",
+    "imgURL": "../assets/jon_gillies_img.png"
   }
 ]

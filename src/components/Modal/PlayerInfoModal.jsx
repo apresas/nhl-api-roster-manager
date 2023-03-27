@@ -5,9 +5,13 @@ import ModalBackDrop from "../Backdrop/ModalBackDrop";
 import playerItems from "../../data/player.json";
 import { IoClose } from "react-icons/io5";
 import { IoMdPulse } from "react-icons/io";
-import { FaUserTie } from "react-icons/fa"
-import { GiCancel } from "react-icons/gi"
+import { GiCancel } from "react-icons/gi";
+import { GiHealthNormal } from "react-icons/gi";
+import { MdSportsHockey } from "react-icons/md";
+import { FaUserTie } from "react-icons/fa";
+import { RiMedal2Line } from "react-icons/ri";
 import { GiCannon } from "react-icons/gi";
+import { GrStar } from "react-icons/gr";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function PlayerInfoModal({
@@ -16,12 +20,17 @@ export default function PlayerInfoModal({
   localCurrentPlayer,
   injuryStatus,
   scratchedStatus,
+  rookieStatus,
   flagCode,
   hasStats,
   addBirthPlace,
   birthPlace,
   shoots,
-  shootsFormatter
+  shootsFormatter,
+  getPlayer,
+  scratchPlayerStatus,
+  injuryPlayerStatus,
+  activePlayerStatus,
 }) {
   // Path for Stats
   // console.log(info.stats[0].splits[0].stat.games)
@@ -49,18 +58,22 @@ export default function PlayerInfoModal({
         goals: localCurrentPlayer[0].stats[0].splits[0].stat.goals,
         assists: localCurrentPlayer[0].stats[0].splits[0].stat.assists,
         points: localCurrentPlayer[0].stats[0].splits[0].stat.points,
-        powerPlayGoals: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
-        powerPlayPoints: localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
-        penaltyMinutes: localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
+        powerPlayGoals:
+          localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayGoals,
+        powerPlayPoints:
+          localCurrentPlayer[0].stats[0].splits[0].stat.powerPlayPoints,
+        penaltyMinutes:
+          localCurrentPlayer[0].stats[0].splits[0].stat.penaltyMinutes,
         plusMinus: localCurrentPlayer[0].stats[0].splits[0].stat.plusMinus,
         shots: localCurrentPlayer[0].stats[0].splits[0].stat.shots,
         hits: localCurrentPlayer[0].stats[0].splits[0].stat.hits,
         faceOffPct: localCurrentPlayer[0].stats[0].splits[0].stat.faceOffPct,
         blocked: localCurrentPlayer[0].stats[0].splits[0].stat.blocked,
-        timeOnIcePerGame: localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame,
+        timeOnIcePerGame:
+          localCurrentPlayer[0].stats[0].splits[0].stat.timeOnIcePerGame,
       });
 
-      // Change Player Info 
+      // Change Player Info
       // if (localCurrentPlayer[0].id === 8478967) {
       //   localCurrentPlayer[0].primaryNumber = 18
       // }
@@ -77,31 +90,32 @@ export default function PlayerInfoModal({
     }
   }, []);
 
-  useEffect(() => {
-    console.log(...localCurrentPlayer);
-  }, [localCurrentPlayer]);
+  // useEffect(() => {
+  //   // console.log(...localCurrentPlayer);
+  //   console.log(...getPlayer);
+  // }, [localCurrentPlayer]);
 
   const info = localCurrentPlayer[0];
 
-  // const [birthPlace, setBirthPlace] = useState()
-
-  // function addBirthPlace(birthCity, birthCountry, birthStateProvince) {
-  //   if (birthStateProvince === undefined) {
-  //     const birthPlace = birthCity + ', ' + birthCountry
-  //     setBirthPlace(birthPlace)
-  //     console.log(birthPlace);
-  //   } else {
-  //     const birthPlace = birthCity + ', ' + birthStateProvince + ', ' + birthCountry
-  //     setBirthPlace(birthPlace)
-  //     console.log(birthPlace);
-  //   }
-
-  // }
-
   useEffect(() => {
-    addBirthPlace(info.birthCity, info.birthCountry, info.birthStateProvince)
-    shootsFormatter(info.shootsCatches)
+    addBirthPlace(info.birthCity, info.birthCountry, info.birthStateProvince);
+    shootsFormatter(info.shootsCatches);
   }, []);
+
+  function setScratch() {
+    scratchPlayerStatus(getPlayer);
+    handelClose();
+  }
+
+  function setInjury() {
+    injuryPlayerStatus(getPlayer);
+    handelClose();
+  }
+
+  function setActive() {
+    activePlayerStatus(getPlayer);
+    handelClose();
+  }
 
   const imgs = playerItems.find((item) => item.id === info.id);
   if (imgs == null) return null;
@@ -143,63 +157,104 @@ export default function PlayerInfoModal({
         exit="exit"
       >
         <div className="player-info-container">
-        <div className="player-profile-display">
-          <div className="image-container">
-            <img
-              className="player-image"
-              src={imgs.imgURL}
-              alt="player image"
-            ></img>
+          <div className={`${rookieStatus}`}>
+            <RiMedal2Line />
+            <span>Rookie</span>
           </div>
-          <h1>
-            <IoMdPulse className={`${injuryStatus}`}/>
-            <GiCancel className={`${scratchedStatus}`}/>
-            {info.fullName}
-          </h1>
-          <h2>{info.primaryNumber}</h2>
-          <span className="divider" />
-        </div>
-        <div className="player-profile-info">
-          <ul className="info-list">
-          <div className="info-left"> 
-            <li>
-              Position:{" "}
-              <span className="space-span">{info.primaryPosition.name}</span>
-            </li>
-            <li>
-              Height: <span className="space-span">{info.height}</span>
-            </li>
-            <li>
-              Weight: <span className="space-span">{info.weight}lbs</span>
-            </li>
-            <li>
-              Shoots: <span className="space-span">{shoots}</span>
-            </li>
+          <div className="player-profile-display">
+            <div className="image-container">
+              <img
+                className="player-image"
+                src={imgs.imgURL}
+                alt="player image"
+              ></img>
             </div>
-            <div className="info-right">
-            <li>
-              Age: <span className="space-span">{info.currentAge}</span>
-            </li>
-            <li>
-              Nationality:
-              <span
-                className={`${flagCode}`}
-                style={{
-                  borderRadius: "50%",
-                  border: "1px solid var(--CBJ-silver)",
-                  height: '1.2rem',
-                  width: '1.2rem',
-                  top: '-1px',
-                  left: '2.5px',
-                  backgroundSize: "cover"
-                }}
-              ></span>
-            </li>
-            <li>
-             Birthplace : <span className="space-span">{birthPlace}</span>
-            </li>
-            </div>
-          </ul>
+            <h1>
+              <IoMdPulse className={`${injuryStatus}`} />
+              <GiCancel className={`${scratchedStatus}`} />
+              {info.fullName}
+            </h1>
+            <h2>{info.primaryNumber}</h2>
+            <span className="divider" />
+          </div>
+          <div className="player-profile-info">
+            <ul className="info-list">
+              <div className="info-left">
+                <li>
+                  Position:{" "}
+                  <span className="space-span">
+                    {info.primaryPosition.name}
+                  </span>
+                </li>
+                <li>
+                  Height: <span className="space-span">{info.height}</span>
+                </li>
+                <li>
+                  Weight: <span className="space-span">{info.weight}lbs</span>
+                </li>
+                <li>
+                  Shoots: <span className="space-span">{shoots}</span>
+                </li>
+                <li>
+                  Age: <span className="space-span">{info.currentAge}</span>
+                </li>
+              </div>
+              <div className="info-right">
+                {/* <li className="cannon_li">
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                  <GrStar style={{zIndex:"0"}}/>
+                </li> */}
+                <li>
+                  Nationality:
+                  <span
+                    className={`${flagCode}`}
+                    style={{
+                      borderRadius: "50%",
+                      border: "1px solid var(--CBJ-silver)",
+                      height: "1.2rem",
+                      width: "1.2rem",
+                      top: "-1px",
+                      left: "2.5px",
+                      backgroundSize: "cover",
+                    }}
+                  ></span>
+                </li>
+                <li>
+                  Birthplace : <span className="space-span">{birthPlace}</span>
+                </li>
+                <li className="controller_li">
+                  <button className="btn btn-injured" onClick={setInjury}>
+                    Injury{" "}
+                    <span>
+                      <GiHealthNormal />
+                    </span>
+                  </button>
+                  <button className="btn btn-scratched" onClick={setScratch}>
+                    Scratch{" "}
+                    <span>
+                      <FaUserTie />
+                    </span>
+                  </button>
+                  <button className="btn btn-active" onClick={setActive}>
+                    Active{" "}
+                    <span>
+                      <MdSportsHockey />
+                    </span>
+                  </button>
+                </li>
+              </div>
+            </ul>
           </div>
         </div>
         <div className="player-profile-stats">

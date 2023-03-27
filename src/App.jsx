@@ -19,12 +19,18 @@ function App() {
     playerList,
     players,
     getPlayers,
+    getPlayer,
     addBirthPlace,
     birthPlace, 
     percentFormatter,
     shootsFormatter,
     shoots,
-    toggle
+    toggle,
+    scratchPlayerStatus,
+    injuryPlayerStatus,
+    activePlayerStatus,
+    scratchedForward,
+    scratchedDefense
   } = usePlayers();
 
   //MODAL CONTROL USESTATES
@@ -57,6 +63,9 @@ function App() {
   // GET SCRATHED STATUS
   const [scratchedStatus, setScratchedStatus] = useState([]);
 
+  // GET ROOKIE STATUS 
+  const [rookieStatus, setRookieStatus] = useState([]);
+
   // GET ROSTER
   const getRoster = async (res) => {
     res.map(async (item) => {
@@ -84,13 +93,15 @@ function App() {
 
   useEffect(() => {
     addPlayers(rosterData);
-
     addPlayerList(rosterData);
   }, [rosterData]);
 
   // useEffect(() => {
-  //   console.log(players.key)
-  //   console.log('Player List Changed')
+  //   // console.log(players.key)
+  //   // console.log('Player List Changed')
+  //   // addPlayerList(players)
+  //   // addPlayers(players)
+  //   console.log(players)
   // }, [players])
 
 
@@ -128,9 +139,17 @@ function App() {
     if (!selectedPlayer[0].primaryPosition.code.includes("G")) {
       setShowPlayerInfoModal(true);
       toggle()
+      getPlayers(selectedPlayer[0].id)
     } else {
       setShowGoalieInfoModal(true);
       toggle()
+      getPlayers(selectedPlayer[0].id)
+    }
+
+    if (selectedPlayer[0].rookie === true) {
+      setRookieStatus("rookie-badge-active")
+    } else {
+      setRookieStatus("rookie-badge")
     }
 
     if (selectedPlayer[0].rosterStatus.includes("I")) {
@@ -304,6 +323,30 @@ function App() {
                 </li>
               ))}
           </section>
+          <div className="scratchs-title-container">
+          <h2 className="player-list-type-title scratches-list-title">Scratches</h2>
+          </div>
+          <section className="player-list goalie-list">
+          {players
+              .filter((player) => player.rosterStatus.includes("S") && player.primaryPosition.type.includes("Goalie"))
+              .map((scratched) => (
+                <li key={scratched.id}>
+                  <PlayerTile
+                    onClick={openPlayerInfoModal}
+                    key={scratched.id}
+                    id={scratched.id}
+                    fullName={scratched.fullName}
+                    lastName={scratched.lastName}
+                    firstName={scratched.firstName}
+                    number={scratched.primaryNumber}
+                    position={scratched.primaryPosition.abbreviation}
+                    shoots={scratched.shootsCatches}
+                    stats={scratched.stats.splits}
+                    rosterStatus={scratched.rosterStatus}
+                  />
+                </li>
+              ))}
+              </section>
           <h1 className="player-list-type-title">Injuries</h1>
           <section className="player-list injury-list">
             {players
@@ -341,11 +384,17 @@ function App() {
             localCurrentPlayer={localCurrentPlayer}
             injuryStatus={injuryStatus}
             scratchedStatus={scratchedStatus}
+            rookieStatus={rookieStatus}
             flagCode={flagCode}
             hasStats={hasStats}
             currentSelectedPlayer={currentSelectedPlayer}
             playerInfoModalID={playerInfoModalID}
             getPlayers={getPlayers}
+            getPlayer={getPlayer}
+            scratchPlayerStatus={scratchPlayerStatus}
+            injuryPlayerStatus={injuryPlayerStatus}
+            activePlayerStatus={activePlayerStatus}
+
           />
         )}
       </AnimatePresence>
@@ -363,8 +412,13 @@ function App() {
             localCurrentPlayer={localCurrentPlayer}
             injuryStatus={injuryStatus}
             scratchedStatus={scratchedStatus}
+            rookieStatus={rookieStatus}
             flagCode={flagCode}
             hasStats={hasStats}
+            getPlayer={getPlayer}
+            scratchPlayerStatus={scratchPlayerStatus}
+            injuryPlayerStatus={injuryPlayerStatus}
+            activePlayerStatus={activePlayerStatus}
           />
         )}
       </AnimatePresence>
